@@ -7,20 +7,12 @@
       "RelativeMoniker": "D:0:0:{AEBE0551-6E55-498F-8378-827A6A30E7BE}|Final\\Final.csproj|solutionrelative:final\\views\\home\\menu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AEBE0551-6E55-498F-8378-827A6A30E7BE}|Final\\Final.csproj|d:\\h\u1ECDc\\maoh-sama\\new-world\\final\\final\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AEBE0551-6E55-498F-8378-827A6A30E7BE}|Final\\Final.csproj|solutionrelative:final\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{AEBE0551-6E55-498F-8378-827A6A30E7BE}|Final\\Final.csproj|d:\\h\u1ECDc\\maoh-sama\\new-world\\final\\final\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{AEBE0551-6E55-498F-8378-827A6A30E7BE}|Final\\Final.csproj|solutionrelative:final\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AEBE0551-6E55-498F-8378-827A6A30E7BE}|Final\\Final.csproj|d:\\h\u1ECDc\\maoh-sama\\new-world\\final\\final\\views\\home\\book.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AEBE0551-6E55-498F-8378-827A6A30E7BE}|Final\\Final.csproj|solutionrelative:final\\views\\home\\book.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AEBE0551-6E55-498F-8378-827A6A30E7BE}|Final\\Final.csproj|d:\\h\u1ECDc\\maoh-sama\\new-world\\final\\final\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AEBE0551-6E55-498F-8378-827A6A30E7BE}|Final\\Final.csproj|solutionrelative:final\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{AEBE0551-6E55-498F-8378-827A6A30E7BE}|Final\\Final.csproj|d:\\h\u1ECDc\\maoh-sama\\new-world\\final\\final\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEBE0551-6E55-498F-8378-827A6A30E7BE}|Final\\Final.csproj|solutionrelative:final\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,47 +22,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\H\u1ECDc\\Maoh-sama\\New-world\\Final\\Final\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Final\\Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\H\u1ECDc\\Maoh-sama\\New-world\\Final\\Final\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Final\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAALwDAAAAAAAAAAAkwMoDAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-12T01:49:24.663Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "about.cshtml",
-              "DocumentMoniker": "D:\\H\u1ECDc\\Maoh-sama\\New-world\\Final\\Final\\Views\\Home\\about.cshtml",
-              "RelativeDocumentMoniker": "Final\\Views\\Home\\about.cshtml",
-              "ToolTip": "D:\\H\u1ECDc\\Maoh-sama\\New-world\\Final\\Final\\Views\\Home\\about.cshtml",
-              "RelativeToolTip": "Final\\Views\\Home\\about.cshtml",
-              "ViewState": "AgIAAJMAAAAAAAAAAAArwDAAAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-12T02:21:40.536Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "book.cshtml",
-              "DocumentMoniker": "D:\\H\u1ECDc\\Maoh-sama\\New-world\\Final\\Final\\Views\\Home\\book.cshtml",
-              "RelativeDocumentMoniker": "Final\\Views\\Home\\book.cshtml",
-              "ToolTip": "D:\\H\u1ECDc\\Maoh-sama\\New-world\\Final\\Final\\Views\\Home\\book.cshtml",
-              "RelativeToolTip": "Final\\Views\\Home\\book.cshtml",
-              "ViewState": "AgIAAAABAAAAAAAAAAAkwA4BAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-12T02:22:13.157Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -79,22 +32,35 @@
               "RelativeDocumentMoniker": "Final\\Views\\Home\\menu.cshtml",
               "ToolTip": "D:\\H\u1ECDc\\Maoh-sama\\New-world\\Final\\Final\\Views\\Home\\menu.cshtml",
               "RelativeToolTip": "Final\\Views\\Home\\menu.cshtml",
-              "ViewState": "AgIAAJkBAAAAAAAAAAArwB8BAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACIAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-12T02:18:21.392Z",
+              "WhenOpened": "2025-07-14T07:20:55.479Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\H\u1ECDc\\Maoh-sama\\New-world\\Final\\Final\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Final\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\H\u1ECDc\\Maoh-sama\\New-world\\Final\\Final\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Final\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAADQAAAAHAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\H\u1ECDc\\Maoh-sama\\New-world\\Final\\Final\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Final\\Views\\Home\\Index.cshtml",
+              "ToolTip": "D:\\H\u1ECDc\\Maoh-sama\\New-world\\Final\\Final\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Final\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAB8AAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-12T02:15:56.316Z",
+              "WhenOpened": "2025-07-14T07:19:07.477Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\H\u1ECDc\\Maoh-sama\\New-world\\Final\\Final\\Program.cs",
+              "RelativeDocumentMoniker": "Final\\Program.cs",
+              "ToolTip": "D:\\H\u1ECDc\\Maoh-sama\\New-world\\Final\\Final\\Program.cs",
+              "RelativeToolTip": "Final\\Program.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABgAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-14T07:18:34.909Z",
               "EditorCaption": ""
             }
           ]
