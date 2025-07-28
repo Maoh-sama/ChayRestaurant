@@ -20,5 +20,14 @@ namespace Cuahangchay.Data
         public DbSet<NhanVien> NhanViens { get; set; }
         public DbSet<TaiKhoan> TaiKhoans { get; set; }
         public DbSet<CauHinh> CauHinhs { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            // Cấu hình ChiTietHoaDon là một keyless entity type
+            modelBuilder.Entity<ChiTietHoaDon>().HasNoKey();
+
+            // Đừng quên gọi base.OnModelCreating nếu bạn có các cấu hình khác
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
