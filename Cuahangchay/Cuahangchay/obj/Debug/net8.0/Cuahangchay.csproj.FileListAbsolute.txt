@@ -61,3 +61,4 @@ C:\Users\clips\Documents\GitHub\ChayRestaurant\Cuahangchay\Cuahangchay\obj\Debug
 C:\Users\clips\Documents\GitHub\ChayRestaurant\Cuahangchay\Cuahangchay\obj\Debug\net8.0\Cuahangchay.pdb
 C:\Users\clips\Documents\GitHub\ChayRestaurant\Cuahangchay\Cuahangchay\obj\Debug\net8.0\Cuahangchay.genruntimeconfig.cache
 C:\Users\clips\Documents\GitHub\ChayRestaurant\Cuahangchay\Cuahangchay\obj\Debug\net8.0\ref\Cuahangchay.dll
+C:\Users\clips\Documents\GitHub\ChayRestaurant\Cuahangchay\Cuahangchay\obj\Debug\net8.0\Cuahangchay.csproj.AssemblyReference.cache

@@ -1,4 +1,4 @@
-﻿@model Reservation
+﻿@model KhachHang
 @{
     ViewData["Title"] = "Đặt bàn";
 }
@@ -6,19 +6,15 @@
 <form method="post">
     <div class="mb-3">
         <label>Họ tên</label>
-        <input asp-for="Name" class="form-control" />
+        <input asp-for="TenKH" class="form-control" />
     </div>
     <div class="mb-3">
         <label>Điện thoại</label>
-        <input asp-for="Phone" class="form-control" />
+        <input asp-for="SoDienThoai" class="form-control" />
     </div>
     <div class="mb-3">
         <label>Ngày giờ</label>
-        <input asp-for="Date" type="datetime-local" class="form-control" />
-    </div>
-    <div class="mb-3">
-        <label>Số người</label>
-        <input asp-for="People" class="form-control" />
+        <input asp-for="Email" type="datetime-local" class="form-control" />
     </div>
     <button class="btn btn-success">Gửi</button>
 </form>

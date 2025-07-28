@@ -12,19 +12,15 @@ namespace Cuahangchay.Controllers
 
         public IActionResult Menu()
         {
-            var dishes = new List<Dish>
-        {
-            new Dish { Id = 1, Name = "Phở Bò", Price = 80000, ImageUrl = "/images/pho.jpg" },
-            new Dish { Id = 2, Name = "Bánh Mì", Price = 40000, ImageUrl = "/images/banhmi.jpg" }
-        };
-            return View(dishes);
+
+            return View();
         }
 
         [HttpGet]
         public IActionResult Reservation() => View();
 
         [HttpPost]
-        public IActionResult Reservation(Reservation res)
+        public IActionResult Reservation(KhachHang res)
         {
             if (ModelState.IsValid)
                 return RedirectToAction("Success");
