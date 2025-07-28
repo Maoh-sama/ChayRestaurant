@@ -1,6 +1,6 @@
-﻿using Cuahangchay.Models;
-using Microsoft.EntityFrameworkCore;  // Bắt buộc phải có
-
+﻿using Microsoft.EntityFrameworkCore; // Bắt buộc phải có
+using Cuahangchay.Models; // Đảm bảo bạn có namespace cho các Models của bạn
+using System.ComponentModel.DataAnnotations; 
 namespace Cuahangchay.Data
 {
     public class ApplicationDbContext : DbContext
@@ -23,10 +23,14 @@ namespace Cuahangchay.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Cấu hình ChiTietHoaDon là một keyless entity type
-            modelBuilder.Entity<ChiTietHoaDon>().HasNoKey();
+            // Bỏ dòng này đi HOẶC comment nó hoàn toàn:
+            // modelBuilder.Entity<ChiTietHoaDon>().HasNoKey();
 
-            // Đừng quên gọi base.OnModelCreating nếu bạn có các cấu hình khác
+            // Các mối quan hệ của bạn được định nghĩa đúng theo quy ước
+            // nên EF Core có thể tự động nhận diện chúng.
+            // Nếu sau này bạn gặp lỗi với các mối quan hệ phức tạp hơn,
+            // bạn có thể thêm cấu hình tường minh tại đây.
+
             base.OnModelCreating(modelBuilder);
         }
     }

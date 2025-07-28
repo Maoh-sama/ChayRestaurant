@@ -1,9 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Cuahangchay.Models
 {
     public class DatBan
     {
+        [Key] // Dòng này đánh dấu đây là khóa chính
         public int DatBanID { get; set; }
 
         [Required(ErrorMessage = "Vui lòng nhập tên khách hàng")]

@@ -1,7 +1,10 @@
-﻿namespace Cuahangchay.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+namespace Cuahangchay.Models
 {
     public class HoaDon
     {
+        [Key]
         public int HoaDonID { get; set; }
         public DateTime NgayLap { get; set; } = DateTime.Now;
         public int BanID { get; set; }

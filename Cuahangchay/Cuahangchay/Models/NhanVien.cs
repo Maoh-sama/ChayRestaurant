@@ -1,7 +1,10 @@
-﻿namespace Cuahangchay.Models
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+namespace Cuahangchay.Models
 {
     public class NhanVien
     {
+        [Key] // Dòng này đánh dấu đây là khóa chính
         public int NhanVienID { get; set; }
         public string HoTen { get; set; }
         public string SDT { get; set; }
