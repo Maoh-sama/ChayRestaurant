@@ -4,16 +4,23 @@
 }
 <h2>Thực đơn</h2>
 <div class="row">
-    @foreach (var item in Model)
+    @if (Model != null)
     {
-        <div class="col-md-4 mb-3">
-            <div class="card">
-                <img src="@item.HinhAnh" class="card-img-top" />
-                <div class="card-body">
-                    <h5>@item.TenMon</h5>
-                    <p>@item.Gia.ToString("N0") VND</p>
+        @foreach (var item in Model)
+        {
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <img src="@item.HinhAnh" class="card-img-top" />
+                    <div class="card-body">
+                        <h5>@item.TenMon</h5>
+                        <p>@item.Gia.ToString("N0") VND</p>
+                    </div>
                 </div>
             </div>
-        </div>
+        }
+    }
+    else
+    {
+        <p>Không có món ăn nào để hiển thị.</p>
     }
 </div>

@@ -18,8 +18,20 @@ namespace Cuahangchay.Controllers
 
         public IActionResult Menu()
         {
-            List<MonChay> monChaylist = _context.MonChays.ToList();
-            return View(monChaylist);
+            try
+            {
+                List<MonChay> monChaylist = _context.MonChays.ToList();
+                if (monChaylist == null)
+                {
+                    monChaylist = new List<MonChay>(); // Trả về danh sách rỗng nếu null
+                }
+                return View(monChaylist);
+            }
+            catch (Exception ex)
+            {
+                // Log lỗi hoặc trả về view lỗi
+                return View("Error");
+            }
         }
 
         [HttpGet]

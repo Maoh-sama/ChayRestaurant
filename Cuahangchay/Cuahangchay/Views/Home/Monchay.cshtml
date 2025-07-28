@@ -3,8 +3,15 @@
 <h2>Danh sách món chay</h2>
 
 <ul>
-@foreach (var item in Model)
-{
-    <li>@item.TenMon - @item.Gia VND</li>
-}
+    @if (Model != null)
+    {
+        @foreach (var item in Model)
+        {
+            <li>@item.TenMon - @item.Gia VND</li>
+        }
+    }
+    else
+    {
+        <li>Không có món chay nào.</li>
+    }
 </ul>
