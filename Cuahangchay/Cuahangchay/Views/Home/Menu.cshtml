@@ -1,0 +1,19 @@
+﻿@model List<Dish>
+@{
+    ViewData["Title"] = "Thực đơn";
+}
+<h2>Thực đơn</h2>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <img src="@item.ImageUrl" class="card-img-top" />
+                <div class="card-body">
+                    <h5>@item.Name</h5>
+                    <p>@item.Price.ToString("N0") VND</p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
