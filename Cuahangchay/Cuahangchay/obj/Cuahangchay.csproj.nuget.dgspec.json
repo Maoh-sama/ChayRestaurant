@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\clips\\Documents\\GitHub\\Cuahangchay\\Cuahangchay\\Cuahangchay.csproj": {}
+    "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Cuahangchay.csproj": {}
   },
   "projects": {
-    "C:\\Users\\clips\\Documents\\GitHub\\Cuahangchay\\Cuahangchay\\Cuahangchay.csproj": {
+    "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Cuahangchay.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\clips\\Documents\\GitHub\\Cuahangchay\\Cuahangchay\\Cuahangchay.csproj",
+        "projectUniqueName": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Cuahangchay.csproj",
         "projectName": "Cuahangchay",
-        "projectPath": "C:\\Users\\clips\\Documents\\GitHub\\Cuahangchay\\Cuahangchay\\Cuahangchay.csproj",
+        "projectPath": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Cuahangchay.csproj",
         "packagesPath": "C:\\Users\\clips\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\clips\\Documents\\GitHub\\Cuahangchay\\Cuahangchay\\obj\\",
+        "outputPath": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
