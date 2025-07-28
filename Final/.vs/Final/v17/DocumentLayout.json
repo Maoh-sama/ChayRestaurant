@@ -1,18 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\H\u1ECDc\\Maoh-sama\\New-world\\Final\\",
+  "WorkspaceRootPath": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Final\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AEBE0551-6E55-498F-8378-827A6A30E7BE}|Final\\Final.csproj|d:\\h\u1ECDc\\maoh-sama\\new-world\\final\\final\\views\\home\\menu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AEBE0551-6E55-498F-8378-827A6A30E7BE}|Final\\Final.csproj|solutionrelative:final\\views\\home\\menu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AEBE0551-6E55-498F-8378-827A6A30E7BE}|Final\\Final.csproj|d:\\h\u1ECDc\\maoh-sama\\new-world\\final\\final\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{AEBE0551-6E55-498F-8378-827A6A30E7BE}|Final\\Final.csproj|c:\\users\\clips\\documents\\github\\chayrestaurant\\final\\final\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{AEBE0551-6E55-498F-8378-827A6A30E7BE}|Final\\Final.csproj|solutionrelative:final\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AEBE0551-6E55-498F-8378-827A6A30E7BE}|Final\\Final.csproj|d:\\h\u1ECDc\\maoh-sama\\new-world\\final\\final\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AEBE0551-6E55-498F-8378-827A6A30E7BE}|Final\\Final.csproj|solutionrelative:final\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AEBE0551-6E55-498F-8378-827A6A30E7BE}|Final\\Final.csproj|c:\\users\\clips\\documents\\github\\chayrestaurant\\final\\final\\views\\home\\menu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AEBE0551-6E55-498F-8378-827A6A30E7BE}|Final\\Final.csproj|solutionrelative:final\\views\\home\\menu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEBE0551-6E55-498F-8378-827A6A30E7BE}|Final\\Final.csproj|c:\\users\\clips\\documents\\github\\chayrestaurant\\final\\final\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AEBE0551-6E55-498F-8378-827A6A30E7BE}|Final\\Final.csproj|solutionrelative:final\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,45 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
+              "Title": "about.cshtml",
+              "DocumentMoniker": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Final\\Final\\Views\\Home\\about.cshtml",
+              "RelativeDocumentMoniker": "Final\\Views\\Home\\about.cshtml",
+              "ToolTip": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Final\\Final\\Views\\Home\\about.cshtml",
+              "RelativeToolTip": "Final\\Views\\Home\\about.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-07-28T03:25:06.971Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "menu.cshtml",
-              "DocumentMoniker": "D:\\H\u1ECDc\\Maoh-sama\\New-world\\Final\\Final\\Views\\Home\\menu.cshtml",
+              "DocumentMoniker": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Final\\Final\\Views\\Home\\menu.cshtml",
               "RelativeDocumentMoniker": "Final\\Views\\Home\\menu.cshtml",
-              "ToolTip": "D:\\H\u1ECDc\\Maoh-sama\\New-world\\Final\\Final\\Views\\Home\\menu.cshtml",
+              "ToolTip": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Final\\Final\\Views\\Home\\menu.cshtml",
               "RelativeToolTip": "Final\\Views\\Home\\menu.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAACIAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-07-14T07:20:55.479Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\H\u1ECDc\\Maoh-sama\\New-world\\Final\\Final\\Views\\Home\\Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Final\\Final\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Final\\Views\\Home\\Index.cshtml",
-              "ToolTip": "D:\\H\u1ECDc\\Maoh-sama\\New-world\\Final\\Final\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Final\\Final\\Views\\Home\\Index.cshtml",
               "RelativeToolTip": "Final\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAB8AAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAAIEAAAAAAAAAAAAAADgAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-07-14T07:19:07.477Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\H\u1ECDc\\Maoh-sama\\New-world\\Final\\Final\\Program.cs",
-              "RelativeDocumentMoniker": "Final\\Program.cs",
-              "ToolTip": "D:\\H\u1ECDc\\Maoh-sama\\New-world\\Final\\Final\\Program.cs",
-              "RelativeToolTip": "Final\\Program.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABgAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-14T07:18:34.909Z",
               "EditorCaption": ""
             }
           ]
