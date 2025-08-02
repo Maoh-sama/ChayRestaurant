@@ -1,26 +1,45 @@
-﻿@model List<MonChay>
+﻿@* Khai báo Model cho View này, là một danh sách các món chay *@
+@model List<Cuahangchay.Models.MonChay>
+
 @{
     ViewData["Title"] = "Thực đơn";
 }
-<h2>Thực đơn</h2>
-<div class="row">
-    @if (Model != null)
-    {
+
+<h2 class="text-center my-4">Thực đơn Món Chay</h2>
+
+@if (Model != null && Model.Any())
+{
+    <div class="row">
         @foreach (var item in Model)
         {
-            <div class="col-md-4 mb-3">
-                <div class="card">
-                    <img src="@item.HinhAnh" class="card-img-top" />
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                    <img src="@item.HinhAnh" class="card-img-top" alt="@item.TenMon" style="object-fit: cover; height: 200px;">
                     <div class="card-body">
-                        <h5>@item.TenMon</h5>
-                        <p>@item.Gia.ToString("N0") VND</p>
+                        <h5 class="card-title">
+                            @item.TenMon
+                            @if (item.ConTon)
+                            {
+                                <span class="badge bg-success float-end">Còn hàng</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-danger float-end">Hết hàng</span>
+                            }
+                        </h5>
+                        <p class="card-text text-muted">@item.MoTa</p>
+                    </div>
+                    <div class="card-footer">
+                        <h5 class="fw-bold text-primary">@item.Gia.ToString("N0") VNĐ</h5>
                     </div>
                 </div>
             </div>
         }
-    }
-    else
-    {
-        <p>Không có món ăn nào để hiển thị.</p>
-    }
-</div>
+    </div>
+}
+else
+{
+    <div class="alert alert-warning text-center" role="alert">
+        Hiện tại chưa có món ăn nào trong thực đơn.
+    </div>
+}

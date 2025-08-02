@@ -1,9 +1,47 @@
-﻿@{
+﻿@* Khai báo Model, giả sử trang chủ hiển thị một vài món ăn nổi bật *@
+@model List<Cuahangchay.Models.MonChay>
+
+@{
     ViewData["Title"] = "Trang chủ";
 }
-<section class="text-center">
-    <h1>Chào mừng đến Nhà hàng ABC</h1>
-    <p>Ẩm thực tinh tế – Phục vụ tận tâm</p>
-    <a class="btn btn-primary" href="/Home/Menu">Xem Thực Đơn</a>
+
+@* Phần giới thiệu cửa hàng *@
+<section class="jumbotron text-center bg-light p-5">
+    <div class="container">
+        <h1 class="jumbotron-heading display-4 fw-bold">Chào mừng đến với Cửa Hàng Chay Thanh Lương</h1>
+        <p class="lead text-muted">Nơi lan tỏa ẩm thực chay tinh tế, với những món ăn được chế biến từ nguyên liệu tươi ngon và phục vụ tận tâm.</p>
+        <p>
+            <a href="/Home/Menu" class="btn btn-success my-2 btn-lg">Xem Thực Đơn Ngay</a>
+            <a href="/Home/Login" class="btn btn-outline-secondary my-2 btn-lg">Dang nhap</a>
+        </p>
+    </div>
 </section>
 
+@* Phần hiển thị các món ăn nổi bật *@
+<div class="album py-5 bg-white">
+    <div class="container">
+        <h2 class="text-center mb-4">Các Món Ăn Nổi Bật</h2>
+        @if (Model != null && Model.Any())
+        {
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                @foreach (var item in Model)
+                {
+                    <div class="col">
+                        <div class="card shadow-sm h-100">
+                            <img src="@item.HinhAnh" class="card-img-top" alt="@item.TenMon" style="object-fit: cover; height: 200px;">
+                            <div class="card-body text-center">
+                                <h5 class="card-title fw-bold">@item.TenMon</h5>
+                                <p class="card-text text-primary fs-5 fw-bold">@item.Gia.ToString("N0") VNĐ</p>
+                                <p class="text-muted">@item.MoTa</p>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <p class="text-center text-muted">Không có món ăn nổi bật nào để hiển thị.</p>
+        }
+    </div>
+</div>

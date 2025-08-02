@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 namespace Cuahangchay.Models
 {
+    [Table("MonChay")]
     public class MonChay
     {
         [Key]
