@@ -9,6 +9,8 @@ using System.Linq; // Thêm dòng này để dùng FirstOrDefault()
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using System;
+using Cuahangchay.ViewModels;
+using Cuahangchay.ViewModel;
 
 namespace Cuahangchay.Controllers
 {
