@@ -128,5 +128,42 @@ namespace Cuahangchay.Controllers
             // Nếu có lỗi, trả về view với model để hiển thị lại form
             return View(model);
         }
+        // Dăng ki//
+        [HttpGet]
+        public IActionResult Register()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Register(RegisterViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                // Kiểm tra tài khoản đã tồn tại chưa
+                var existingUser = _context.TaiKhoans.FirstOrDefault(u => u.Username == model.Username);
+                if (existingUser != null)
+                {
+                    ModelState.AddModelError("", "Tên đăng nhập đã tồn tại.");
+                    return View(model);
+                }
+
+                // Tạo tài khoản mới
+                var newUser = new TaiKhoan
+                {
+                    Username = model.Username,
+                    MatKhau = model.Password,
+                    Quyen = "user" // hoặc mặc định là "user"
+                };
+
+                _context.TaiKhoans.Add(newUser);
+                _context.SaveChanges();
+
+                // Chuyển hướng về Login sau khi đăng ký
+                return RedirectToAction("Login");
+            }
+
+            return View(model);
+        }
+
     }
 }
