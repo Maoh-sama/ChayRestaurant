@@ -52,7 +52,27 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
+[C:/Users/clips/Documents/GitHub/ChayRestaurant/Cuahangchay/Cuahangchay/Views/Home/QuanLyHoaDon.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxRdWFuTHlIb2FEb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/clips/Documents/GitHub/ChayRestaurant/Cuahangchay/Cuahangchay/Views/Home/QuanLyKho.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxRdWFuTHlLaG8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/clips/Documents/GitHub/ChayRestaurant/Cuahangchay/Cuahangchay/Views/Home/QuanLyNhanVien.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxRdWFuTHlOaGFuVmllbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/clips/Documents/GitHub/ChayRestaurant/Cuahangchay/Cuahangchay/Views/Home/QuanLyTaiKhoan.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxRdWFuTHlUYWlLaG9hbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/clips/Documents/GitHub/ChayRestaurant/Cuahangchay/Cuahangchay/Views/Home/Register.cshtml]
+=======
 [C:/Users/admin/Desktop/ChayRestaurant/Cuahangchay/Cuahangchay/Views/Home/Register.cshtml]
+>>>>>>> cc6c986f5b5cf1b8eed5d53cc93c3e0062f83806
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
@@ -64,7 +84,23 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTdWNjZXNzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
+[C:/Users/clips/Documents/GitHub/ChayRestaurant/Cuahangchay/Cuahangchay/Views/Home/ThongKeBanHang.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUaG9uZ0tlQmFuSGFuZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/clips/Documents/GitHub/ChayRestaurant/Cuahangchay/Cuahangchay/Views/Home/ThongKeDoanhThu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUaG9uZ0tlRG9hbmhUaHUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/clips/Documents/GitHub/ChayRestaurant/Cuahangchay/Cuahangchay/Views/Home/ThongKeNguyenLieu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUaG9uZ0tlTmd1eWVuTGlldS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/clips/Documents/GitHub/ChayRestaurant/Cuahangchay/Cuahangchay/Views/Shared/Error.cshtml]
+=======
 [C:/Users/admin/Desktop/ChayRestaurant/Cuahangchay/Cuahangchay/Views/Shared/Error.cshtml]
+>>>>>>> cc6c986f5b5cf1b8eed5d53cc93c3e0062f83806
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 

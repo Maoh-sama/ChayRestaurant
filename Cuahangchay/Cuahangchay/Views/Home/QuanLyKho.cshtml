@@ -1,0 +1,65 @@
+﻿@model List<Cuahangchay.Models.NguyenLieu>
+@{
+    ViewData["Title"] = "Quản lý kho";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <h1 class="h3 mb-4 text-gray-800">Quản lý kho</h1>
+
+    <div class="card shadow mb-4">
+        <!-- Khung đen: Tiêu đề của mục đã ấn -->
+        <div class="card-header py-3 d-flex justify-content-between">
+            <h6 class="m-0 font-weight-bold text-primary">Danh sách nguyên liệu</h6>
+            <!-- Hai ô xanh: Nút Tìm kiếm và Chỉnh (thay thế Thêm mới) -->
+            <div>
+                <a href="#" class="btn btn-info btn-sm mr-2">
+                    <i class="fas fa-search"></i> Tìm kiếm <!-- Biểu tượng tìm kiếm, bạn thêm link sau -->
+                </a>
+                <a href="#" class="btn btn-success btn-sm">
+                    <i class="fas fa-edit"></i> Chỉnh <!-- Biểu tượng chỉnh sửa, bạn thêm link sau -->
+                </a>
+            </div>
+        </div>
+        <!-- Khung đỏ: Bảng dữ liệu -->
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Mã NL</th>
+                            <th>Tên nguyên liệu</th>
+                            <th>Số lượng</th>
+                            <th>Đơn vị</th>
+                            <th>Ngày nhập</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.NLID</td>
+                                <td>@item.TenNguyenLieu</td>
+                                <td>@item.SoLuong</td>
+                                <td>@item.DonVi</td>
+                                <td>@item.NgayNhap.ToString("dd/MM/yyyy")</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Chú thích: Script cho DataTable -->
+@section Scripts {
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#dataTable').DataTable();
+        });
+    </script>
+    <!-- Chú thích: Thêm thư viện jQuery và DataTable để hiển thị bảng có phân trang, tìm kiếm -->
+}

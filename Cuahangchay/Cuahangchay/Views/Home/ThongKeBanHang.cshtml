@@ -1,0 +1,52 @@
+﻿@model List<Cuahangchay.Models.HoaDon>
+@{
+    ViewData["Title"] = "Thống kê bán hàng";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <h1 class="h3 mb-4 text-gray-800">Thống kê bán hàng</h1>
+
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Danh sách hóa đơn bán hàng</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Mã Hóa đơn</th>
+                            <th>Ngày lập</th>
+                            <th>Bàn</th>
+                            <th>Nhân viên</th>
+                            <th>Tổng tiền</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.HoaDonID</td>
+                                <td>@item.NgayLap.ToString("dd/MM/yyyy HH:mm")</td>
+                                <td>@item.Ban.SoBan</td>
+                                <td>@item.NhanVien.HoTen</td>
+                                <td>@item.TongTien.ToString("N0") VND</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#dataTable').DataTable();
+        });
+    </script>
+}

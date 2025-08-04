@@ -1,16 +1,17 @@
 ﻿using Cuahangchay.Data;
 using Cuahangchay.Models;
+using Cuahangchay.ViewModel;
+using Cuahangchay.ViewModels;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
-using System.Security.Claims;
-using System.Linq; // Thêm dòng này để dùng FirstOrDefault()
-using System.Threading.Tasks;
-using System.Collections.Generic;
+using Microsoft.EntityFrameworkCore;
 using System;
-using Cuahangchay.ViewModels;
-using Cuahangchay.ViewModel;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq; // Thêm dòng này để dùng FirstOrDefault()
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace Cuahangchay.Controllers
 {
@@ -22,7 +23,7 @@ namespace Cuahangchay.Controllers
         {
             _context = context;
         }
-
+        // Các action hiện có (Index, About, Menu, v.v.)...
         public IActionResult Index() => View();
 
         public IActionResult About() => View();
@@ -164,6 +165,18 @@ namespace Cuahangchay.Controllers
 
             return View(model);
         }
+        // Thêm các action cho các trang trong sidebar
+        // Thống kê (không thay đổi)
+        public async Task<IActionResult> ThongKeNguyenLieu() => View(await _context.NguyenLieus.ToListAsync());
+        public async Task<IActionResult> ThongKeBanHang() => View(await _context.HoaDons.Include(h => h.ChiTietHoaDons).ThenInclude(ct => ct.MonChay).ToListAsync());
+        public async Task<IActionResult> ThongKeDoanhThu() => View(await _context.HoaDons.ToListAsync());
+
+        // Quản lý (cập nhật view)
+        public async Task<IActionResult> QuanLyKho() => View(await _context.NguyenLieus.ToListAsync());
+        public async Task<IActionResult> QuanLyNhanVien() => View(await _context.NhanViens.ToListAsync());
+        public async Task<IActionResult> QuanLyHoaDon() => View(await _context.HoaDons.Include(h => h.Ban).Include(h => h.NhanVien).ToListAsync());
+        public async Task<IActionResult> QuanLyTaiKhoan() => View(await _context.TaiKhoans.Include(t => t.NhanVien).ToListAsync());
+
 
     }
 }

@@ -1,6 +1,6 @@
 using Cuahangchay.Data;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,7 +9,7 @@ builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnC
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-// Thêm d?ch v? xác th?c Cookie vào ?ây
+// Thêm d?ch v? xác th?c Cookie
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(options =>
     {
@@ -37,7 +37,7 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
-// ??t UseAuthentication và UseAuthorization ? ?úng v? trí
+// ??t UseAuthentication và UseAuthorization ? ?ây
 app.UseAuthentication();
 app.UseAuthorization();
 

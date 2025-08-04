@@ -13,7 +13,7 @@ namespace Cuahangchay.Data
         // DbSet<T> cho các bảng
         public DbSet<MonChay> MonChays { get; set; }
         public DbSet<Ban> Bans { get; set; }
-        public DbSet<Kho_nguyenlieu_> Kho_nguyenlieu_s { get; set; }
+        public DbSet<NguyenLieu> NguyenLieus { get; set; }
         public DbSet<HoaDon> HoaDons { get; set; }
         public DbSet<ChiTietHoaDon> ChiTietHoaDons { get; set; }
         public DbSet<KhachHang> KhachHangs { get; set; }

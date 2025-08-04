@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 namespace Cuahangchay.Models
 {
+    [Table("KhachHang")] // Dòng này chỉ định tên bảng trong cơ sở dữ liệu
     public class KhachHang
     {
         [Key] // Dòng này đánh dấu đây là khóa chính
