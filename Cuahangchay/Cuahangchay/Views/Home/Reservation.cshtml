@@ -2,19 +2,29 @@
 @{
     ViewData["Title"] = "Đặt bàn";
 }
-<h2>Đặt bàn</h2>
-<form method="post">
-    <div class="mb-3">
-        <label>Họ tên</label>
-        <input asp-for="TenKH" class="form-control" />
-    </div>
-    <div class="mb-3">
-        <label>Điện thoại</label>
-        <input asp-for="SoDienThoai" class="form-control" />
-    </div>
-    <div class="mb-3">
-        <label>Ngày giờ</label>
-        <input asp-for="Email" type="datetime-local" class="form-control" />
-    </div>
-    <button class="btn btn-success">Gửi</button>
-</form>
+
+<h2 class="text-center text-success mt-4">Đặt bàn</h2>
+
+<div class="reservation-form mx-auto mt-4">
+    <form method="post">
+        <div class="mb-3">
+            <label asp-for="TenKH" class="form-label">Họ tên</label>
+            <input asp-for="TenKH" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="SoDienThoai" class="form-label">Điện thoại</label>
+            <input asp-for="SoDienThoai" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Email" class="form-label">Ngày giờ</label>
+            <input asp-for="Email" type="datetime-local" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-success px-4 d-block mx-auto">
+            Gửi
+        </button>
+
+    </form>
+</div>
