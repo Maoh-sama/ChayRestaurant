@@ -21,6 +21,22 @@
       "PackagePath": "staticwebassets\\img\\Nha hang chay.jpg"
     },
     {
+      "Id": "C:\\Users\\admin\\Desktop\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\wwwroot\\img\\bun.png",
+      "PackagePath": "staticwebassets\\img\\bun.png"
+    },
+    {
+      "Id": "C:\\Users\\admin\\Desktop\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\wwwroot\\img\\com.png",
+      "PackagePath": "staticwebassets\\img\\com.png"
+    },
+    {
+      "Id": "C:\\Users\\admin\\Desktop\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\wwwroot\\img\\goicuon.png",
+      "PackagePath": "staticwebassets\\img\\goicuon.png"
+    },
+    {
+      "Id": "C:\\Users\\admin\\Desktop\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\wwwroot\\img\\pho.png",
+      "PackagePath": "staticwebassets\\img\\pho.png"
+    },
+    {
       "Id": "C:\\Users\\admin\\Desktop\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\wwwroot\\img\\undraw_posting_photo.svg",
       "PackagePath": "staticwebassets\\img\\undraw_posting_photo.svg"
     },
