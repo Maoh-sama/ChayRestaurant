@@ -13,7 +13,7 @@ public class MonChayController : Controller
 
     public IActionResult Index()
     {
-        var list = _context.MonChays.ToList(); // Gọi thử dữ liệu
+        var list = _context.MonChay.ToList(); // Gọi thử dữ liệu
         return View(list);
     }
 }

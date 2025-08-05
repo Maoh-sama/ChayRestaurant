@@ -32,7 +32,7 @@ namespace Cuahangchay.Controllers
         {
             try
             {
-                List<MonChay> monChaylist = _context.MonChays.ToList();
+                List<MonChay> monChaylist = _context.MonChay.ToList();
                 if (monChaylist == null)
                 {
                     monChaylist = new List<MonChay>(); // Trả về danh sách rỗng nếu null
@@ -63,7 +63,7 @@ namespace Cuahangchay.Controllers
 
         public IActionResult ChiTiet(int id)
         {
-            var sanPham = _context.MonChays.FirstOrDefault(s => s.MonID == id);
+            var sanPham = _context.MonChay.FirstOrDefault(s => s.MonID == id);
 
             if (sanPham == null)
             {

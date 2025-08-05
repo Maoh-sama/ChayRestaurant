@@ -11,8 +11,8 @@ namespace Cuahangchay.Data
         }
 
         // DbSet<T> cho các bảng
-        public DbSet<MonChay> MonChays { get; set; }
-        public DbSet<Ban> Bans { get; set; }
+        public DbSet<MonChay> MonChay { get; set; }
+        public DbSet<Ban> Ban { get; set; }
         public DbSet<NguyenLieu> NguyenLieus { get; set; }
         public DbSet<HoaDon> HoaDons { get; set; }
         public DbSet<ChiTietHoaDon> ChiTietHoaDons { get; set; }
