@@ -16,5 +16,6 @@ namespace Cuahangchay.Models
 
         public MonChay MonChay { get; set; }
         public HoaDon HoaDon { get; set; }
+
     }
 }

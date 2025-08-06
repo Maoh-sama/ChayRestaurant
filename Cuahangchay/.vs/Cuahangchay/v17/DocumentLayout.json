@@ -3,32 +3,60 @@
   "WorkspaceRootPath": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|c:\\users\\clips\\documents\\github\\chayrestaurant\\cuahangchay\\cuahangchay\\views\\monchays\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|solutionrelative:cuahangchay\\views\\monchays\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|c:\\users\\clips\\documents\\github\\chayrestaurant\\cuahangchay\\cuahangchay\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|solutionrelative:cuahangchay\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|c:\\users\\clips\\documents\\github\\chayrestaurant\\cuahangchay\\cuahangchay\\controllers\\monchayscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|solutionrelative:cuahangchay\\controllers\\monchayscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|c:\\users\\clips\\documents\\github\\chayrestaurant\\cuahangchay\\cuahangchay\\views\\home\\viewcart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|solutionrelative:cuahangchay\\views\\home\\viewcart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|c:\\users\\clips\\documents\\github\\chayrestaurant\\cuahangchay\\cuahangchay\\views\\monchays\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|solutionrelative:cuahangchay\\views\\monchays\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|c:\\users\\clips\\documents\\github\\chayrestaurant\\cuahangchay\\cuahangchay\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|solutionrelative:cuahangchay\\views\\home\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|c:\\users\\clips\\documents\\github\\chayrestaurant\\cuahangchay\\cuahangchay\\models\\monchay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|solutionrelative:cuahangchay\\models\\monchay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|c:\\users\\clips\\documents\\github\\chayrestaurant\\cuahangchay\\cuahangchay\\views\\shared\\layoutnew.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|solutionrelative:cuahangchay\\views\\shared\\layoutnew.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|c:\\users\\clips\\documents\\github\\chayrestaurant\\cuahangchay\\cuahangchay\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|solutionrelative:cuahangchay\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|c:\\users\\clips\\documents\\github\\chayrestaurant\\cuahangchay\\cuahangchay\\views\\home\\menu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|solutionrelative:cuahangchay\\views\\home\\menu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|c:\\users\\clips\\documents\\github\\chayrestaurant\\cuahangchay\\cuahangchay\\models\\sessionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|solutionrelative:cuahangchay\\models\\sessionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|c:\\users\\clips\\documents\\github\\chayrestaurant\\cuahangchay\\cuahangchay\\models\\nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|solutionrelative:cuahangchay\\models\\nhanvien.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|c:\\users\\clips\\documents\\github\\chayrestaurant\\cuahangchay\\cuahangchay\\models\\taikhoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|solutionrelative:cuahangchay\\models\\taikhoan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|c:\\users\\clips\\documents\\github\\chayrestaurant\\cuahangchay\\cuahangchay\\controllers\\taikhoancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|solutionrelative:cuahangchay\\controllers\\taikhoancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|c:\\users\\clips\\documents\\github\\chayrestaurant\\cuahangchay\\cuahangchay\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|solutionrelative:cuahangchay\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|c:\\users\\clips\\documents\\github\\chayrestaurant\\cuahangchay\\cuahangchay\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|solutionrelative:cuahangchay\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|c:\\users\\clips\\documents\\github\\chayrestaurant\\cuahangchay\\cuahangchay\\models\\chitiethoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|solutionrelative:cuahangchay\\models\\chitiethoadon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|c:\\users\\clips\\documents\\github\\chayrestaurant\\cuahangchay\\cuahangchay\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|solutionrelative:cuahangchay\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|c:\\users\\clips\\documents\\github\\chayrestaurant\\cuahangchay\\cuahangchay\\models\\monchay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|solutionrelative:cuahangchay\\models\\monchay.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,97 +66,188 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 13,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Views\\MonChays\\Create.cshtml",
-              "RelativeDocumentMoniker": "Cuahangchay\\Views\\MonChays\\Create.cshtml",
-              "ToolTip": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Views\\MonChays\\Create.cshtml",
-              "RelativeToolTip": "Cuahangchay\\Views\\MonChays\\Create.cshtml",
-              "ViewState": "AgIAABgAAAAAAAAAAAAAACUAAAASAAAAAAAAAA==",
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Views\\Home\\Login.cshtml",
+              "RelativeDocumentMoniker": "Cuahangchay\\Views\\Home\\Login.cshtml",
+              "ToolTip": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Views\\Home\\Login.cshtml",
+              "RelativeToolTip": "Cuahangchay\\Views\\Home\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-06T07:36:33.362Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MonChaysController.cs",
-              "DocumentMoniker": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Controllers\\MonChaysController.cs",
-              "RelativeDocumentMoniker": "Cuahangchay\\Controllers\\MonChaysController.cs",
-              "ToolTip": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Controllers\\MonChaysController.cs",
-              "RelativeToolTip": "Cuahangchay\\Controllers\\MonChaysController.cs",
-              "ViewState": "AgIAAH0AAAAAAAAAAAAwwIUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-06T07:35:28.428Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Views\\MonChays\\Edit.cshtml",
-              "RelativeDocumentMoniker": "Cuahangchay\\Views\\MonChays\\Edit.cshtml",
-              "ToolTip": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Views\\MonChays\\Edit.cshtml",
-              "RelativeToolTip": "Cuahangchay\\Views\\MonChays\\Edit.cshtml",
-              "ViewState": "AgIAABgAAAAAAAAAAAAgwC4AAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-06T07:27:15.299Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Menu.cshtml",
-              "DocumentMoniker": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Views\\Home\\Menu.cshtml",
-              "RelativeDocumentMoniker": "Cuahangchay\\Views\\Home\\Menu.cshtml",
-              "ToolTip": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Views\\Home\\Menu.cshtml",
-              "RelativeToolTip": "Cuahangchay\\Views\\Home\\Menu.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAQwBQAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-06T07:24:24.314Z",
+              "WhenOpened": "2025-08-06T15:01:03.317Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "MonChay.cs",
-              "DocumentMoniker": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Models\\MonChay.cs",
-              "RelativeDocumentMoniker": "Cuahangchay\\Models\\MonChay.cs",
-              "ToolTip": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Models\\MonChay.cs",
-              "RelativeToolTip": "Cuahangchay\\Models\\MonChay.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwA8AAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-06T07:24:03.317Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "Cuahangchay\\Data\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "Cuahangchay\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-06T07:12:45.265Z",
+              "Title": "layoutnew.cshtml",
+              "DocumentMoniker": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Views\\Shared\\layoutnew.cshtml",
+              "RelativeDocumentMoniker": "Cuahangchay\\Views\\Shared\\layoutnew.cshtml",
+              "ToolTip": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Views\\Shared\\layoutnew.cshtml",
+              "RelativeToolTip": "Cuahangchay\\Views\\Shared\\layoutnew.cshtml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAADYAAABjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-06T14:57:40.363Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
+              "Title": "SessionExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Models\\SessionExtensions.cs",
+              "RelativeDocumentMoniker": "Cuahangchay\\Models\\SessionExtensions.cs",
+              "ToolTip": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Models\\SessionExtensions.cs",
+              "RelativeToolTip": "Cuahangchay\\Models\\SessionExtensions.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-06T14:54:11.842Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Program.cs",
+              "RelativeDocumentMoniker": "Cuahangchay\\Program.cs",
+              "ToolTip": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Program.cs",
+              "RelativeToolTip": "Cuahangchay\\Program.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAIwDcAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-06T14:53:36.136Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Cuahangchay\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Cuahangchay\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAswBUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-06T14:46:21.554Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "NhanVien.cs",
+              "DocumentMoniker": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Models\\NhanVien.cs",
+              "RelativeDocumentMoniker": "Cuahangchay\\Models\\NhanVien.cs",
+              "ToolTip": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Models\\NhanVien.cs",
+              "RelativeToolTip": "Cuahangchay\\Models\\NhanVien.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-06T14:39:09.452Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "TaiKhoan.cs",
+              "DocumentMoniker": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Models\\TaiKhoan.cs",
+              "RelativeDocumentMoniker": "Cuahangchay\\Models\\TaiKhoan.cs",
+              "ToolTip": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Models\\TaiKhoan.cs",
+              "RelativeToolTip": "Cuahangchay\\Models\\TaiKhoan.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-06T14:36:28.456Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "TaiKhoanController.cs",
+              "DocumentMoniker": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Controllers\\TaiKhoanController.cs",
+              "RelativeDocumentMoniker": "Cuahangchay\\Controllers\\TaiKhoanController.cs",
+              "ToolTip": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Controllers\\TaiKhoanController.cs",
+              "RelativeToolTip": "Cuahangchay\\Controllers\\TaiKhoanController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-06T14:36:25.967Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ChiTietHoaDon.cs",
+              "DocumentMoniker": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Models\\ChiTietHoaDon.cs",
+              "RelativeDocumentMoniker": "Cuahangchay\\Models\\ChiTietHoaDon.cs",
+              "ToolTip": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Models\\ChiTietHoaDon.cs",
+              "RelativeToolTip": "Cuahangchay\\Models\\ChiTietHoaDon.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAiwBIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-06T14:20:19.112Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "MonChay.cs",
+              "DocumentMoniker": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Models\\MonChay.cs",
+              "RelativeDocumentMoniker": "Cuahangchay\\Models\\MonChay.cs",
+              "ToolTip": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Models\\MonChay.cs",
+              "RelativeToolTip": "Cuahangchay\\Models\\MonChay.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-06T14:22:54.251Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ViewCart.cshtml",
+              "DocumentMoniker": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Views\\Home\\ViewCart.cshtml",
+              "RelativeDocumentMoniker": "Cuahangchay\\Views\\Home\\ViewCart.cshtml",
+              "ToolTip": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Views\\Home\\ViewCart.cshtml",
+              "RelativeToolTip": "Cuahangchay\\Views\\Home\\ViewCart.cshtml",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAACAAAACBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-06T14:17:04.194Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CartItem.cs",
+              "DocumentMoniker": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Models\\CartItem.cs",
+              "RelativeDocumentMoniker": "Cuahangchay\\Models\\CartItem.cs",
+              "ToolTip": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Models\\CartItem.cs",
+              "RelativeToolTip": "Cuahangchay\\Models\\CartItem.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAA3wBQAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-06T14:14:04.879Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Menu.cshtml",
+              "DocumentMoniker": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Views\\Home\\Menu.cshtml",
+              "RelativeDocumentMoniker": "Cuahangchay\\Views\\Home\\Menu.cshtml",
+              "ToolTip": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Views\\Home\\Menu.cshtml",
+              "RelativeToolTip": "Cuahangchay\\Views\\Home\\Menu.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAkwCkAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-06T14:12:16.882Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Cuahangchay\\Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Cuahangchay\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAAwCUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAACAAAAAAAAAAAAAwwDEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-06T07:09:36.501Z",
+              "WhenOpened": "2025-08-06T13:58:26.453Z",
               "EditorCaption": ""
             }
           ]

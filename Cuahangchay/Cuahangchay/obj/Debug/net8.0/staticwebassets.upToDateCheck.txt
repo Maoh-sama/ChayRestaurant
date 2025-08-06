@@ -14,6 +14,7 @@ wwwroot\img\undraw_profile_2.svg
 wwwroot\img\undraw_profile_3.svg
 wwwroot\img\undraw_rocket.svg
 wwwroot\img\z6879082488925_a9ba4ab53d1ffb293f0d428bc23f4508.jpg
+wwwroot\img\z6879368743033_8afeda56b35cf456ba544cc7d561df62.jpg
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map

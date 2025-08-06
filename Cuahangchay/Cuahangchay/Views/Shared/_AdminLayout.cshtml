@@ -26,16 +26,13 @@
                                 <div class="sidebar-brand-icon rotate-n-15">
                                     <i class="fas fa-laugh-wink"></i>
                                 </div>
-                                <div class="sidebar-brand-text mx-3">SB Admin 2</div>
+                                <div class="sidebar-brand-text mx-3">Cửa hàng chay Thanh Lương</div>
                             </a>
 
                             <hr class="sidebar-divider my-0">
 
                             <li class="nav-item active">
-                                <a class="nav-link" href="/Home/Index">
-                                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                                    <span>Dashboard</span>
-                                </a>
+                      
                             </li>
 
                             <hr class="sidebar-divider">
@@ -70,13 +67,24 @@
                                 <div id="collapseManagement" class="collapse" aria-labelledby="headingManagement" data-parent="#accordionSidebar">
                                     <div class="bg-white py-2 collapse-inner rounded">
                                         <h6 class="collapse-header">Quản lý chi tiết:</h6>
-                                        <a class="collapse-item" href="/Home/QuanLyKho">Quản lý kho</a>
-                                        <a class="collapse-item" href="/Home/QuanLyNhanVien">Nhân viên</a>
-                                        <a class="collapse-item" href="/Home/QuanLyHoaDon">Hóa đơn</a>
-                                        <a class="collapse-item" href="/Home/QuanLyTaiKhoan">Tài khoản</a>
-                                        <a class="collapse-item" href="/Home/QuanLyKhachHang">Khách hàng</a>
-                                        <a class="collapse-item" href="/Home/QuanLyMonChay">Món chay</a>
-                                        
+                                        @if (User.IsInRole("Admin"))
+                                        {
+                                            <a class="collapse-item" asp-controller="TaiKhoan" asp-action="Index">Quản lý Tài khoản</a>
+                                            <a class="collapse-item" asp-controller="Home" asp-action="QuanLyKho">Quản lý Kho</a>
+                                            <a class="collapse-item" asp-controller="Home" asp-action="QuanLyHoaDon">Quản lý Hóa đơn</a>
+                                            <a class="collapse-item" asp-controller="Home" asp-action="QuanLyMonChay">Quản lý Món chay</a>
+                                            <a class="collapse-item" asp-controller="Home" asp-action="QuanLyKhachHang">Quản lý Khách hàng</a>
+                                        }
+                                        @if (User.IsInRole("Bep"))
+                                        {
+                                            <a class="collapse-item" asp-controller="Home" asp-action="QuanLyKhoDetails">Chi tiết Kho</a>
+                                        }
+                                        @if (User.IsInRole("ThuNgan"))
+                                        {
+                                            <a class="collapse-item" asp-controller="Home" asp-action="QuanLyHoaDon">Quản lý Hóa đơn</a>
+                                            <a class="collapse-item" asp-controller="Home" asp-action="QuanLyMonChay">Quản lý Món chay</a>
+                                            <a class="collapse-item" asp-controller="Home" asp-action="QuanLyKhachHang">Quản lý Khách hàng</a>
+                                        }
                                     </div>
                                 </div>
                             </li>
@@ -312,7 +320,7 @@
             </div>
         </div>
     </div>
-
+   
     <script src="~/vendor/jquery/jquery.min.js"></script>
     <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/sb-admin-2.min.js"></script>

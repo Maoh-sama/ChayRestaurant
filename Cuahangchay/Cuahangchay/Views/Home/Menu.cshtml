@@ -1,5 +1,4 @@
-﻿@* Khai báo Model cho View này, là một danh sách các món chay *@
-@model List<Cuahangchay.Models.MonChay>
+﻿@model List<Cuahangchay.Models.MonChay>
 
 @{
     ViewData["Title"] = "Thực đơn";
@@ -31,6 +30,14 @@
                     </div>
                     <div class="card-footer">
                         <h5 class="fw-bold text-primary">@item.Gia.ToString("N0") VNĐ</h5>
+                        @if (item.ConTon)
+                        {
+                            <form asp-action="AddToCart" asp-controller="Home" method="post">
+                                <input type="hidden" name="monId" value="@item.MonID" />
+                                <input type="number" name="soLuong" value="1" min="1" class="form-control d-inline w-25" />
+                                <button type="submit" class="btn btn-primary">Thêm vào giỏ hàng</button>
+                            </form>
+                        }
                     </div>
                 </div>
             </div>

@@ -307,6 +307,7 @@ C:\Users\clips\Documents\GitHub\ChayRestaurant\Cuahangchay\Cuahangchay\bin\Debug
 C:\Users\clips\Documents\GitHub\ChayRestaurant\Cuahangchay\Cuahangchay\bin\Debug\net8.0\Cuahangchay.pdb
 C:\Users\clips\Documents\GitHub\ChayRestaurant\Cuahangchay\Cuahangchay\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\clips\Documents\GitHub\ChayRestaurant\Cuahangchay\Cuahangchay\bin\Debug\net8.0\Azure.Identity.dll
+C:\Users\clips\Documents\GitHub\ChayRestaurant\Cuahangchay\Cuahangchay\bin\Debug\net8.0\BCrypt.Net-Next.dll
 C:\Users\clips\Documents\GitHub\ChayRestaurant\Cuahangchay\Cuahangchay\bin\Debug\net8.0\Humanizer.dll
 C:\Users\clips\Documents\GitHub\ChayRestaurant\Cuahangchay\Cuahangchay\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\clips\Documents\GitHub\ChayRestaurant\Cuahangchay\Cuahangchay\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll

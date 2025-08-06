@@ -8,7 +8,6 @@ namespace Cuahangchay.Models
         [Key]
         public int HoaDonID { get; set; }
         public DateTime NgayLap { get; set; } = DateTime.Now;
-        public int BanID { get; set; }
         public int NhanVienID { get; set; }
         public decimal TongTien { get; set; }
         public NhanVien NhanVien { get; set; }
