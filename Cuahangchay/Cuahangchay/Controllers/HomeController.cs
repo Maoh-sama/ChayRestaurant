@@ -28,22 +28,12 @@ namespace Cuahangchay.Controllers
 
         public IActionResult About() => View();
 
-        public IActionResult Menu()
+        public async Task<IActionResult> Menu()
         {
-            try
-            {
-                List<MonChay> monChaylist = _context.MonChay.ToList();
-                if (monChaylist == null)
-                {
-                    monChaylist = new List<MonChay>(); // Trả về danh sách rỗng nếu null
-                }
-                return View(monChaylist);
-            }
-            catch (Exception ex)
-            {
-                // Log lỗi hoặc trả về view lỗi
-                return Content("Lỗi: " + ex.Message);
-            }
+            // Lấy danh sách món chay từ database
+              var monChayList = await _context.MonChay.ToListAsync();
+            // Trả về view Menu.cshtml với danh sách món chay
+            return View(monChayList);
         }
 
         [HttpGet]
@@ -174,9 +164,18 @@ namespace Cuahangchay.Controllers
         // Quản lý (cập nhật view)
         public async Task<IActionResult> QuanLyKho() => View(await _context.NguyenLieus.ToListAsync());
         public async Task<IActionResult> QuanLyNhanVien() => View(await _context.NhanViens.ToListAsync());
-        public async Task<IActionResult> QuanLyHoaDon() => View(await _context.HoaDons.Include(h => h.Ban).Include(h => h.NhanVien).ToListAsync());
+        public async Task<IActionResult> QuanLyHoaDon() => View(await _context.HoaDons.Include(h => h.NhanVien).ToListAsync());
         public async Task<IActionResult> QuanLyTaiKhoan() => View(await _context.TaiKhoans.Include(t => t.NhanVien).ToListAsync());
-
-
+        public async Task<IActionResult> QuanLyKhachHang() => View(await _context.KhachHangs.ToListAsync());
+        // Trong HomeController.cs
+        // ...
+        public async Task<IActionResult> QuanLyMonChay()
+        {
+            // Lấy tất cả món chay từ database
+            var monChayList = await _context.MonChay.ToListAsync();
+            // Trả về view QuanLyMonChay.cshtml với danh sách món chay
+            return View(monChayList);
+        }
+        // ...
     }
 }

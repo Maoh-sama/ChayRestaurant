@@ -84,8 +84,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxRdWFuTHlIb2FEb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/clips/Documents/GitHub/ChayRestaurant/Cuahangchay/Cuahangchay/Views/Home/QuanLyKhachHang.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxRdWFuTHlLaGFjaEhhbmcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/clips/Documents/GitHub/ChayRestaurant/Cuahangchay/Cuahangchay/Views/Home/QuanLyKho.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxRdWFuTHlLaG8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/clips/Documents/GitHub/ChayRestaurant/Cuahangchay/Cuahangchay/Views/Home/QuanLyMonChay.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxRdWFuTHlNb25DaGF5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/clips/Documents/GitHub/ChayRestaurant/Cuahangchay/Cuahangchay/Views/Home/QuanLyNhanVien.cshtml]
@@ -120,6 +128,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUaG9uZ0tlTmd1eWVuTGlldS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/clips/Documents/GitHub/ChayRestaurant/Cuahangchay/Cuahangchay/Views/KhachHangs/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2hhY2hIYW5nc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/clips/Documents/GitHub/ChayRestaurant/Cuahangchay/Cuahangchay/Views/KhachHangs/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2hhY2hIYW5nc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/clips/Documents/GitHub/ChayRestaurant/Cuahangchay/Cuahangchay/Views/KhachHangs/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2hhY2hIYW5nc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/clips/Documents/GitHub/ChayRestaurant/Cuahangchay/Cuahangchay/Views/KhachHangs/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2hhY2hIYW5nc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/clips/Documents/GitHub/ChayRestaurant/Cuahangchay/Cuahangchay/Views/KhachHangs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2hhY2hIYW5nc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/clips/Documents/GitHub/ChayRestaurant/Cuahangchay/Cuahangchay/Views/Kho/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2hvXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -138,6 +166,26 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/clips/Documents/GitHub/ChayRestaurant/Cuahangchay/Cuahangchay/Views/Kho/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcS2hvXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/clips/Documents/GitHub/ChayRestaurant/Cuahangchay/Cuahangchay/Views/MonChays/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9uQ2hheXNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/clips/Documents/GitHub/ChayRestaurant/Cuahangchay/Cuahangchay/Views/MonChays/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9uQ2hheXNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/clips/Documents/GitHub/ChayRestaurant/Cuahangchay/Cuahangchay/Views/MonChays/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9uQ2hheXNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/clips/Documents/GitHub/ChayRestaurant/Cuahangchay/Cuahangchay/Views/MonChays/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9uQ2hheXNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/clips/Documents/GitHub/ChayRestaurant/Cuahangchay/Cuahangchay/Views/MonChays/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW9uQ2hheXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/clips/Documents/GitHub/ChayRestaurant/Cuahangchay/Cuahangchay/Views/NhanVien/Create.cshtml]

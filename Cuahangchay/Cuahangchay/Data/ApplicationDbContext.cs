@@ -12,14 +12,12 @@ namespace Cuahangchay.Data
 
         // DbSet<T> cho các bảng
         public DbSet<MonChay> MonChay { get; set; }
-        public DbSet<Ban> Ban { get; set; }
         public DbSet<NguyenLieu> NguyenLieus { get; set; }
         public DbSet<HoaDon> HoaDons { get; set; }
         public DbSet<ChiTietHoaDon> ChiTietHoaDons { get; set; }
         public DbSet<KhachHang> KhachHangs { get; set; }
         public DbSet<NhanVien> NhanViens { get; set; }
         public DbSet<TaiKhoan> TaiKhoans { get; set; }
-        public DbSet<CauHinh> CauHinhs { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

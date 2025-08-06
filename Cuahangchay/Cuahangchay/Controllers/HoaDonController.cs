@@ -22,7 +22,7 @@ namespace Cuahangchay.Controllers
         // GET: HoaDon
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.HoaDons.Include(h => h.Ban).Include(h => h.NhanVien);
+            var applicationDbContext = _context.HoaDons.Include(h => h.NhanVien);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -34,8 +34,8 @@ namespace Cuahangchay.Controllers
                 return NotFound();
             }
 
-            var hoaDon = await _context.HoaDons
-                .Include(h => h.Ban)
+            var hoaDon = await  _context.HoaDons
+                
                 .Include(h => h.NhanVien)
                 .FirstOrDefaultAsync(m => m.HoaDonID == id);
             if (hoaDon == null)
@@ -49,7 +49,7 @@ namespace Cuahangchay.Controllers
         // GET: HoaDon/Create
         public IActionResult Create()
         {
-            ViewData["BanID"] = new SelectList(_context.Ban, "BanID", "BanID");
+           
             ViewData["NhanVienID"] = new SelectList(_context.NhanViens, "NhanVienID", "NhanVienID");
             return View();
         }
@@ -67,7 +67,7 @@ namespace Cuahangchay.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["BanID"] = new SelectList(_context.Ban, "BanID", "BanID", hoaDon.BanID);
+           
             ViewData["NhanVienID"] = new SelectList(_context.NhanViens, "NhanVienID", "NhanVienID", hoaDon.NhanVienID);
             return View(hoaDon);
         }
@@ -85,7 +85,7 @@ namespace Cuahangchay.Controllers
             {
                 return NotFound();
             }
-            ViewData["BanID"] = new SelectList(_context.Ban, "BanID", "BanID", hoaDon.BanID);
+           
             ViewData["NhanVienID"] = new SelectList(_context.NhanViens, "NhanVienID", "NhanVienID", hoaDon.NhanVienID);
             return View(hoaDon);
         }
@@ -122,7 +122,7 @@ namespace Cuahangchay.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["BanID"] = new SelectList(_context.Ban, "BanID", "BanID", hoaDon.BanID);
+            
             ViewData["NhanVienID"] = new SelectList(_context.NhanViens, "NhanVienID", "NhanVienID", hoaDon.NhanVienID);
             return View(hoaDon);
         }
@@ -136,7 +136,7 @@ namespace Cuahangchay.Controllers
             }
 
             var hoaDon = await _context.HoaDons
-                .Include(h => h.Ban)
+                
                 .Include(h => h.NhanVien)
                 .FirstOrDefaultAsync(m => m.HoaDonID == id);
             if (hoaDon == null)

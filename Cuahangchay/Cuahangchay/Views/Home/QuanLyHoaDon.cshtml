@@ -1,43 +1,42 @@
 ﻿@model List<Cuahangchay.Models.HoaDon>
+
 @{
     ViewData["Title"] = "Quản lý Hóa đơn";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<!-- Khung đen: Tiêu đề của mục đã ấn -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <h1 class="h3 mb-0 text-gray-800">Quản lý Hóa đơn</h1>
 </div>
 
-<!-- Hai ô xanh: Nút Tìm kiếm và Chỉnh -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <div>
         <a href="#" class="d-none d-sm-inline-block btn btn-info btn-sm shadow-sm">
-            <i class="fas fa-search"></i> Tìm kiếm <!-- Biểu tượng tìm kiếm, bạn thêm link sau -->
+            <i class="fas fa-search"></i> Tìm kiếm
         </a>
-        <a href="#" class="d-none d-sm-inline-block btn btn-success btn-sm shadow-sm">
-            <i class="fas fa-edit"></i> Chỉnh <!-- Biểu tượng chỉnh sửa, bạn thêm link sau -->
+        <a asp-action="Create" asp-controller="HoaDon" class="d-none d-sm-inline-block btn btn-success btn-sm shadow-sm">
+            <i class="fas fa-plus"></i> Thêm mới
         </a>
     </div>
 </div>
 
-<!-- Khung đỏ: Bảng dữ liệu -->
 <div class="row">
     <div class="col-xl-12 col-lg-12">
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Danh sách hóa đơn</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Danh sách Hóa đơn</h6>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th>Mã Hóa đơn</th>
+                                <th>Mã HD</th>
                                 <th>Ngày lập</th>
-                                <th>Bàn</th>
-                                <th>Nhân viên</th>
+                                <th>Mã bàn</th>
+                                <th>Mã NV</th>
                                 <th>Tổng tiền</th>
+                                <th>Thao tác</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -46,9 +45,20 @@
                                 <tr>
                                     <td>@item.HoaDonID</td>
                                     <td>@item.NgayLap.ToString("dd/MM/yyyy HH:mm")</td>
-                                    <td>@item.Ban.SoBan</td>
-                                    <td>@item.NhanVien.HoTen</td>
-                                    <td>@item.TongTien.ToString("N0") VND</td>
+                                    <td>@item.BanID</td>
+                                    <td>@item.NhanVienID</td>
+                                    <td>@item.TongTien.ToString("N0") VNĐ</td>
+                                    <td>
+                                        <a asp-action="Details" asp-controller="HoaDon" asp-route-id="@item.HoaDonID" class="btn btn-info btn-sm">
+                                            <i class="fas fa-info-circle"></i> Chi tiết
+                                        </a>
+                                        <a asp-action="Edit" asp-controller="HoaDon" asp-route-id="@item.HoaDonID" class="btn btn-warning btn-sm">
+                                            <i class="fas fa-edit"></i> Sửa
+                                        </a>
+                                        <a asp-action="Delete" asp-controller="HoaDon" asp-route-id="@item.HoaDonID" class="btn btn-danger btn-sm">
+                                            <i class="fas fa-trash"></i> Xóa
+                                        </a>
+                                    </td>
                                 </tr>
                             }
                         </tbody>
@@ -59,7 +69,6 @@
     </div>
 </div>
 
-<!-- Chú thích: Script cho DataTable -->
 @section Scripts {
     <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
@@ -68,5 +77,4 @@
             $('#dataTable').DataTable();
         });
     </script>
-    <!-- Chú thích: Thêm thư viện jQuery và DataTable để hiển thị bảng có phân trang, tìm kiếm -->
 }

@@ -1,5 +1,19 @@
+wwwroot\css\sb-admin-2.css
+wwwroot\css\sb-admin-2.min.css
 wwwroot\css\site.css
 wwwroot\favicon.ico
+wwwroot\img\bun.png
+wwwroot\img\com.png
+wwwroot\img\goicuon.png
+wwwroot\img\Nha hang chay.jpg
+wwwroot\img\pho.png
+wwwroot\img\undraw_posting_photo.svg
+wwwroot\img\undraw_profile.svg
+wwwroot\img\undraw_profile_1.svg
+wwwroot\img\undraw_profile_2.svg
+wwwroot\img\undraw_profile_3.svg
+wwwroot\img\undraw_rocket.svg
+wwwroot\img\z6879082488925_a9ba4ab53d1ffb293f0d428bc23f4508.jpg
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
@@ -58,14 +72,6 @@ wwwroot\lib\jquery\dist\jquery.js
 wwwroot\lib\jquery\dist\jquery.min.js
 wwwroot\lib\jquery\dist\jquery.min.map
 wwwroot\lib\jquery\LICENSE.txt
-wwwroot\css\sb-admin-2.css
-wwwroot\css\sb-admin-2.min.css
-wwwroot\img\undraw_posting_photo.svg
-wwwroot\img\undraw_profile.svg
-wwwroot\img\undraw_profile_1.svg
-wwwroot\img\undraw_profile_2.svg
-wwwroot\img\undraw_profile_3.svg
-wwwroot\img\undraw_rocket.svg
 wwwroot\scss\navs\_global.scss
 wwwroot\scss\navs\_sidebar.scss
 wwwroot\scss\navs\_topbar.scss
@@ -1907,8 +1913,3 @@ wwwroot\vendor\jquery\jquery.min.map
 wwwroot\vendor\jquery\jquery.slim.js
 wwwroot\vendor\jquery\jquery.slim.min.js
 wwwroot\vendor\jquery\jquery.slim.min.map
-wwwroot\img\pho.png
-wwwroot\img\com.png
-wwwroot\img\bun.png
-wwwroot\img\goicuon.png
-wwwroot\img\Nha hang chay.jpg

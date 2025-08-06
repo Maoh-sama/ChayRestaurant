@@ -1,0 +1,106 @@
+﻿@model Cuahangchay.Models.MonChay
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Thêm Món Chay</h1>
+
+<h4>MonChay</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form id="createMonChayForm" asp-action="Create" enctype="multipart/form-data">
+            
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TenMon" class="control-label"></label>
+                <input asp-for="TenMon" class="form-control" />
+                <span asp-validation-for="TenMon" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MoTa" class="control-label"></label>
+                <input asp-for="MoTa" class="form-control" />
+                <span asp-validation-for="MoTa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gia" class="control-label"></label>
+                <input asp-for="Gia" class="form-control" />
+                <span asp-validation-for="Gia" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="HinhAnhUpload" class="control-label"></label>
+                <input asp-for="HinhAnhUpload" type="file" class="form-control" />
+                <span asp-validation-for="HinhAnhUpload" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-2">
+                <img id="imagePreview" src="#" alt="Xem trước ảnh" style="width: 150px; height: 150px; object-fit: cover; display: none;" />
+            </div>
+
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="ConTon" /> @Html.DisplayNameFor(model => model.ConTon)
+                </label>
+            </div>
+            <div class="form-group mt-3">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div>
+    <a asp-action="Index">Quay lại danh sách</a>
+</div>
+
+
+<script>
+    $(document).ready(function () {
+        // Xem trước ảnh khi chọn file
+        $('#fileInput').change(function (e) {
+            var file = e.target.files[0];
+            if (file) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#imagePreview').attr('src', e.target.result).show();
+                }
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Xử lý form bằng AJAX
+        $('#createMonChayForm').submit(function (e) {
+            e.preventDefault();
+            var formData = new FormData(this);
+            var token = $('input[name="__RequestVerificationToken"]').val(); // Lấy token
+            formData.append('__RequestVerificationToken', token);
+
+            $.ajax({
+                url: '@Url.Action("Create", "MonChays")',
+                type: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                headers: {
+                    'RequestVerificationToken': token
+                },
+                success: function (response) {
+                    alert("Thêm món chay thành công!");
+                    window.location.href = '@Url.Action("Index", "MonChays")';
+                },
+                error: function (xhr, status, error) {
+                    alert("Có lỗi xảy ra: " + xhr.responseText);
+                }
+            });
+        });
+    });
+</script>
+<form id="createMonChayForm" asp-action="Create" enctype="multipart/form-data">
+    @Html.AntiForgeryToken()
+    <!-- Các trường khác -->
+</form>
+}
