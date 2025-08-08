@@ -1,0 +1,104 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model Cuahangchay.Models.HoaDon
+@{
+    ViewData["Title"] = "Xác nhận hóa đơn";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    <link href="~/wwwroot/css/sb-admin-2.min.css" rel="stylesheet" />
+}
+
+<div class="container-fluid">
+    <h1 class="h3 mb-4 text-gray-800">Xác nhận hóa đơn</h1>
+
+    <div class="card shadow mb-4">
+        <!-- Khung đen: Tiêu đề của mục đã ấn -->
+        <div class="card-header py-3 d-flex justify-content-between">
+            <h6 class="m-0 font-weight-bold text-primary">Thông tin hóa đơn</h6>
+            <!-- Hai ô xanh: Nút Tìm kiếm và Chỉnh (thay thế Thêm mới) -->
+            <div>
+                <a href="#" class="btn btn-info btn-sm mr-2">
+                    <i class="fas fa-search"></i> Tìm kiếm
+                </a>
+                @if (User.IsInRole("ThuNgan"))
+                {
+                    <form asp-action="ConfirmCheckout" method="post" style="display:inline;">
+                        <input type="hidden" name="hoaDonId" value="@Model.HoaDonID" />
+                        <button type="submit" class="btn btn-success btn-sm">
+                            <i class="fas fa-check"></i> Xác nhận
+                        </button>
+                    </form>
+                }
+            </div>
+        </div>
+        <!-- Khung đỏ: Bảng dữ liệu -->
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Mã hóa đơn</th>
+                            <th>Ngày lập</th>
+                            <th>Nhân viên</th>
+                            <th>Khách hàng</th>
+                            <th>Tổng tiền</th>
+                            <th>Trạng thái</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>@Model.HoaDonID</td>
+                            <td>@Model.NgayLap.ToString("dd/MM/yyyy HH:mm")</td>
+                            <td>@Model.NhanVien?.HoTen ?? "Chưa xác định"</td>
+                            <td>@Model.KhachHang?.TenKH ?? "Chưa xác định"</td>
+                            <td>@Model.TongTien.ToString("N0") VNĐ</td>
+                            <td>@Model.TrangThai</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <h6 class="mt-4 font-weight-bold text-primary">Chi tiết hóa đơn</h6>
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTableDetails" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Mã món</th>
+                            <th>Tên món</th>
+                            <th>Số lượng</th>
+                            <th>Đơn giá</th>
+                            <th>Thành tiền</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.ChiTietHoaDons)
+                        {
+                            <tr>
+                                <td>@item.MonID</td>
+                                <td>@item.MonChay?.TenMon ?? "Chưa xác định"</td>
+                                <td>@item.SoLuong</td>
+                                <td>@item.DonGia.ToString("N0") VNĐ</td>
+                                <td>@(item.SoLuong* item.DonGia).ToString("N0") VNĐ</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Chú thích: Script cho DataTable -->
+@section Scripts
+{
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#dataTable').DataTable();
+            $('#dataTableDetails').DataTable();
+        });
+    </script>
+    <!-- Chú thích: Thêm thư viện jQuery và DataTable để hiển thị bảng có phân trang, tìm kiếm -->
+}

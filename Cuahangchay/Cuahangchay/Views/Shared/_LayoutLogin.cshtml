@@ -1,0 +1,83 @@
+﻿@* Fix for CS8602: Dereference of a possibly null reference *@  
+@using Microsoft.AspNetCore.Identity
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - Nhà hàng Chay</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #F5F3EF;
+        }
+
+        .navbar-custom {
+            background-color: #4E342E !important;
+        }
+
+        .navbar-brand {
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+
+        .content-wrapper {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 40px 15px;
+        }
+
+        footer {
+            background-color: #3E2723;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Cửa Hàng Chay Thanh Lương</a>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <a class="collapse-item" asp-controller="TaiKhoan" asp-action="Index">Quản lý Tài khoản</a>
+                        <a class="collapse-item" asp-controller="Home" asp-action="QuanLyKho">Quản lý Kho</a>
+                        <a class="collapse-item" asp-controller="Home" asp-action="QuanLyHoaDon">Quản lý Hóa đơn</a>
+                        <a class="collapse-item" asp-controller="Home" asp-action="QuanLyMonChay">Quản lý Món chay</a>
+                        <a class="collapse-item" asp-controller="Home" asp-action="QuanLyKhachHang">Quản lý Khách hàng</a>
+                    }
+                    @if (User.IsInRole("Bep"))
+                    {
+                        <a class="collapse-item" asp-controller="Home" asp-action="QuanLyKhoDetails">Chi tiết Kho</a>
+                    }
+                    @if (User.IsInRole("ThuNgan"))
+                    {
+                        <a class="collapse-item" asp-controller="Home" asp-action="QuanLyHoaDon">Quản lý Hóa đơn</a>
+                        <a class="collapse-item" asp-controller="Home" asp-action="QuanLyMonChay">Quản lý Món chay</a>
+                        <a class="collapse-item" asp-controller="Home" asp-action="QuanLyKhachHang">Quản lý Khách hàng</a>
+                    }
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content-wrapper">
+        @RenderBody()
+    </div>
+
+    <footer class="bg-light text-center py-3 mt-5">
+        <p>&copy; 2025 Nhà hàng Chay</p>
+    </footer>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

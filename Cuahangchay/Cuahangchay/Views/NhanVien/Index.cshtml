@@ -1,59 +1,79 @@
-﻿@model IEnumerable<Cuahangchay.Models.NhanVien>
-
+﻿@model List<Cuahangchay.Models.NhanVien>
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Quản lý Nhân viên";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<h1>Index</h1>
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Quản lý Nhân viên</h1>
+</div>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.HoTen)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SDT)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.VaiTro)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MatKhau)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.HoTen)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SDT)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.VaiTro)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MatKhau)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.NhanVienID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.NhanVienID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.NhanVienID">Delete</a>
-            </td>
-        </tr>
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <div>
+        <a href="#" class="d-none d-sm-inline-block btn btn-info btn-sm shadow-sm">
+            <i class="fas fa-search"></i> Tìm kiếm
+        </a>
+        <a href="#" class="d-none d-sm-inline-block btn btn-success btn-sm shadow-sm">
+            <i class="fas fa-edit"></i> Chỉnh
+        </a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xl-12 col-lg-12">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Danh sách nhân viên</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Mã NV</th>
+                                <th>Họ tên</th>
+                                <th>SĐT</th>
+                                <th>Email</th>
+                                <th>Vai trò</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.NhanVienID</td>
+                                    <td>@item.HoTen</td>
+                                    <td>@item.SDT</td>
+                                    <td>@item.Email</td>
+                                    <td>@item.VaiTro</td>
+                                    <td>
+                                        <a asp-action="Details" asp-controller="NhanVien" asp-route-id="@item.NhanVienID" class="btn btn-info btn-sm">
+                                            <i class="fas fa-info-circle"></i> Chi tiết
+                                        </a>
+                                        <a asp-action="Edit" asp-controller="NhanVien" asp-route-id="@item.NhanVienID" class="btn btn-warning btn-sm">
+                                            <i class="fas fa-edit"></i> Sửa
+                                        </a>
+                                        <a asp-action="Delete" asp-controller="NhienVien" asp-route-id="@item.NhanVienID" class="btn btn-danger btn-sm">
+                                            <i class="fas fa-trash"></i> Xóa
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#dataTable').DataTable();
+        });
+    </script>
 }
-    </tbody>
-</table>

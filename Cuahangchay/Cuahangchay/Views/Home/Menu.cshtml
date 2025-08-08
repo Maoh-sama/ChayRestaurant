@@ -6,47 +6,93 @@
 
 <h2 class="text-center my-4">Thực đơn Món Chay</h2>
 
-@if (Model != null && Model.Any())
-{
-    <div class="row">
-        @foreach (var item in Model)
-        {
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card h-100">
-                    <img src="@item.HinhAnh" class="card-img-top" alt="@item.TenMon" style="object-fit: cover; height: 200px;">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            @item.TenMon
+<!-- Search Bar -->
+<div class="row mb-4">
+    <div class="col-md-6 offset-md-3">
+        <div class="input-group">
+            <input type="text" id="searchInput" class="form-control" placeholder="Tìm kiếm món ăn..." aria-label="Tìm kiếm món ăn">
+            <button class="btn btn-outline-secondary" type="button" id="clearSearch">Xóa</button>
+        </div>
+    </div>
+</div>
+
+<!-- Dish List -->
+<div id="menuContainer">
+    @if (Model != null && Model.Any())
+    {
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="card h-100">
+                        <img src="@item.HinhAnh" class="card-img-top" alt="@item.TenMon" style="object-fit: cover; height: 200px;">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                @item.TenMon
+                                @if (item.ConTon)
+                                {
+                                    <span class="badge bg-success float-end">Còn hàng</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-danger float-end">Hết hàng</span>
+                                }
+                            </h5>
+                            <p class="card-text text-muted">@item.MoTa</p>
+                        </div>
+                        <div class="card-footer">
+                            <h5 class="fw-bold text-primary">@item.Gia.ToString("N0") VNĐ</h5>
                             @if (item.ConTon)
                             {
-                                <span class="badge bg-success float-end">Còn hàng</span>
+                                <form asp-action="AddToCart" asp-controller="Home" method="post">
+                                    <input type="hidden" name="monId" value="@item.MonID" />
+                                    <input type="number" name="soLuong" value="1" min="1" class="form-control d-inline w-25" />
+                                    <button type="submit" class="btn btn-primary">Thêm vào giỏ hàng</button>
+                                </form>
                             }
-                            else
-                            {
-                                <span class="badge bg-danger float-end">Hết hàng</span>
-                            }
-                        </h5>
-                        <p class="card-text text-muted">@item.MoTa</p>
-                    </div>
-                    <div class="card-footer">
-                        <h5 class="fw-bold text-primary">@item.Gia.ToString("N0") VNĐ</h5>
-                        @if (item.ConTon)
-                        {
-                            <form asp-action="AddToCart" asp-controller="Home" method="post">
-                                <input type="hidden" name="monId" value="@item.MonID" />
-                                <input type="number" name="soLuong" value="1" min="1" class="form-control d-inline w-25" />
-                                <button type="submit" class="btn btn-primary">Thêm vào giỏ hàng</button>
-                            </form>
-                        }
+                        </div>
                     </div>
                 </div>
-            </div>
-        }
-    </div>
-}
-else
-{
-    <div class="alert alert-warning text-center" role="alert">
-        Hiện tại chưa có món ăn nào trong thực đơn.
-    </div>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-warning text-center" role="alert">
+            Hiện tại chưa có món ăn nào trong thực đơn.
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Handle search input
+            $('#searchInput').on('input', function () {
+                var query = $(this).val().trim();
+                searchMenu(query);
+            });
+
+            // Clear search
+            $('#clearSearch').click(function () {
+                $('#searchInput').val('');
+                searchMenu('');
+            });
+
+            function searchMenu(query) {
+                $.ajax({
+                    url: '@Url.Action("SearchMenu", "Home")',
+                    type: 'GET',
+                    data: { query: query },
+                    success: function (data) {
+                        $('#menuContainer').html(data);
+                    },
+                    error: function () {
+                        $('#menuContainer').html('<div class="alert alert-danger text-center" role="alert">Đã xảy ra lỗi khi tìm kiếm. Vui lòng thử lại.</div>');
+                    }
+                });
+            }
+        });
+    </script>
 }

@@ -18,5 +18,22 @@ namespace Cuahangchay.ViewModels
         [DataType(DataType.Password)]
         [Display(Name = "Xác nhận mật khẩu")]
         public string ConfirmPassword { get; set; }
+
+        [Required(ErrorMessage = "Vui lòng nhập tên khách hàng")]
+        [Display(Name = "Tên khách hàng")]
+        public string TenKH { get; set; }
+
+        [Required(ErrorMessage = "Vui lòng nhập số điện thoại")]
+        [Phone(ErrorMessage = "Số điện thoại không hợp lệ")]
+        [Display(Name = "Số điện thoại")]
+        public string SoDienThoai { get; set; }
+
+        [Required(ErrorMessage = "Vui lòng nhập email")]
+        [EmailAddress(ErrorMessage = "Email không hợp lệ")]
+        [Display(Name = "Email")]
+        public string Email { get; set; }
+
+        [Display(Name = "Điểm tích lũy")]
+        public int DiemTichLuy { get; set; }
     }
 }

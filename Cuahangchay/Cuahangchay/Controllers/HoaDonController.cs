@@ -34,8 +34,7 @@ namespace Cuahangchay.Controllers
                 return NotFound();
             }
 
-            var hoaDon = await  _context.HoaDons
-                
+            var hoaDon = await _context.HoaDons
                 .Include(h => h.NhanVien)
                 .FirstOrDefaultAsync(m => m.HoaDonID == id);
             if (hoaDon == null)
@@ -49,14 +48,11 @@ namespace Cuahangchay.Controllers
         // GET: HoaDon/Create
         public IActionResult Create()
         {
-           
             ViewData["NhanVienID"] = new SelectList(_context.NhanViens, "NhanVienID", "NhanVienID");
             return View();
         }
 
         // POST: HoaDon/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("HoaDonID,NgayLap,BanID,NhanVienID,TongTien")] HoaDon hoaDon)
@@ -67,35 +63,27 @@ namespace Cuahangchay.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-           
             ViewData["NhanVienID"] = new SelectList(_context.NhanViens, "NhanVienID", "NhanVienID", hoaDon.NhanVienID);
             return View(hoaDon);
         }
 
         // GET: HoaDon/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        [HttpGet]
+        public IActionResult Edit(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var hoaDon = await _context.HoaDons.FindAsync(id);
+            var hoaDon = _context.HoaDons.Find(id); // Assuming Entity Framework
             if (hoaDon == null)
             {
-                return NotFound();
+                return NotFound(); // Or handle the case appropriately
             }
-           
-            ViewData["NhanVienID"] = new SelectList(_context.NhanViens, "NhanVienID", "NhanVienID", hoaDon.NhanVienID);
+            ViewBag.NhanVienID = new SelectList(_context.NhanViens, "NhanVienID", "TenNhanVien");
+            ViewBag.TrangThai = new SelectList(new List<string> { "Pending", "Completed", "Cancelled" }); // Example statuses
             return View(hoaDon);
         }
 
-        // POST: HoaDon/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("HoaDonID,NgayLap,BanID,NhanVienID,TongTien")] HoaDon hoaDon)
+        public async Task<IActionResult> Edit(int id, [Bind("HoaDonID,NgayLap,NhanVienID,TongTien,TrangThai")] HoaDon hoaDon)
         {
             if (id != hoaDon.HoaDonID)
             {
@@ -108,6 +96,7 @@ namespace Cuahangchay.Controllers
                 {
                     _context.Update(hoaDon);
                     await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -120,10 +109,8 @@ namespace Cuahangchay.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction(nameof(Index));
             }
-            
-            ViewData["NhanVienID"] = new SelectList(_context.NhanViens, "NhanVienID", "NhanVienID", hoaDon.NhanVienID);
+
             return View(hoaDon);
         }
 
@@ -136,7 +123,6 @@ namespace Cuahangchay.Controllers
             }
 
             var hoaDon = await _context.HoaDons
-                
                 .Include(h => h.NhanVien)
                 .FirstOrDefaultAsync(m => m.HoaDonID == id);
             if (hoaDon == null)

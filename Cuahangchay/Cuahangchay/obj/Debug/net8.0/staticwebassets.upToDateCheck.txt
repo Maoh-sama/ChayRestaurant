@@ -7,6 +7,7 @@ wwwroot\img\com.png
 wwwroot\img\goicuon.png
 wwwroot\img\Nha hang chay.jpg
 wwwroot\img\pho.png
+wwwroot\img\tung.jpg
 wwwroot\img\undraw_posting_photo.svg
 wwwroot\img\undraw_profile.svg
 wwwroot\img\undraw_profile_1.svg

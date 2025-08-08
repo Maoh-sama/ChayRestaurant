@@ -1,5 +1,6 @@
 ﻿@model Cuahangchay.ViewModels.RegisterViewModel
 
+
 @{
     ViewData["Title"] = "Đăng ký";
 }
@@ -21,6 +22,26 @@
         <label asp-for="ConfirmPassword"></label>
         <input asp-for="ConfirmPassword" class="form-control" />
         <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="TenKH"></label>
+        <input asp-for="TenKH" class="form-control" />
+        <span asp-validation-for="TenKH" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="SoDienThoai"></label>
+        <input asp-for="SoDienThoai" class="form-control" />
+        <span asp-validation-for="SoDienThoai" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="DiemTichLuy"></label>
+        <input asp-for="DiemTichLuy" class="form-control" value="0" />
+        <span asp-validation-for="DiemTichLuy" class="text-danger"></span>
     </div>
     <button type="submit" class="btn btn-primary">Đăng ký</button>
     <a asp-action="Login" class="btn btn-link">Đã có tài khoản?</a>

@@ -40,6 +40,11 @@ namespace Cuahangchay.Data
                 .HasForeignKey(t => t.NhanVienID)
                 .IsRequired(false); // Vì NhanVienID là nullable
 
+            modelBuilder.Entity<HoaDon>()
+                .HasOne(h => h.KhachHang)
+                .WithMany()
+                .HasForeignKey(h => h.KHID);
+
             base.OnModelCreating(modelBuilder);
         }
     }

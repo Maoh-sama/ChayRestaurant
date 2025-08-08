@@ -1,6 +1,7 @@
 ﻿// Đảm bảo có dòng này
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization; // Để sử dụng JsonIgnore
 
 namespace Cuahangchay.Models
 {
@@ -15,6 +16,7 @@ namespace Cuahangchay.Models
         public decimal DonGia { get; set; }
 
         public MonChay MonChay { get; set; }
+        [JsonIgnore]
         public HoaDon HoaDon { get; set; }
 
     }
