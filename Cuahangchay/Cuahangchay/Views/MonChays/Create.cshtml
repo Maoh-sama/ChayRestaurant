@@ -45,6 +45,7 @@
                     <input class="form-check-input" asp-for="ConTon" /> @Html.DisplayNameFor(model => model.ConTon)
                 </label>
             </div>
+
             <div class="form-group mt-3">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
@@ -57,50 +58,3 @@
     <a asp-action="Index">Quay lại danh sách</a>
 </div>
 
-
-<script>
-    $(document).ready(function () {
-        // Xem trước ảnh khi chọn file
-        $('#fileInput').change(function (e) {
-            var file = e.target.files[0];
-            if (file) {
-                var reader = new FileReader();
-                reader.onload = function (e) {
-                    $('#imagePreview').attr('src', e.target.result).show();
-                }
-                reader.readAsDataURL(file);
-            }
-        });
-
-        // Xử lý form bằng AJAX
-        $('#createMonChayForm').submit(function (e) {
-            e.preventDefault();
-            var formData = new FormData(this);
-            var token = $('input[name="__RequestVerificationToken"]').val(); // Lấy token
-            formData.append('__RequestVerificationToken', token);
-
-            $.ajax({
-                url: '@Url.Action("Create", "MonChays")',
-                type: 'POST',
-                data: formData,
-                processData: false,
-                contentType: false,
-                headers: {
-                    'RequestVerificationToken': token
-                },
-                success: function (response) {
-                    alert("Thêm món chay thành công!");
-                    window.location.href = '@Url.Action("Index", "MonChays")';
-                },
-                error: function (xhr, status, error) {
-                    alert("Có lỗi xảy ra: " + xhr.responseText);
-                }
-            });
-        });
-    });
-</script>
-<form id="createMonChayForm" asp-action="Create" enctype="multipart/form-data">
-    @Html.AntiForgeryToken()
-    <!-- Các trường khác -->
-</form>
-}

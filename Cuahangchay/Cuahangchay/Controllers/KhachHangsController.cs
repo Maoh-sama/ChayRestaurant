@@ -142,10 +142,13 @@ namespace Cuahangchay.Controllers
             var khachHang = await _context.KhachHangs.FindAsync(id);
             if (khachHang != null)
             {
-                _context.KhachHangs.Remove(khachHang);
-            }
+                // Xóa các bản ghi HoaDon liên quan
+                var hoaDons = _context.HoaDons.Where(hd => hd.KHID == id).ToList();
+                _context.HoaDons.RemoveRange(hoaDons);
 
-            await _context.SaveChangesAsync();
+                _context.KhachHangs.Remove(khachHang);
+                await _context.SaveChangesAsync();
+            }
             return RedirectToAction(nameof(Index));
         }
 

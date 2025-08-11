@@ -49,16 +49,30 @@ namespace Cuahangchay.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(MonChay monChay, IFormFile HinhAnh)
+        public async Task<IActionResult> Create(MonChay monChay, IFormFile HinhAnhUpload)
         {
             // Xóa thuộc tính HinhAnh khỏi ModelState để tránh lỗi xác thực
             ModelState.Remove("HinhAnh");
 
             if (ModelState.IsValid)
             {
-                if (HinhAnh != null && HinhAnh.Length > 0)
+                if (HinhAnhUpload != null && HinhAnhUpload.Length > 0)
                 {
-                    // ... (giữ nguyên logic xử lý tệp)
+                    var fileName = Path.GetFileName(HinhAnhUpload.FileName);
+                    var imagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img", fileName);
+
+                    using (var stream = new FileStream(imagePath, FileMode.Create))
+                    {
+                        await HinhAnhUpload.CopyToAsync(stream);
+                    }
+
+                    // Gán đúng đường dẫn
+                    monChay.HinhAnh = "/img/" + fileName;
+                }
+                else
+                {
+                    // Nếu không upload ảnh thì có thể set ảnh mặc định
+                    monChay.HinhAnh = "/img/default.png";
                 }
 
                 _context.Add(monChay);

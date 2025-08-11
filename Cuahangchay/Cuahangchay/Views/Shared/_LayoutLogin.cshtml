@@ -46,24 +46,7 @@
             <a class="navbar-brand" href="/">Cửa Hàng Chay Thanh Lương</a>
             <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
                 <ul class="navbar-nav">
-                    @if (User.IsInRole("Admin"))
-                    {
-                        <a class="collapse-item" asp-controller="TaiKhoan" asp-action="Index">Quản lý Tài khoản</a>
-                        <a class="collapse-item" asp-controller="Home" asp-action="QuanLyKho">Quản lý Kho</a>
-                        <a class="collapse-item" asp-controller="Home" asp-action="QuanLyHoaDon">Quản lý Hóa đơn</a>
-                        <a class="collapse-item" asp-controller="Home" asp-action="QuanLyMonChay">Quản lý Món chay</a>
-                        <a class="collapse-item" asp-controller="Home" asp-action="QuanLyKhachHang">Quản lý Khách hàng</a>
-                    }
-                    @if (User.IsInRole("Bep"))
-                    {
-                        <a class="collapse-item" asp-controller="Home" asp-action="QuanLyKhoDetails">Chi tiết Kho</a>
-                    }
-                    @if (User.IsInRole("ThuNgan"))
-                    {
-                        <a class="collapse-item" asp-controller="Home" asp-action="QuanLyHoaDon">Quản lý Hóa đơn</a>
-                        <a class="collapse-item" asp-controller="Home" asp-action="QuanLyMonChay">Quản lý Món chay</a>
-                        <a class="collapse-item" asp-controller="Home" asp-action="QuanLyKhachHang">Quản lý Khách hàng</a>
-                    }
+                  
 
 
                 </ul>
