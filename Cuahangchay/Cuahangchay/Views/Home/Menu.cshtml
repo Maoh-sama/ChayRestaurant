@@ -25,7 +25,9 @@
             {
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100">
-                        <img src="@item.HinhAnh" class="card-img-top" alt="@item.TenMon" style="object-fit: cover; height: 200px;">
+                        <a href="@Url.Action("ChiTiet", "Home", new { id = item.MonID })">
+                            <img src="@item.HinhAnh" class="card-img-top" alt="@item.TenMon" style="object-fit: cover; height: 200px;">
+                        </a>
                         <div class="card-body">
                             <h5 class="card-title">
                                 @item.TenMon

@@ -65,19 +65,21 @@ namespace Cuahangchay.Controllers
             }
             ViewData["NhanVienID"] = new SelectList(_context.NhanViens, "NhanVienID", "NhanVienID", hoaDon.NhanVienID);
             return View(hoaDon);
+
         }
 
         // GET: HoaDon/Edit/5
         [HttpGet]
         public IActionResult Edit(int id)
         {
-            var hoaDon = _context.HoaDons.Find(id); // Assuming Entity Framework
+            var hoaDon = _context.HoaDons.Find(id);
             if (hoaDon == null)
             {
-                return NotFound(); // Or handle the case appropriately
+                return NotFound();
             }
-            ViewBag.NhanVienID = new SelectList(_context.NhanViens, "NhanVienID", "TenNhanVien");
-            ViewBag.TrangThai = new SelectList(new List<string> { "Pending", "Completed", "Cancelled" }); // Example statuses
+            ViewBag.NhanVienID = new SelectList(_context.NhanViens, "NhanVienID", "TenNhanVien", hoaDon.NhanVienID);
+            ViewBag.KhachHangID = new SelectList(_context.KhachHangs, "KhachHangID", "TenKhachHang", hoaDon.KHID);
+            ViewBag.TrangThai = new SelectList(new List<string> { "Pending", "Completed", "Cancelled" }, hoaDon.TrangThai);
             return View(hoaDon);
         }
 
@@ -104,10 +106,11 @@ namespace Cuahangchay.Controllers
                     {
                         return NotFound();
                     }
-                    else
-                    {
-                        throw;
-                    }
+                    ModelState.AddModelError("", "Concurrency error: The record you attempted to edit was modified by another user. Please reload and try again.");
+                    ViewBag.NhanVienID = new SelectList(_context.NhanViens, "NhanVienID", "TenNhanVien", hoaDon.NhanVienID);
+                    ViewBag.KhachHangID = new SelectList(_context.KhachHangs, "KhachHangID", "TenKhachHang", hoaDon.KHID);
+                    ViewBag.TrangThai = new SelectList(new List<string> { "Pending", "Completed", "Cancelled" }, hoaDon.TrangThai);
+                    return View(hoaDon);
                 }
             }
 

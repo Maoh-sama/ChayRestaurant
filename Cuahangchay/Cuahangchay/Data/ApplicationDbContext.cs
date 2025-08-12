@@ -18,7 +18,7 @@ namespace Cuahangchay.Data
         public DbSet<KhachHang> KhachHangs { get; set; }
         public DbSet<NhanVien> NhanViens { get; set; }
         public DbSet<TaiKhoan> TaiKhoans { get; set; }
-
+        public DbSet<DanhGia> DanhGias { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

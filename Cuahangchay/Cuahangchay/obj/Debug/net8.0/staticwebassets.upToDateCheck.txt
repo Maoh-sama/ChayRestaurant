@@ -5,6 +5,7 @@ wwwroot\favicon.ico
 wwwroot\img\bun.png
 wwwroot\img\com.png
 wwwroot\img\dauhuxaoque.png
+wwwroot\img\duy.jpg
 wwwroot\img\goicuon.png
 wwwroot\img\Nha hang chay.jpg
 wwwroot\img\pho.png

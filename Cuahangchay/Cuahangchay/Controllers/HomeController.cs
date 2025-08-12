@@ -205,6 +205,39 @@ namespace Cuahangchay.Controllers
             }
             return PartialView("_MenuPartial", monChayList);
         }
+        [HttpPost]
+        [HttpPost]
+        public IActionResult SubmitRating(int monId, int rating, string comment)
+        {
+            if (!User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Login");
+            }
+
+            var danhGia = new DanhGia
+            {
+                MonID = monId,
+                Username = User.Identity.Name,
+                Rating = rating,
+                Comment = comment,
+                NgayDanhGia = DateTime.Now
+            };
+
+            try
+            {
+                _context.DanhGias.Add(danhGia);
+                _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                // Ghi log lỗi (bạn có thể thêm logging như Serilog)
+                // Ví dụ: Console.WriteLine(ex.Message);
+                return RedirectToAction("Error"); // Hoặc trang lỗi tùy chỉnh
+            }
+
+            return RedirectToAction("ChiTiet", new { id = monId });
+        }
+
         public IActionResult Reservation() => View();
         [HttpPost]
         public IActionResult Reservation(KhachHang res)
@@ -217,10 +250,24 @@ namespace Cuahangchay.Controllers
         public IActionResult Success() => View();
         public IActionResult ChiTiet(int id)
         {
-            var sanPham = _context.MonChay.FirstOrDefault(s => s.MonID == id);
-            return sanPham == null ? NotFound() : View(sanPham);
-        }
+            var monChay = _context.MonChay.FirstOrDefault(m => m.MonID == id);
+            if (monChay == null)
+            {
+                return NotFound();
+            }
 
+            var ratings = _context.DanhGias
+                                 .Where(d => d.MonID == id)
+                                 .ToList() ?? new List<DanhGia>();
+
+            var viewModel = new MonChayViewModel
+            {
+                MonChay = monChay,
+                Ratings = ratings
+            };
+
+            return View(viewModel);
+        }
         [HttpGet]
         public IActionResult Login() => View();
         [HttpPost]
