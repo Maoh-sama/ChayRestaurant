@@ -7,9 +7,9 @@ namespace Cuahangchay.Models
     {
         [Key] // Dòng này đánh dấu đây là khóa chính
         public int KHID { get; set; }
-        public string TenKH { get; set; }
-        public string SoDienThoai { get; set; }
-        public string Email { get; set; }
-        public int DiemTichLuy { get; set; }
+        public string? TenKH { get; set; }  // Already likely string, but ensure ?
+        public string? SoDienThoai { get; set; }
+        public string? Email { get; set; }
+     
     }
 }

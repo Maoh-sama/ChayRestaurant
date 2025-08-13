@@ -12,24 +12,39 @@ namespace Cuahangchay.Data
 
         // DbSet<T> cho các bảng
         public DbSet<MonChay> MonChay { get; set; }
-        public DbSet<Ban> Ban { get; set; }
         public DbSet<NguyenLieu> NguyenLieus { get; set; }
         public DbSet<HoaDon> HoaDons { get; set; }
         public DbSet<ChiTietHoaDon> ChiTietHoaDons { get; set; }
         public DbSet<KhachHang> KhachHangs { get; set; }
         public DbSet<NhanVien> NhanViens { get; set; }
         public DbSet<TaiKhoan> TaiKhoans { get; set; }
-        public DbSet<CauHinh> CauHinhs { get; set; }
+        public DbSet<DanhGia> DanhGias { get; set; }
+        public DbSet<Ban> Bans { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Bỏ dòng này đi HOẶC comment nó hoàn toàn:
-            // modelBuilder.Entity<ChiTietHoaDon>().HasNoKey();
+            // Quan hệ ChiTietHoaDon
+            modelBuilder.Entity<ChiTietHoaDon>()
+                .HasOne(c => c.HoaDon)
+                .WithMany(h => h.ChiTietHoaDons)
+                .HasForeignKey(c => c.HoaDonID);
 
-            // Các mối quan hệ của bạn được định nghĩa đúng theo quy ước
-            // nên EF Core có thể tự động nhận diện chúng.
-            // Nếu sau này bạn gặp lỗi với các mối quan hệ phức tạp hơn,
-            // bạn có thể thêm cấu hình tường minh tại đây.
+            modelBuilder.Entity<ChiTietHoaDon>()
+                .HasOne(c => c.MonChay)
+                .WithMany()
+                .HasForeignKey(c => c.MonID);
+
+            // Quan hệ TaiKhoan - NhanVien
+            modelBuilder.Entity<TaiKhoan>()
+                .HasOne(t => t.NhanVien)
+                .WithMany() // Nếu NhanVien không cần collection ngược lại
+                .HasForeignKey(t => t.NhanVienID)
+                .IsRequired(false); // Vì NhanVienID là nullable
+
+            modelBuilder.Entity<HoaDon>()
+                .HasOne(h => h.KhachHang)
+                .WithMany()
+                .HasForeignKey(h => h.KHID);
 
             base.OnModelCreating(modelBuilder);
         }

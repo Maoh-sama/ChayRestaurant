@@ -1,0 +1,83 @@
+﻿@model MonChayViewModel
+
+<h2 class="text-center my-4">Chi tiết món ăn: @Model.MonChay.TenMon</h2>
+
+<!-- Phần hiển thị thông tin món ăn -->
+<div class="row">
+    <div class="col-md-6">
+        <img src="@Model.MonChay.HinhAnh" class="img-fluid rounded" alt="@Model.MonChay.TenMon" style="max-height: 400px; object-fit: cover;">
+    </div>
+    <div class="col-md-6">
+        <h3>@Model.MonChay.TenMon</h3>
+        <p><strong>Mô tả:</strong> @(Model.MonChay.MoTa ?? "Không có mô tả")</p>
+        <p><strong>Giá:</strong> @Model.MonChay.Gia.ToString("N0") VNĐ</p>
+        <p>
+            <strong>Trạng thái:</strong>
+            @if (Model.MonChay.ConTon)
+            {
+                <span class="badge bg-success">Còn hàng</span>
+            }
+            else
+            {
+                <span class="badge bg-danger">Hết hàng</span>
+            }
+        </p>
+        @if (Model.MonChay.ConTon)
+        {
+            <form asp-action="AddToCart" asp-controller="Home" method="post">
+                <input type="hidden" name="monId" value="@Model.MonChay.MonID" />
+                <div class="input-group mb-3" style="max-width: 200px;">
+                    <input type="number" name="soLuong" value="1" min="1" class="form-control" />
+                    <button type="submit" class="btn btn-primary">Thêm vào giỏ hàng</button>
+                </div>
+            </form>
+        }
+    </div>
+</div>
+
+<hr />
+
+<h4 class="my-4">Đánh giá món ăn</h4>
+
+<!-- Phần gửi đánh giá -->
+@if (User.Identity.IsAuthenticated)
+{
+    <form asp-action="SubmitRating" asp-controller="Home" method="post">
+        <input type="hidden" name="monId" value="@Model.MonChay.MonID" />
+        <div class="mb-3">
+            <label for="rating" class="form-label">Điểm đánh giá (1-5):</label>
+            <input type="number" name="rating" min="1" max="5" class="form-control" style="max-width: 100px;" required />
+        </div>
+        <div class="mb-3">
+            <label for="comment" class="form-label">Nhận xét:</label>
+            <textarea name="comment" class="form-control" rows="4"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Gửi đánh giá</button>
+    </form>
+}
+else
+{
+    <p>Vui lòng <a asp-action="Login" asp-controller="Home">đăng nhập</a> để gửi đánh giá.</p>
+}
+
+<hr />
+
+<h5>Các đánh giá hiện có</h5>
+<div id="ratingsContainer">
+    @if (Model.Ratings.Any())
+    {
+        foreach (var rating in Model.Ratings)
+        {
+            <div class="card mb-2">
+                <div class="card-body">
+                    <p><strong>@rating.Username</strong> (@rating.NgayDanhGia.ToString("dd/MM/yyyy")): @rating.Rating/5</p>
+                    <p>@rating.Comment</p>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <p>Hãy là người đầu tiên đưa ra nhận xét về món ăn</p>
+    }
+</div>

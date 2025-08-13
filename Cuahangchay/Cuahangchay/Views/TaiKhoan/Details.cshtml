@@ -1,36 +1,20 @@
 ﻿@model Cuahangchay.Models.TaiKhoan
-
 @{
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
-
+<h1>Chi tiết tài khoản</h1>
 <div>
-    <h4>TaiKhoan</h4>
+    <h4>@Model.Username</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.MatKhau)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.MatKhau)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Quyen)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Quyen)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NhanVien)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NhanVien.NhanVienID)
-        </dd>
+        <dt class="col-sm-2">Vai trò</dt>
+        <dd class="col-sm-10">@Html.DisplayFor(model => model.Quyen)</dd>
+        <dt class="col-sm-2">Nhân viên</dt>
+        <dd class="col-sm-10">@(Model.NhanVien?.HoTen ?? "Không có")</dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.Username">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-controller="TaiKhoan" asp-route-id="@Model?.Username">Sửa</a> |
+    <a asp-action="Index" asp-controller="TaiKhoan">Quay lại</a>
 </div>

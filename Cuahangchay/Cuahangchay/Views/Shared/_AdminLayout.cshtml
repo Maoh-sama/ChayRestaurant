@@ -2,25 +2,12 @@
 <html lang="en">
 
 <head>
+    <link href="/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+          rel="stylesheet">
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>SB Admin 2 - Dashboard</title>
-
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
-
-    <link href="~/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,700" rel="stylesheet" />
     <link href="~/css/sb-admin-2.min.css" rel="stylesheet" />
-
+    <link href="~/css/custom.css" rel="stylesheet" />
 </head>
 
 
@@ -35,20 +22,17 @@
 
                         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-                            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/Home/Index">
+                            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/Home/Index1">
                                 <div class="sidebar-brand-icon rotate-n-15">
                                     <i class="fas fa-laugh-wink"></i>
                                 </div>
-                                <div class="sidebar-brand-text mx-3">SB Admin 2</div>
+                                <div class="sidebar-brand-text mx-3">Cửa hàng chay Thanh Lương</div>
                             </a>
 
                             <hr class="sidebar-divider my-0">
 
                             <li class="nav-item active">
-                                <a class="nav-link" href="/Home/Index">
-                                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                                    <span>Dashboard</span>
-                                </a>
+                      
                             </li>
 
                             <hr class="sidebar-divider">
@@ -66,6 +50,7 @@
                                         <a class="collapse-item" href="/Home/ThongKeNguyenLieu">Thống kê nguyên liệu</a>
                                         <a class="collapse-item" href="/Home/ThongKeBanHang">Thống kê bán hàng</a>
                                         <a class="collapse-item" href="/Home/ThongKeDoanhThu">Thống kê doanh thu</a>
+
                                     </div>
                                 </div>
                             </li>
@@ -82,10 +67,25 @@
                                 <div id="collapseManagement" class="collapse" aria-labelledby="headingManagement" data-parent="#accordionSidebar">
                                     <div class="bg-white py-2 collapse-inner rounded">
                                         <h6 class="collapse-header">Quản lý chi tiết:</h6>
-                                        <a class="collapse-item" href="/Home/QuanLyKho">Quản lý kho</a>
-                                        <a class="collapse-item" href="/Home/QuanLyNhanVien">Nhân viên</a>
-                                        <a class="collapse-item" href="/Home/QuanLyHoaDon">Hóa đơn</a>
-                                        <a class="collapse-item" href="/Home/QuanLyTaiKhoan">Tài khoản</a>
+                                        @if (User.IsInRole("Admin"))
+                                        {
+                                            <a class="collapse-item" asp-controller="TaiKhoan" asp-action="Index">Quản lý Tài khoản</a>
+                                            <a class="collapse-item" asp-controller="Home" asp-action="QuanLyKho">Quản lý Kho</a>
+                                            <a class="collapse-item" asp-controller="Home" asp-action="QuanLyHoaDon">Quản lý Hóa đơn</a>
+                                            <a class="collapse-item" asp-controller="Home" asp-action="QuanLyMonChay">Quản lý Món chay</a>
+                                            <a class="collapse-item" asp-controller="Home" asp-action="QuanLyKhachHang">Quản lý Khách hàng</a>
+                                        }
+                                        @if (User.IsInRole("Bep"))
+                                        {
+                                            <a class="collapse-item" asp-controller="Home" asp-action="QuanLyKhoDetails">Chi tiết Kho</a>
+                                        }
+                                        @if (User.IsInRole("ThuNgan"))
+                                        {
+                                            <a class="collapse-item" asp-controller="Home" asp-action="QuanLyHoaDon">Quản lý Hóa đơn</a>
+                                            <a class="collapse-item" asp-controller="Home" asp-action="QuanLyMonChay">Quản lý Món chay</a>
+                                            <a class="collapse-item" asp-controller="Home" asp-action="QuanLyKhachHang">Quản lý Khách hàng</a>
+                                            
+                                        }
                                     </div>
                                 </div>
                             </li>
@@ -93,7 +93,8 @@
                             <hr class="sidebar-divider d-none d-md-block">
 
                             <div class="text-center d-none d-md-inline">
-                                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                             
+                                <a class="btn btn-primary" asp-controller="Home" asp-action="Logout">Logout</a>
                             </div>
 
                         </ul>
@@ -129,9 +130,7 @@
                                                     <div class="input-group">
                                                         <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
                                                         <div class="input-group-append">
-                                                            <button class="btn btn-primary" type="button">
-                                                                <i class="fas fa-search fa-sm"></i>
-                                                            </button>
+                                                       
                                                         </div>
                                                     </div>
                                                 </form>
@@ -237,27 +236,38 @@
 
                                         <li class="nav-item dropdown no-arrow">
                                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                               
+                                                    @if (User.IsInRole("Admin"))
+                                                    {
+                                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
+                                                    }
+                                                    else if (User.IsInRole("Bep"))
+                                                    {
+                                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Bep</span>
+                                                    }
+                                                    else if (User.IsInRole("ThuNgan"))
+                                                    {
+                                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Thu Ngan</span>
+                                                    }
+                                                
                                                 <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
                                             </a>
-                                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-                                                <a class="dropdown-item" href="#">
-                                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                                    Profile
-                                                </a>
-                                                <a class="dropdown-item" href="#">
-                                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                                    Settings
-                                                </a>
-                                                <a class="dropdown-item" href="#">
-                                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                                    Activity Log
-                                                </a>
-                                                <div class="dropdown-divider"></div>
-                                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                                    Logout
-                                                </a>
+                                            <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                                                            <button class="close" type="button" data-bs-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">×</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                                                        <div class="modal-footer">
+                                                            <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+                                                            <a class="btn btn-primary" asp-controller="Home" asp-action="Logout">Logout</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </li>
 
@@ -279,23 +289,19 @@
                             </footer>
                         </div>
                     </div>
-                    <a class="scroll-to-top rounded" href="#page-top">
-                        <i class="fas fa-angle-up"></i>
-                    </a>
-
                     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                                    <button class="close" type="button" data-bs-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">×</span>
                                     </button>
                                 </div>
                                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                                 <div class="modal-footer">
-                                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                                    <a class="btn btn-primary" href="/Home/Login">Logout</a>
+                                    <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Cancel</button>
+                                    <a class="btn btn-primary" asp-controller="Home" asp-action="Logout">Logout</a>
                                 </div>
                             </div>
                         </div>
@@ -321,7 +327,7 @@
             </div>
         </div>
     </div>
-
+   
     <script src="~/vendor/jquery/jquery.min.js"></script>
     <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/sb-admin-2.min.js"></script>

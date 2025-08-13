@@ -22,7 +22,7 @@ namespace Cuahangchay.Controllers
         // GET: HoaDon
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.HoaDons.Include(h => h.Ban).Include(h => h.NhanVien);
+            var applicationDbContext = _context.HoaDons.Include(h => h.NhanVien);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -35,7 +35,6 @@ namespace Cuahangchay.Controllers
             }
 
             var hoaDon = await _context.HoaDons
-                .Include(h => h.Ban)
                 .Include(h => h.NhanVien)
                 .FirstOrDefaultAsync(m => m.HoaDonID == id);
             if (hoaDon == null)
@@ -49,17 +48,14 @@ namespace Cuahangchay.Controllers
         // GET: HoaDon/Create
         public IActionResult Create()
         {
-            ViewData["BanID"] = new SelectList(_context.Ban, "BanID", "BanID");
             ViewData["NhanVienID"] = new SelectList(_context.NhanViens, "NhanVienID", "NhanVienID");
             return View();
         }
 
         // POST: HoaDon/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("HoaDonID,NgayLap,BanID,NhanVienID,TongTien")] HoaDon hoaDon)
+        public async Task<IActionResult> Create([Bind("HoaDonID,NgayLap,NhanVienID,TongTien")] HoaDon hoaDon)
         {
             if (ModelState.IsValid)
             {
@@ -67,35 +63,31 @@ namespace Cuahangchay.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["BanID"] = new SelectList(_context.Ban, "BanID", "BanID", hoaDon.BanID);
             ViewData["NhanVienID"] = new SelectList(_context.NhanViens, "NhanVienID", "NhanVienID", hoaDon.NhanVienID);
             return View(hoaDon);
         }
 
         // GET: HoaDon/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        [HttpGet]
+        public IActionResult Edit(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var hoaDon = await _context.HoaDons.FindAsync(id);
+            var hoaDon = _context.HoaDons.Find(id);
             if (hoaDon == null)
             {
                 return NotFound();
             }
-            ViewData["BanID"] = new SelectList(_context.Ban, "BanID", "BanID", hoaDon.BanID);
-            ViewData["NhanVienID"] = new SelectList(_context.NhanViens, "NhanVienID", "NhanVienID", hoaDon.NhanVienID);
+            ViewBag.NhanVienID = new SelectList(_context.NhanViens, "NhanVienID", "TenNhanVien", hoaDon.NhanVienID);
+            ViewBag.KhachHangID = new SelectList(_context.KhachHangs, "KhachHangID", "TenKhachHang", hoaDon.KHID);
+            ViewBag.TrangThai = new SelectList(new List<string> { "Pending", "Completed", "Cancelled" }, hoaDon.TrangThai);
             return View(hoaDon);
         }
-
-        // POST: HoaDon/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        private bool HoaDonExists(int id)
+        {
+            return _context.HoaDons.Any(e => e.HoaDonID == id);
+        }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("HoaDonID,NgayLap,BanID,NhanVienID,TongTien")] HoaDon hoaDon)
+        public async Task<IActionResult> Edit(int id, [Bind("HoaDonID,NgayLap,NhanVienID,TongTien,TrangThai")] HoaDon hoaDon)
         {
             if (id != hoaDon.HoaDonID)
             {
@@ -106,8 +98,14 @@ namespace Cuahangchay.Controllers
             {
                 try
                 {
+                    var existingHoaDon = await _context.HoaDons.AsNoTracking().FirstOrDefaultAsync(h => h.HoaDonID == id);
+                    if (existingHoaDon == null)
+                    {
+                        return NotFound();
+                    }
                     _context.Update(hoaDon);
                     await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -115,15 +113,18 @@ namespace Cuahangchay.Controllers
                     {
                         return NotFound();
                     }
-                    else
-                    {
-                        throw;
-                    }
+                    ModelState.AddModelError("", "Concurrency error: The record you attempted to edit was modified by another user. Please reload and try again.");
+                    ViewBag.NhanVienID = new SelectList(_context.NhanViens, "NhanVienID", "TenNhanVien", hoaDon.NhanVienID);
+                    ViewBag.KhachHangID = new SelectList(_context.KhachHangs, "KhachHangID", "TenKhachHang", hoaDon.KHID);
+                    ViewBag.TrangThai = new SelectList(new List<string> { "Pending", "Completed", "Cancelled" }, hoaDon.TrangThai);
+                    return View(hoaDon);
                 }
-                return RedirectToAction(nameof(Index));
+                catch (Exception ex)
+                {
+                    ModelState.AddModelError("", $"Error: {ex.Message}");
+                    return View(hoaDon);
+                }
             }
-            ViewData["BanID"] = new SelectList(_context.Ban, "BanID", "BanID", hoaDon.BanID);
-            ViewData["NhanVienID"] = new SelectList(_context.NhanViens, "NhanVienID", "NhanVienID", hoaDon.NhanVienID);
             return View(hoaDon);
         }
 
@@ -136,7 +137,6 @@ namespace Cuahangchay.Controllers
             }
 
             var hoaDon = await _context.HoaDons
-                .Include(h => h.Ban)
                 .Include(h => h.NhanVien)
                 .FirstOrDefaultAsync(m => m.HoaDonID == id);
             if (hoaDon == null)
@@ -152,19 +152,26 @@ namespace Cuahangchay.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            // Lấy hóa đơn từ database
             var hoaDon = await _context.HoaDons.FindAsync(id);
+
             if (hoaDon != null)
             {
+                // 1. Tìm tất cả các ChiTietHoaDon liên quan
+                var chiTietHoaDons = await _context.ChiTietHoaDons
+                                                   .Where(ct => ct.HoaDonID == hoaDon.HoaDonID)
+                                                   .ToListAsync();
+
+                // 2. Xóa các ChiTietHoaDon đó trước
+                _context.ChiTietHoaDons.RemoveRange(chiTietHoaDons);
+
+                // 3. Sau đó, xóa HoaDon
                 _context.HoaDons.Remove(hoaDon);
+
+                await _context.SaveChangesAsync();
             }
 
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
-        }
-
-        private bool HoaDonExists(int id)
-        {
-            return _context.HoaDons.Any(e => e.HoaDonID == id);
         }
     }
 }

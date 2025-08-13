@@ -7,11 +7,13 @@ namespace Cuahangchay.Models
     {
         [Key]
         public int MonID { get; set; }
-        public string TenMon { get; set; }
-        public string MoTa { get; set; }
-        public decimal Gia { get; set; }
-        public string HinhAnh { get; set; }
-        public bool ConTon { get; set; }
-    }
+        public string TenMon { get; set; }           // cột này không cho null nên giữ nguyên
+        public string? MoTa { get; set; }            // sửa lại cho phép null
+        public decimal Gia { get; set; }             // không null => giữ nguyên
+        public string? HinhAnh { get; set; }         // sửa lại cho phép null
+        public bool ConTon { get; set; }            // sửa lại cho phép null
+        [NotMapped]
+        public IFormFile? HinhAnhUpload { get; set; }
 
+    }
 }

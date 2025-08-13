@@ -4,19 +4,21 @@ namespace Cuahangchay.ViewModels
 {
     public class RegisterViewModel
     {
-        [Required(ErrorMessage = "Vui lòng nhập tên đăng nhập")]
-        [Display(Name = "Tên đăng nhập")]
-        public string Username { get; set; }
+       
+       
+            [Required(ErrorMessage = "Tên đăng nhập là bắt buộc")]
+            public string Username { get; set; }
 
-        [Required(ErrorMessage = "Vui lòng nhập mật khẩu")]
-        [DataType(DataType.Password)]
-        [Display(Name = "Mật khẩu")]
-        public string Password { get; set; }
+            [Required(ErrorMessage = "Mật khẩu là bắt buộc")]
+            [DataType(DataType.Password)]
+            public string Password { get; set; }
 
-        [Required(ErrorMessage = "Vui lòng xác nhận mật khẩu")]
-        [Compare("Password", ErrorMessage = "Mật khẩu xác nhận không khớp")]
-        [DataType(DataType.Password)]
-        [Display(Name = "Xác nhận mật khẩu")]
-        public string ConfirmPassword { get; set; }
+            [Required(ErrorMessage = "Xác nhận mật khẩu là bắt buộc")]
+            [DataType(DataType.Password)]
+            [Compare("Password", ErrorMessage = "Mật khẩu và xác nhận mật khẩu không khớp")]
+            public string ConfirmPassword { get; set; }
+      
+
+   
     }
 }
