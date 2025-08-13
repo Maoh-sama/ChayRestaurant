@@ -19,14 +19,12 @@ namespace Cuahangchay.Controllers
             _context = context;
         }
 
-        // GET: HoaDon
         public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.HoaDons.Include(h => h.NhanVien);
             return View(await applicationDbContext.ToListAsync());
         }
 
-        // GET: HoaDon/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -45,14 +43,12 @@ namespace Cuahangchay.Controllers
             return View(hoaDon);
         }
 
-        // GET: HoaDon/Create
         public IActionResult Create()
         {
             ViewData["NhanVienID"] = new SelectList(_context.NhanViens, "NhanVienID", "NhanVienID");
             return View();
         }
 
-        // POST: HoaDon/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("HoaDonID,NgayLap,NhanVienID,TongTien")] HoaDon hoaDon)
@@ -65,10 +61,8 @@ namespace Cuahangchay.Controllers
             }
             ViewData["NhanVienID"] = new SelectList(_context.NhanViens, "NhanVienID", "NhanVienID", hoaDon.NhanVienID);
             return View(hoaDon);
-
         }
 
-        // GET: HoaDon/Edit/5
         [HttpGet]
         public IActionResult Edit(int id)
         {
@@ -82,14 +76,7 @@ namespace Cuahangchay.Controllers
             ViewBag.TrangThai = new SelectList(new List<string> { "Pending", "Completed", "Cancelled" }, hoaDon.TrangThai);
             return View(hoaDon);
         }
-<<<<<<< HEAD
-        private bool HoaDonExists(int id)
-        {
-            return _context.HoaDons.Any(e => e.HoaDonID == id);
-        }
-=======
 
->>>>>>> cd2eadafd2e36726da5e866fa5eeb43b08067864
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("HoaDonID,NgayLap,NhanVienID,TongTien,TrangThai")] HoaDon hoaDon)
@@ -123,23 +110,19 @@ namespace Cuahangchay.Controllers
                     ViewBag.KhachHangID = new SelectList(_context.KhachHangs, "KhachHangID", "TenKhachHang", hoaDon.KHID);
                     ViewBag.TrangThai = new SelectList(new List<string> { "Pending", "Completed", "Cancelled" }, hoaDon.TrangThai);
                     return View(hoaDon);
-<<<<<<< HEAD
                 }
                 catch (Exception ex)
                 {
                     ModelState.AddModelError("", $"Error: {ex.Message}");
+                    ViewBag.NhanVienID = new SelectList(_context.NhanViens, "NhanVienID", "TenNhanVien", hoaDon.NhanVienID);
+                    ViewBag.KhachHangID = new SelectList(_context.KhachHangs, "KhachHangID", "TenKhachHang", hoaDon.KHID);
+                    ViewBag.TrangThai = new SelectList(new List<string> { "Pending", "Completed", "Cancelled" }, hoaDon.TrangThai);
                     return View(hoaDon);
                 }
             }
-=======
-                }
-            }
-
->>>>>>> cd2eadafd2e36726da5e866fa5eeb43b08067864
             return View(hoaDon);
         }
 
-        // GET: HoaDon/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -158,31 +141,26 @@ namespace Cuahangchay.Controllers
             return View(hoaDon);
         }
 
-        // POST: HoaDon/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            // Lấy hóa đơn từ database
             var hoaDon = await _context.HoaDons.FindAsync(id);
-
             if (hoaDon != null)
             {
-                // 1. Tìm tất cả các ChiTietHoaDon liên quan
                 var chiTietHoaDons = await _context.ChiTietHoaDons
                                                    .Where(ct => ct.HoaDonID == hoaDon.HoaDonID)
                                                    .ToListAsync();
-
-                // 2. Xóa các ChiTietHoaDon đó trước
                 _context.ChiTietHoaDons.RemoveRange(chiTietHoaDons);
-
-                // 3. Sau đó, xóa HoaDon
                 _context.HoaDons.Remove(hoaDon);
-
                 await _context.SaveChangesAsync();
             }
-
             return RedirectToAction(nameof(Index));
+        }
+
+        private bool HoaDonExists(int id)
+        {
+            return _context.HoaDons.Any(e => e.HoaDonID == id);
         }
     }
 }

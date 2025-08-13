@@ -25,27 +25,26 @@ namespace Cuahangchay.Controllers
         {
             _context = context;
         }
+
         public IActionResult ViewCart()
         {
             var cart = HttpContext.Session.GetObjectFromJson<List<CartItem>>("Cart") ?? new List<CartItem>();
-            return View(cart); // Truyền model cart vào view
+            return View(cart);
         }
+
         [HttpPost]
         public IActionResult UpdateCart(int monId, int soLuong)
         {
-            // Lấy giỏ hàng từ Session
             var cart = HttpContext.Session.GetObjectFromJson<List<CartItem>>("Cart") ?? new List<CartItem>();
-
-            // Tìm món trong giỏ hàng
             var cartItem = cart.FirstOrDefault(c => c.MonID == monId);
             if (cartItem != null && soLuong > 0)
             {
-                cartItem.SoLuong = soLuong; // Cập nhật số lượng
-                HttpContext.Session.SetObjectAsJson("Cart", cart); // Lưu lại giỏ hàng
+                cartItem.SoLuong = soLuong;
+                HttpContext.Session.SetObjectAsJson("Cart", cart);
             }
-
-            return RedirectToAction("ViewCart"); // Quay lại trang giỏ hàng
+            return RedirectToAction("ViewCart");
         }
+
         [Authorize]
         public IActionResult Checkout()
         {
@@ -61,17 +60,10 @@ namespace Cuahangchay.Controllers
                 return RedirectToAction("Login");
             }
 
-<<<<<<< HEAD
             var khachHang = _context.KhachHangs.FirstOrDefault(k => k.TenKH == taiKhoan.Username);
             if (khachHang == null)
             {
                 return RedirectToAction("UpdateKhachHang");
-=======
-            var khachHang = _context.KhachHangs.FirstOrDefault(k => k.TenKH == taiKhoan.Username); // Giả định dựa trên Username
-            if (khachHang == null)
-            {
-                return RedirectToAction("UpdateKhachHang"); // Yêu cầu bổ sung thông tin KhachHang
->>>>>>> cd2eadafd2e36726da5e866fa5eeb43b08067864
             }
 
             var nhanVien = taiKhoan.NhanVien;
@@ -86,33 +78,17 @@ namespace Cuahangchay.Controllers
                 TrangThai = "Chờ xác nhận"
             };
 
-<<<<<<< HEAD
-                _context.HoaDons.Add(hoaDon);
-                _context.SaveChanges();
-=======
             _context.HoaDons.Add(hoaDon);
-            _context.SaveChanges(); // Lưu tạm hóa đơn
+            _context.SaveChanges();
 
->>>>>>> cd2eadafd2e36726da5e866fa5eeb43b08067864
             var chiTietHoaDons = cart.Select(item => new ChiTietHoaDon
             {
                 HoaDonID = hoaDon.HoaDonID,
                 MonID = item.MonID,
                 SoLuong = item.SoLuong,
-<<<<<<< HEAD
-                DonGia = item.Gia
+                DonGia = item.Gia 
             }).ToList();
 
-            _context.ChiTietHoaDons.AddRange(chiTietHoaDons);
-=======
-                DonGia = item.Gia   // Handle null Gia
-            }).ToList();
-
-            _context.ChiTietHoaDons.AddRange(chiTietHoaDons);
-            // Không SaveChanges ngay, chờ xác nhận từ ThuNgan
-
-            // Lưu tạm chi tiết hóa đơn và chuyển đến trang chờ xác nhận
->>>>>>> cd2eadafd2e36726da5e866fa5eeb43b08067864
             TempData["HoaDonID"] = hoaDon.HoaDonID;
             HttpContext.Session.SetObjectAsJson("PendingChiTietHoaDons", chiTietHoaDons);
 
@@ -160,6 +136,7 @@ namespace Cuahangchay.Controllers
             }
             return View(hoaDon);
         }
+
         public IActionResult AddToCart(int monId, int soLuong)
         {
             var monChay = _context.MonChay.FirstOrDefault(m => m.MonID == monId);
@@ -190,9 +167,9 @@ namespace Cuahangchay.Controllers
             }
 
             HttpContext.Session.SetObjectAsJson("Cart", cart);
-
             return RedirectToAction("Menu");
         }
+
         [HttpPost]
         public IActionResult RemoveFromCart(int monId)
         {
@@ -203,18 +180,16 @@ namespace Cuahangchay.Controllers
                 cart.Remove(cartItem);
                 HttpContext.Session.SetObjectAsJson("Cart", cart);
             }
-            return View("RemoveFromCart", cart); // Hiển thị RemoveFromCart.cshtml thay vì chuyển hướng
+            return View("RemoveFromCart", cart);
         }
-        public async Task<IActionResult> Index1() => View(await _context.MonChay.ToListAsync());
+
         public async Task<IActionResult> Index() => View(await _context.MonChay.ToListAsync());
+        public async Task<IActionResult> Index1() => View(await _context.MonChay.ToListAsync());
+
         public IActionResult About() => View();
-        public IActionResult About1() => View();
 
         public async Task<IActionResult> Menu() => View(await _context.MonChay.ToListAsync());
-<<<<<<< HEAD
 
-
-=======
         [HttpGet]
         public async Task<IActionResult> SearchMenu(string query)
         {
@@ -228,8 +203,7 @@ namespace Cuahangchay.Controllers
             }
             return PartialView("_MenuPartial", monChayList);
         }
-        [HttpPost]
->>>>>>> cd2eadafd2e36726da5e866fa5eeb43b08067864
+
         [HttpPost]
         public IActionResult SubmitRating(int monId, int rating, string comment)
         {
@@ -252,26 +226,28 @@ namespace Cuahangchay.Controllers
                 _context.DanhGias.Add(danhGia);
                 _context.SaveChanges();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                // Ghi log lỗi (bạn có thể thêm logging như Serilog)
-                // Ví dụ: Console.WriteLine(ex.Message);
-                return RedirectToAction("Error"); // Hoặc trang lỗi tùy chỉnh
+                return RedirectToAction("Error");
             }
 
             return RedirectToAction("ChiTiet", new { id = monId });
         }
 
         public IActionResult Reservation() => View();
+
         [HttpPost]
         public IActionResult Reservation(KhachHang res)
         {
             if (ModelState.IsValid) return RedirectToAction("Success");
             return View(res);
         }
+
         public IActionResult Contact() => View();
         public IActionResult Contact1() => View();
+        public IActionResult About1() => View();
         public IActionResult Success() => View();
+
         public IActionResult ChiTiet(int id)
         {
             var monChay = _context.MonChay.FirstOrDefault(m => m.MonID == id);
@@ -292,8 +268,10 @@ namespace Cuahangchay.Controllers
 
             return View(viewModel);
         }
+
         [HttpGet]
         public IActionResult Login() => View();
+
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
@@ -303,10 +281,10 @@ namespace Cuahangchay.Controllers
                 if (taiKhoan != null)
                 {
                     var claims = new List<Claim>
-                    {
-                        new Claim(ClaimTypes.Name, taiKhoan.Username),
-                        new Claim(ClaimTypes.Role, taiKhoan.Quyen)
-                    };
+                {
+                    new Claim(ClaimTypes.Name, taiKhoan.Username),
+                    new Claim(ClaimTypes.Role, taiKhoan.Quyen)
+                };
                     var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
                     var authProperties = new AuthenticationProperties
                     {
@@ -315,22 +293,21 @@ namespace Cuahangchay.Controllers
                     };
                     await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity), authProperties);
 
-                    // Chuyển hướng dựa trên vai trò
                     if (taiKhoan.Quyen == "Admin")
                     {
-                        return RedirectToAction("QuanLyTaiKhoan"); // Chuyển hướng admin đến trang quản trị
+                        return RedirectToAction("QuanLyTaiKhoan");
                     }
                     else if (taiKhoan.Quyen == "Bep")
                     {
-                        return RedirectToAction("Details", "Kho", new { id = taiKhoan.Username }); // Chuyển hướng Bep đến Details của chính mình
+                        return RedirectToAction("Details", "Kho", new { id = taiKhoan.Username });
                     }
                     else if (taiKhoan.Quyen == "ThuNgan")
                     {
-                        return RedirectToAction("QuanLyHoaDon", "Home"); // Chuyển hướng ThuNgan đến Quản lý Hóa đơn
+                        return RedirectToAction("QuanLyHoaDon", "Home");
                     }
                     else
                     {
-                        return RedirectToAction("Index1", "Home"); // User về trang chủ
+                        return RedirectToAction("Index", "Home");
                     }
                 }
                 ModelState.AddModelError("", "Tên đăng nhập hoặc mật khẩu không đúng.");
@@ -340,6 +317,7 @@ namespace Cuahangchay.Controllers
 
         [HttpGet]
         public IActionResult Register() => View();
+
         [HttpPost]
         public IActionResult Register(RegisterViewModel model)
         {
@@ -358,10 +336,8 @@ namespace Cuahangchay.Controllers
                     Quyen = "User"
                 };
                 _context.TaiKhoans.Add(newUser);
-<<<<<<< HEAD
                 try
                 {
-                    _context.TaiKhoans.Add(newUser);
                     _context.SaveChanges();
                 }
                 catch (Exception ex)
@@ -369,13 +345,11 @@ namespace Cuahangchay.Controllers
                     ModelState.AddModelError("", $"Lỗi khi lưu tài khoản: {ex.Message}");
                     return View(model);
                 }
-=======
-                _context.SaveChanges();
->>>>>>> cd2eadafd2e36726da5e866fa5eeb43b08067864
                 return RedirectToAction("Login");
             }
             return View(model);
         }
+
         [HttpGet]
         public IActionResult UpdateKhachHang()
         {
@@ -386,17 +360,7 @@ namespace Cuahangchay.Controllers
             }
 
             var khachHang = _context.KhachHangs.FirstOrDefault(k => k.TenKH == taiKhoan.Username);
-<<<<<<< HEAD
-            //if (khachHang == null)
-            //{
-            //    khachHang = new KhachHang { TenKH = taiKhoan.Username, DiemTichLuy = 0 };
-            //}
-=======
-            if (khachHang == null)
-            {
-                khachHang = new KhachHang { TenKH = taiKhoan.Username, DiemTichLuy = 0 };
-            }
->>>>>>> cd2eadafd2e36726da5e866fa5eeb43b08067864
+
             return View(khachHang);
         }
 
@@ -416,25 +380,13 @@ namespace Cuahangchay.Controllers
                 {
                     khachHang = new KhachHang { TenKH = taiKhoan.Username };
                     _context.KhachHangs.Add(khachHang);
-<<<<<<< HEAD
-                    _context.SaveChanges(); // Save to generate KHID
-                }
-
-                // Update the existing or newly created khachHang with model data
-                khachHang.SoDienThoai = model.SoDienThoai;
-                khachHang.Email = model.Email;
-
-
-                _context.SaveChanges(); // Save the updated data
-=======
                 }
 
                 khachHang.SoDienThoai = model.SoDienThoai;
                 khachHang.Email = model.Email;
-                khachHang.DiemTichLuy = model.DiemTichLuy;
+                
 
                 _context.SaveChanges();
->>>>>>> cd2eadafd2e36726da5e866fa5eeb43b08067864
                 return RedirectToAction("Checkout");
             }
             return View(model);
@@ -446,15 +398,12 @@ namespace Cuahangchay.Controllers
             return RedirectToAction("Index", "TaiKhoan");
         }
 
-        // Quản lý Kho (khung đỏ)
         [Authorize(Roles = "Admin,Bep")]
         public async Task<IActionResult> QuanLyKho() => View(await _context.NguyenLieus.ToListAsync());
 
-        // Chỉ Bep được xem Details của Quản lý Kho
         [Authorize(Roles = "Bep")]
         public async Task<IActionResult> QuanLyKhoDetails()
         {
-            // Giả định hiển thị chi tiết Kho, cần tạo View tương ứng
             var kho = await _context.NguyenLieus.ToListAsync();
             return View(kho);
         }
@@ -462,56 +411,33 @@ namespace Cuahangchay.Controllers
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> QuanLyNhanVien() => View(await _context.NhanViens.ToListAsync());
 
-        // Quản lý Hóa đơn (khung xanh)
         [Authorize(Roles = "Admin,ThuNgan")]
         public async Task<IActionResult> QuanLyHoaDon()
         {
             var hoaDons = await _context.HoaDons
                 .Include(h => h.ChiTietHoaDons)
-                .Where(h => h.NhanVien != null && h.KhachHang != null) // Loại bỏ bản ghi NULL
+                .Where(h => h.NhanVien != null && h.KhachHang != null)
                 .ToListAsync();
             ViewBag.TrangThai = new List<SelectListItem>
-            {
-                new SelectListItem { Text = "Chờ xác nhận", Value = "Chờ xác nhận" },
-                new SelectListItem { Text = "Đã xác nhận", Value = "Đã xác nhận" }
-            };
+        {
+            new SelectListItem { Text = "Chờ xác nhận", Value = "Chờ xác nhận" },
+            new SelectListItem { Text = "Đã xác nhận", Value = "Đã xác nhận" }
+        };
             return View(hoaDons);
         }
 
-        // Quản lý Món chay (khung xanh)
         [Authorize(Roles = "Admin,ThuNgan")]
         public async Task<IActionResult> QuanLyMonChay() => View(await _context.MonChay.ToListAsync());
 
-        // Quản lý Khách hàng (khung xanh)
         [Authorize(Roles = "Admin,ThuNgan")]
         public async Task<IActionResult> QuanLyKhachHang() => View(await _context.KhachHangs.ToListAsync());
 
-<<<<<<< HEAD
-        [Authorize(Roles = "Admin,ThuNgan")]
-        public async Task<IActionResult> SearchMonChay(string searchString)
-        {
-            var monChayQuery = _context.MonChay.AsQueryable();
-
-            // Lưu giá trị tìm kiếm để giữ trong input khi load lại trang
-            ViewData["CurrentFilter"] = searchString;
-
-            if (!string.IsNullOrEmpty(searchString))
-            {
-                // Tìm kiếm theo tên món, không phân biệt hoa thường
-                monChayQuery = monChayQuery.Where(m => m.TenMon.ToLower().Contains(searchString.ToLower()));
-            }
-
-            var monChayList = await monChayQuery.ToListAsync();
-            return View(monChayList);
-        }
-
-=======
->>>>>>> cd2eadafd2e36726da5e866fa5eeb43b08067864
         public async Task<IActionResult> ThongKeNguyenLieu() => View(await _context.NguyenLieus.ToListAsync());
         public async Task<IActionResult> ThongKeBanHang() => View(await _context.HoaDons.Include(h => h.ChiTietHoaDons).ThenInclude(ct => ct.MonChay).ToListAsync());
         public async Task<IActionResult> ThongKeDoanhThu() => View(await _context.HoaDons.ToListAsync());
 
         public IActionResult AccessDenied() => View();
+
         [Authorize]
         public async Task<IActionResult> Logout()
         {

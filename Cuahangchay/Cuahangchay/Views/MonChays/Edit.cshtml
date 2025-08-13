@@ -40,6 +40,11 @@
                     <img src="@Model.HinhAnh" style="max-height: 150px;" />
                 </div>
             }
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="ConTon" /> @Html.DisplayNameFor(model => model.ConTon)
+                </label>
+            </div>
 
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

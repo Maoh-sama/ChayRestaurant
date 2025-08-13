@@ -19,28 +19,11 @@ namespace Cuahangchay.Controllers
             _context = context;
         }
 
-        // GET: MonChays
-<<<<<<< HEAD
-        public async Task<IActionResult> Index(string searchString)
-        {
-            var monChayQuery = _context.MonChay.AsQueryable();
-
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                monChayQuery = monChayQuery.Where(m => m.TenMon.Contains(searchString, StringComparison.OrdinalIgnoreCase));
-                ViewData["CurrentFilter"] = searchString;
-            }
-
-            var monChayList = await monChayQuery.ToListAsync();
-            return View(monChayList);
-=======
         public async Task<IActionResult> Index()
         {
             return View(await _context.MonChay.ToListAsync());
->>>>>>> cd2eadafd2e36726da5e866fa5eeb43b08067864
         }
 
-        // GET: MonChays/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -57,24 +40,16 @@ namespace Cuahangchay.Controllers
 
             return View(monChay);
         }
-<<<<<<< HEAD
 
-=======
->>>>>>> cd2eadafd2e36726da5e866fa5eeb43b08067864
-        // GET: MonChays/Create
         public IActionResult Create()
         {
             return View();
         }
-<<<<<<< HEAD
 
-=======
->>>>>>> cd2eadafd2e36726da5e866fa5eeb43b08067864
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(MonChay monChay, IFormFile HinhAnhUpload)
         {
-            // Xóa thuộc tính HinhAnh khỏi ModelState để tránh lỗi xác thực
             ModelState.Remove("HinhAnh");
 
             if (ModelState.IsValid)
@@ -89,12 +64,10 @@ namespace Cuahangchay.Controllers
                         await HinhAnhUpload.CopyToAsync(stream);
                     }
 
-                    // Gán đúng đường dẫn
                     monChay.HinhAnh = "/img/" + fileName;
                 }
                 else
                 {
-                    // Nếu không upload ảnh thì có thể set ảnh mặc định
                     monChay.HinhAnh = "/img/default.png";
                 }
 
@@ -105,7 +78,6 @@ namespace Cuahangchay.Controllers
             return View(monChay);
         }
 
-        // GET: MonChays/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -121,12 +93,6 @@ namespace Cuahangchay.Controllers
             return View(monChay);
         }
 
-        // POST: MonChays/Edit/5
-<<<<<<< HEAD
-=======
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
->>>>>>> cd2eadafd2e36726da5e866fa5eeb43b08067864
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, MonChay monChay, IFormFile? HinhAnhUpload)
@@ -134,14 +100,12 @@ namespace Cuahangchay.Controllers
             if (id != monChay.MonID)
                 return NotFound();
 
-            // Xóa xác thực cũ vì HinhAnhUpload không tồn tại trong DB
             ModelState.Remove("HinhAnh");
 
             if (ModelState.IsValid)
             {
                 try
                 {
-                    // Nếu người dùng chọn ảnh mới thì lưu đè ảnh mới
                     if (HinhAnhUpload != null && HinhAnhUpload.Length > 0)
                     {
                         var fileName = Path.GetFileName(HinhAnhUpload.FileName);
@@ -152,7 +116,6 @@ namespace Cuahangchay.Controllers
                             await HinhAnhUpload.CopyToAsync(stream);
                         }
 
-                        // Gán đường dẫn ảnh mới
                         monChay.HinhAnh = "/img/" + fileName;
                     }
 
@@ -172,11 +135,6 @@ namespace Cuahangchay.Controllers
             return View(monChay);
         }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> cd2eadafd2e36726da5e866fa5eeb43b08067864
-        // GET: MonChays/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -194,7 +152,6 @@ namespace Cuahangchay.Controllers
             return View(monChay);
         }
 
-        // POST: MonChays/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
@@ -214,8 +171,4 @@ namespace Cuahangchay.Controllers
             return _context.MonChay.Any(e => e.MonID == id);
         }
     }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> cd2eadafd2e36726da5e866fa5eeb43b08067864

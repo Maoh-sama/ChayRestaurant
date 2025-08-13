@@ -14,11 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Cuahangchay")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-<<<<<<< HEAD
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9ebfc14703d4b5e7f1bed7d593b57ea6e59e4da7")]
-=======
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2c79fcb879cdc633b6cb8962a0aabb4ff8d1cbae")]
->>>>>>> cd2eadafd2e36726da5e866fa5eeb43b08067864
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c9a4bdcdda827dbb10bdfaa503db3bdbf677fe1f")]
 [assembly: System.Reflection.AssemblyProductAttribute("Cuahangchay")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Cuahangchay")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

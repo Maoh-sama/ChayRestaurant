@@ -9,22 +9,13 @@ namespace Cuahangchay.ViewModels
             [Required(ErrorMessage = "Tên đăng nhập là bắt buộc")]
             public string Username { get; set; }
 
-            [Required(ErrorMessage = "Mật khẩu là bắt buộc")]
-            [DataType(DataType.Password)]
-            public string Password { get; set; }
-
-<<<<<<< HEAD
-            [Required(ErrorMessage = "Xác nhận mật khẩu là bắt buộc")]
-            [DataType(DataType.Password)]
-            [Compare("Password", ErrorMessage = "Mật khẩu và xác nhận mật khẩu không khớp")]
-            public string ConfirmPassword { get; set; }
-      
-
-   
-=======
-        [Required(ErrorMessage = "Vui lòng xác nhận mật khẩu")]
-        [Compare("Password", ErrorMessage = "Mật khẩu xác nhận không khớp")]
+        [Required(ErrorMessage = "Mật khẩu là bắt buộc")]
         [DataType(DataType.Password)]
+        public string Password { get; set; }
+
+        [Required(ErrorMessage = "Vui lòng xác nhận mật khẩu")]
+        [DataType(DataType.Password)]
+        [Compare("Password", ErrorMessage = "Mật khẩu xác nhận không khớp")]
         [Display(Name = "Xác nhận mật khẩu")]
         public string ConfirmPassword { get; set; }
 
@@ -44,6 +35,5 @@ namespace Cuahangchay.ViewModels
 
         [Display(Name = "Điểm tích lũy")]
         public int DiemTichLuy { get; set; }
->>>>>>> cd2eadafd2e36726da5e866fa5eeb43b08067864
     }
 }

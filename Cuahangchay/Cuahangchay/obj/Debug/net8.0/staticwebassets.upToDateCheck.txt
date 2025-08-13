@@ -3,16 +3,18 @@ wwwroot\css\sb-admin-2.min.css
 wwwroot\css\site.css
 wwwroot\favicon.ico
 wwwroot\img\bun.png
+wwwroot\img\chekhoaimon.png
 wwwroot\img\com.png
+wwwroot\img\comrang.png
+wwwroot\img\dauhucachua.png
 wwwroot\img\dauhuxaoque.png
 wwwroot\img\duy.jpg
 wwwroot\img\goicuon.png
-<<<<<<< HEAD
+wwwroot\img\lauchay.png
 wwwroot\img\Nemran.png
-=======
->>>>>>> cd2eadafd2e36726da5e866fa5eeb43b08067864
 wwwroot\img\Nha hang chay.jpg
 wwwroot\img\pho.png
+wwwroot\img\raucaudua.png
 wwwroot\img\tung.jpg
 wwwroot\img\undraw_posting_photo.svg
 wwwroot\img\undraw_profile.svg
