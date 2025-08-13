@@ -7,7 +7,10 @@ wwwroot\img\com.png
 wwwroot\img\dauhuxaoque.png
 wwwroot\img\duy.jpg
 wwwroot\img\goicuon.png
+<<<<<<< HEAD
 wwwroot\img\Nemran.png
+=======
+>>>>>>> cd2eadafd2e36726da5e866fa5eeb43b08067864
 wwwroot\img\Nha hang chay.jpg
 wwwroot\img\pho.png
 wwwroot\img\tung.jpg

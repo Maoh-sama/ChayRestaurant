@@ -1,15 +1,27 @@
+<<<<<<< HEAD
 ﻿@model List<Cuahangchay.Models.MonChay>
 @{
     ViewData["Title"] = "Quản lý Món Chay";
+=======
+﻿@model List<Cuahangchay.Models.HoaDon>
+
+@{
+    ViewData["Title"] = "Quản lý Hóa đơn";
+>>>>>>> cd2eadafd2e36726da5e866fa5eeb43b08067864
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
+<<<<<<< HEAD
     <h1 class="h3 mb-0 text-gray-800">Quản lý Món Chay</h1>
+=======
+    <h1 class="h3 mb-0 text-gray-800">Quản lý Hóa đơn</h1>
+>>>>>>> cd2eadafd2e36726da5e866fa5eeb43b08067864
 </div>
 
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
     <div>
+<<<<<<< HEAD
         <form asp-action="Index" method="get" class="d-inline">
             <input type="text" name="searchString" class="form-control d-inline-block" style="width: auto;" placeholder="Tìm kiếm món chay..." value="@ViewData["CurrentFilter"]" />
             <button type="submit" class="d-none d-sm-inline-block btn btn-info btn-sm shadow-sm">
@@ -17,6 +29,12 @@
             </button>
         </form>
         <a asp-action="Create" asp-controller="MonChays" class="d-none d-sm-inline-block btn btn-success btn-sm shadow-sm">
+=======
+        <a href="#" class="d-none d-sm-inline-block btn btn-info btn-sm shadow-sm">
+            <i class="fas fa-search"></i> Tìm kiếm
+        </a>
+        <a asp-action="Create" asp-controller="HoaDon" class="d-none d-sm-inline-block btn btn-success btn-sm shadow-sm">
+>>>>>>> cd2eadafd2e36726da5e866fa5eeb43b08067864
             <i class="fas fa-plus"></i> Thêm mới
         </a>
     </div>
@@ -26,18 +44,31 @@
     <div class="col-xl-12 col-lg-12">
         <div class="card shadow mb-4">
             <div class="card-header py-3">
+<<<<<<< HEAD
                 <h6 class="m-0 font-weight-bold text-primary">Danh sách món ăn</h6>
+=======
+                <h6 class="m-0 font-weight-bold text-primary">Danh sách Hóa đơn</h6>
+>>>>>>> cd2eadafd2e36726da5e866fa5eeb43b08067864
             </div>
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
+<<<<<<< HEAD
                                 <th>Mã món</th>
                                 <th>Tên món</th>
                                 <th>Hình ảnh</th>
                                 <th>Giá</th>
                                 <th>Tồn kho</th>
+=======
+                                <th>Mã HD</th>
+                                <th>Ngày lập</th>
+                                <th>Mã bàn</th>
+
+                                <th>Tổng tiền</th>
+                                <th>Trạng thái</th>
+>>>>>>> cd2eadafd2e36726da5e866fa5eeb43b08067864
                                 <th>Thao tác</th>
                             </tr>
                         </thead>
@@ -45,6 +76,7 @@
                             @foreach (var item in Model)
                             {
                                 <tr>
+<<<<<<< HEAD
                                     <td>@item.MonID</td>
                                     <td>@item.TenMon</td>
                                     <td><img src="@item.HinhAnh" alt="@item.TenMon" style="width: 80px; height: 80px; object-fit: cover;" /></td>
@@ -67,6 +99,33 @@
                                             <i class="fas fa-edit"></i> Sửa
                                         </a>
                                         <a asp-action="Delete" asp-controller="MonChays" asp-route-id="@item.MonID" class="btn btn-danger btn-sm">
+=======
+                                    <td>@item.HoaDonID</td>
+                                    <td>@item.NgayLap.ToString("dd/MM/yyyy HH:mm")</td>
+                                    <td>@item.NhanVienID</td>
+                                    <td>@item.TongTien.ToString("N0") VNĐ</td>
+                                    <td>
+                                        @if (item.TrangThai == "Chờ xác nhận")
+                                        {
+                                            <span class="badge badge-warning">@item.TrangThai</span>
+                                        }
+                                        else if (item.TrangThai == "Đã xác nhận")
+                                        {
+                                            <span class="badge badge-success">@item.TrangThai</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge badge-secondary">@item.TrangThai</span>
+                                        }
+                                    <td>
+                                        <a asp-action="Details" asp-controller="HoaDon" asp-route-id="@item.HoaDonID" class="btn btn-info btn-sm">
+                                            <i class="fas fa-info-circle"></i> Chi tiết
+                                        </a>
+                                        <a asp-action="Edit" asp-controller="HoaDon" asp-route-id="@item.HoaDonID" class="btn btn-warning btn-sm">
+                                            <i class="fas fa-edit"></i> Sửa
+                                        </a>
+                                        <a asp-action="Delete" asp-controller="HoaDon" asp-route-id="@item.HoaDonID" class="btn btn-danger btn-sm">
+>>>>>>> cd2eadafd2e36726da5e866fa5eeb43b08067864
                                             <i class="fas fa-trash"></i> Xóa
                                         </a>
                                     </td>

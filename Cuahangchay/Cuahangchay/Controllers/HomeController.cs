@@ -61,10 +61,17 @@ namespace Cuahangchay.Controllers
                 return RedirectToAction("Login");
             }
 
+<<<<<<< HEAD
             var khachHang = _context.KhachHangs.FirstOrDefault(k => k.TenKH == taiKhoan.Username);
             if (khachHang == null)
             {
                 return RedirectToAction("UpdateKhachHang");
+=======
+            var khachHang = _context.KhachHangs.FirstOrDefault(k => k.TenKH == taiKhoan.Username); // Giả định dựa trên Username
+            if (khachHang == null)
+            {
+                return RedirectToAction("UpdateKhachHang"); // Yêu cầu bổ sung thông tin KhachHang
+>>>>>>> cd2eadafd2e36726da5e866fa5eeb43b08067864
             }
 
             var nhanVien = taiKhoan.NhanVien;
@@ -79,17 +86,33 @@ namespace Cuahangchay.Controllers
                 TrangThai = "Chờ xác nhận"
             };
 
+<<<<<<< HEAD
                 _context.HoaDons.Add(hoaDon);
                 _context.SaveChanges();
+=======
+            _context.HoaDons.Add(hoaDon);
+            _context.SaveChanges(); // Lưu tạm hóa đơn
+
+>>>>>>> cd2eadafd2e36726da5e866fa5eeb43b08067864
             var chiTietHoaDons = cart.Select(item => new ChiTietHoaDon
             {
                 HoaDonID = hoaDon.HoaDonID,
                 MonID = item.MonID,
                 SoLuong = item.SoLuong,
+<<<<<<< HEAD
                 DonGia = item.Gia
             }).ToList();
 
             _context.ChiTietHoaDons.AddRange(chiTietHoaDons);
+=======
+                DonGia = item.Gia   // Handle null Gia
+            }).ToList();
+
+            _context.ChiTietHoaDons.AddRange(chiTietHoaDons);
+            // Không SaveChanges ngay, chờ xác nhận từ ThuNgan
+
+            // Lưu tạm chi tiết hóa đơn và chuyển đến trang chờ xác nhận
+>>>>>>> cd2eadafd2e36726da5e866fa5eeb43b08067864
             TempData["HoaDonID"] = hoaDon.HoaDonID;
             HttpContext.Session.SetObjectAsJson("PendingChiTietHoaDons", chiTietHoaDons);
 
@@ -188,8 +211,25 @@ namespace Cuahangchay.Controllers
         public IActionResult About1() => View();
 
         public async Task<IActionResult> Menu() => View(await _context.MonChay.ToListAsync());
+<<<<<<< HEAD
 
 
+=======
+        [HttpGet]
+        public async Task<IActionResult> SearchMenu(string query)
+        {
+            var monChayList = await _context.MonChay.ToListAsync();
+            if (!string.IsNullOrEmpty(query))
+            {
+                query = query.ToLower();
+                monChayList = monChayList
+                    .Where(m => m.TenMon.ToLower().Contains(query))
+                    .ToList();
+            }
+            return PartialView("_MenuPartial", monChayList);
+        }
+        [HttpPost]
+>>>>>>> cd2eadafd2e36726da5e866fa5eeb43b08067864
         [HttpPost]
         public IActionResult SubmitRating(int monId, int rating, string comment)
         {
@@ -318,6 +358,7 @@ namespace Cuahangchay.Controllers
                     Quyen = "User"
                 };
                 _context.TaiKhoans.Add(newUser);
+<<<<<<< HEAD
                 try
                 {
                     _context.TaiKhoans.Add(newUser);
@@ -328,6 +369,9 @@ namespace Cuahangchay.Controllers
                     ModelState.AddModelError("", $"Lỗi khi lưu tài khoản: {ex.Message}");
                     return View(model);
                 }
+=======
+                _context.SaveChanges();
+>>>>>>> cd2eadafd2e36726da5e866fa5eeb43b08067864
                 return RedirectToAction("Login");
             }
             return View(model);
@@ -342,10 +386,17 @@ namespace Cuahangchay.Controllers
             }
 
             var khachHang = _context.KhachHangs.FirstOrDefault(k => k.TenKH == taiKhoan.Username);
+<<<<<<< HEAD
             //if (khachHang == null)
             //{
             //    khachHang = new KhachHang { TenKH = taiKhoan.Username, DiemTichLuy = 0 };
             //}
+=======
+            if (khachHang == null)
+            {
+                khachHang = new KhachHang { TenKH = taiKhoan.Username, DiemTichLuy = 0 };
+            }
+>>>>>>> cd2eadafd2e36726da5e866fa5eeb43b08067864
             return View(khachHang);
         }
 
@@ -365,6 +416,7 @@ namespace Cuahangchay.Controllers
                 {
                     khachHang = new KhachHang { TenKH = taiKhoan.Username };
                     _context.KhachHangs.Add(khachHang);
+<<<<<<< HEAD
                     _context.SaveChanges(); // Save to generate KHID
                 }
 
@@ -374,6 +426,15 @@ namespace Cuahangchay.Controllers
 
 
                 _context.SaveChanges(); // Save the updated data
+=======
+                }
+
+                khachHang.SoDienThoai = model.SoDienThoai;
+                khachHang.Email = model.Email;
+                khachHang.DiemTichLuy = model.DiemTichLuy;
+
+                _context.SaveChanges();
+>>>>>>> cd2eadafd2e36726da5e866fa5eeb43b08067864
                 return RedirectToAction("Checkout");
             }
             return View(model);
@@ -425,6 +486,7 @@ namespace Cuahangchay.Controllers
         [Authorize(Roles = "Admin,ThuNgan")]
         public async Task<IActionResult> QuanLyKhachHang() => View(await _context.KhachHangs.ToListAsync());
 
+<<<<<<< HEAD
         [Authorize(Roles = "Admin,ThuNgan")]
         public async Task<IActionResult> SearchMonChay(string searchString)
         {
@@ -443,6 +505,8 @@ namespace Cuahangchay.Controllers
             return View(monChayList);
         }
 
+=======
+>>>>>>> cd2eadafd2e36726da5e866fa5eeb43b08067864
         public async Task<IActionResult> ThongKeNguyenLieu() => View(await _context.NguyenLieus.ToListAsync());
         public async Task<IActionResult> ThongKeBanHang() => View(await _context.HoaDons.Include(h => h.ChiTietHoaDons).ThenInclude(ct => ct.MonChay).ToListAsync());
         public async Task<IActionResult> ThongKeDoanhThu() => View(await _context.HoaDons.ToListAsync());

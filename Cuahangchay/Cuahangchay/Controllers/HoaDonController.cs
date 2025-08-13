@@ -65,6 +65,7 @@ namespace Cuahangchay.Controllers
             }
             ViewData["NhanVienID"] = new SelectList(_context.NhanViens, "NhanVienID", "NhanVienID", hoaDon.NhanVienID);
             return View(hoaDon);
+
         }
 
         // GET: HoaDon/Edit/5
@@ -81,10 +82,14 @@ namespace Cuahangchay.Controllers
             ViewBag.TrangThai = new SelectList(new List<string> { "Pending", "Completed", "Cancelled" }, hoaDon.TrangThai);
             return View(hoaDon);
         }
+<<<<<<< HEAD
         private bool HoaDonExists(int id)
         {
             return _context.HoaDons.Any(e => e.HoaDonID == id);
         }
+=======
+
+>>>>>>> cd2eadafd2e36726da5e866fa5eeb43b08067864
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("HoaDonID,NgayLap,NhanVienID,TongTien,TrangThai")] HoaDon hoaDon)
@@ -118,6 +123,7 @@ namespace Cuahangchay.Controllers
                     ViewBag.KhachHangID = new SelectList(_context.KhachHangs, "KhachHangID", "TenKhachHang", hoaDon.KHID);
                     ViewBag.TrangThai = new SelectList(new List<string> { "Pending", "Completed", "Cancelled" }, hoaDon.TrangThai);
                     return View(hoaDon);
+<<<<<<< HEAD
                 }
                 catch (Exception ex)
                 {
@@ -125,6 +131,11 @@ namespace Cuahangchay.Controllers
                     return View(hoaDon);
                 }
             }
+=======
+                }
+            }
+
+>>>>>>> cd2eadafd2e36726da5e866fa5eeb43b08067864
             return View(hoaDon);
         }
 

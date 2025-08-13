@@ -19,7 +19,10 @@ namespace Cuahangchay.Data
         public DbSet<NhanVien> NhanViens { get; set; }
         public DbSet<TaiKhoan> TaiKhoans { get; set; }
         public DbSet<DanhGia> DanhGias { get; set; }
+<<<<<<< HEAD
         public DbSet<Ban> Bans { get; set; }
+=======
+>>>>>>> cd2eadafd2e36726da5e866fa5eeb43b08067864
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
