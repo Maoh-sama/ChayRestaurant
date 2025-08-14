@@ -91,6 +91,8 @@ namespace Cuahangchay.Controllers
 
             TempData["HoaDonID"] = hoaDon.HoaDonID;
             HttpContext.Session.SetObjectAsJson("PendingChiTietHoaDons", chiTietHoaDons);
+            // Clear the cart after successful checkout
+            HttpContext.Session.Remove("Cart");
 
             return RedirectToAction("Success");
         }
@@ -136,6 +138,13 @@ namespace Cuahangchay.Controllers
             }
             return View(hoaDon);
         }
+
+
+
+
+//////AddToCart///////
+
+
 
         public IActionResult AddToCart(int monId, int soLuong)
         {
@@ -307,7 +316,7 @@ namespace Cuahangchay.Controllers
                     }
                     else
                     {
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction("Index1", "Home");
                     }
                 }
                 ModelState.AddModelError("", "Tên đăng nhập hoặc mật khẩu không đúng.");
@@ -350,9 +359,18 @@ namespace Cuahangchay.Controllers
             return View(model);
         }
 
+
+        /// /////////Cap Nhat Khach Hang//////////
+
+       
+
         [HttpGet]
         public IActionResult UpdateKhachHang()
         {
+            if (!User.Identity.IsAuthenticated)
+            {
+                return RedirectToAction("Login");
+            }
             var taiKhoan = _context.TaiKhoans.FirstOrDefault(t => t.Username == User.Identity.Name);
             if (taiKhoan == null)
             {
@@ -360,37 +378,58 @@ namespace Cuahangchay.Controllers
             }
 
             var khachHang = _context.KhachHangs.FirstOrDefault(k => k.TenKH == taiKhoan.Username);
-
             return View(khachHang);
         }
 
         [HttpPost]
         public IActionResult UpdateKhachHang(KhachHang model)
         {
-            if (ModelState.IsValid)
+            if (!User.Identity.IsAuthenticated)
             {
-                var taiKhoan = _context.TaiKhoans.FirstOrDefault(t => t.Username == User.Identity.Name);
-                if (taiKhoan == null)
-                {
-                    return RedirectToAction("Login");
-                }
-
-                var khachHang = _context.KhachHangs.FirstOrDefault(k => k.TenKH == taiKhoan.Username);
-                if (khachHang == null)
-                {
-                    khachHang = new KhachHang { TenKH = taiKhoan.Username };
-                    _context.KhachHangs.Add(khachHang);
-                }
-
-                khachHang.SoDienThoai = model.SoDienThoai;
-                khachHang.Email = model.Email;
-                
-
-                _context.SaveChanges();
-                return RedirectToAction("Checkout");
+                return RedirectToAction("Login");
             }
-            return View(model);
+
+            if (!ModelState.IsValid)
+            {
+                var errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage);
+                Console.WriteLine(string.Join("; ", errors)); // Ghi log lỗi
+                return View(model);
+            }
+
+            var taiKhoan = _context.TaiKhoans.FirstOrDefault(t => t.Username == User.Identity.Name);
+            if (taiKhoan == null)
+            {
+                return RedirectToAction("Login");
+            }
+
+            var khachHang = _context.KhachHangs.FirstOrDefault(k => k.TenKH == taiKhoan.Username);
+            if (khachHang == null)
+            {
+                khachHang = new KhachHang { TenKH = taiKhoan.Username };
+                _context.KhachHangs.Add(khachHang);
+            }
+
+            khachHang.SoDienThoai = model.SoDienThoai;
+            khachHang.Email = model.Email;
+
+            try
+            {
+                _context.Update(khachHang); // Đảm bảo theo dõi đối tượng
+                _context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message); // Ghi log lỗi
+                ModelState.AddModelError("", $"Lỗi khi lưu dữ liệu: {ex.Message}");
+                return View(model);
+            }
+
+            return RedirectToAction("Checkout");
         }
+
+
+        /// ///// Quản lý tài khoản
+
 
         [Authorize(Roles = "Admin")]
         public IActionResult QuanLyTaiKhoan()
