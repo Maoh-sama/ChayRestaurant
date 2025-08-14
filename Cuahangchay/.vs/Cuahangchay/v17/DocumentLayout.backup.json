@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|c:\\users\\clips\\documents\\github\\chayrestaurant\\cuahangchay\\cuahangchay\\views\\home\\contact1.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|solutionrelative:cuahangchay\\views\\home\\contact1.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|c:\\users\\clips\\documents\\github\\chayrestaurant\\cuahangchay\\cuahangchay\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|solutionrelative:cuahangchay\\views\\home\\contact.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|c:\\users\\clips\\documents\\github\\chayrestaurant\\cuahangchay\\cuahangchay\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AF6E839D-B7D1-4B8A-837E-26A9D65B0AAD}|Cuahangchay\\Cuahangchay.csproj|solutionrelative:cuahangchay\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -74,11 +82,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Contact1.cshtml",
+              "DocumentMoniker": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Views\\Home\\Contact1.cshtml",
+              "RelativeDocumentMoniker": "Cuahangchay\\Views\\Home\\Contact1.cshtml",
+              "ToolTip": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Views\\Home\\Contact1.cshtml",
+              "RelativeToolTip": "Cuahangchay\\Views\\Home\\Contact1.cshtml",
+              "ViewState": "AgIAADoAAAAAAAAAAAAcwF4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-14T07:23:57.679Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Contact.cshtml",
+              "DocumentMoniker": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Views\\Home\\Contact.cshtml",
+              "RelativeDocumentMoniker": "Cuahangchay\\Views\\Home\\Contact.cshtml",
+              "ToolTip": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Views\\Home\\Contact.cshtml",
+              "RelativeToolTip": "Cuahangchay\\Views\\Home\\Contact.cshtml",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAowF4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-14T07:15:41.557Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "KhachHang.cs",
               "DocumentMoniker": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Models\\KhachHang.cs",
               "RelativeDocumentMoniker": "Cuahangchay\\Models\\KhachHang.cs",
@@ -86,12 +119,11 @@
               "RelativeToolTip": "Cuahangchay\\Models\\KhachHang.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-14T06:50:01.935Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-14T06:50:01.935Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Login.cshtml",
               "DocumentMoniker": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Views\\Home\\Login.cshtml",
               "RelativeDocumentMoniker": "Cuahangchay\\Views\\Home\\Login.cshtml",
@@ -99,12 +131,11 @@
               "RelativeToolTip": "Cuahangchay\\Views\\Home\\Login.cshtml",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-14T06:27:55.389Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-14T06:27:55.389Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Views\\MonChays\\Edit.cshtml",
               "RelativeDocumentMoniker": "Cuahangchay\\Views\\MonChays\\Edit.cshtml",
@@ -112,12 +143,11 @@
               "RelativeToolTip": "Cuahangchay\\Views\\MonChays\\Edit.cshtml",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAC4AAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-13T16:23:40.919Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-13T16:23:40.919Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Cuahangchay\\Controllers\\HomeController.cs",
@@ -125,12 +155,11 @@
               "RelativeToolTip": "Cuahangchay\\Controllers\\HomeController.cs",
               "ViewState": "AgIAAGIBAAAAAAAAAAAIwG0BAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-13T16:18:41.467Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-13T16:18:41.467Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Views\\TaiKhoan\\Index.cshtml",
               "RelativeDocumentMoniker": "Cuahangchay\\Views\\TaiKhoan\\Index.cshtml",
@@ -142,7 +171,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "QuanLyTaiKhoan.cshtml",
               "DocumentMoniker": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Views\\Home\\QuanLyTaiKhoan.cshtml",
               "RelativeDocumentMoniker": "Cuahangchay\\Views\\Home\\QuanLyTaiKhoan.cshtml",
@@ -154,7 +183,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "QuanLyNhanVien.cshtml",
               "DocumentMoniker": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Views\\Home\\QuanLyNhanVien.cshtml",
               "RelativeDocumentMoniker": "Cuahangchay\\Views\\Home\\QuanLyNhanVien.cshtml",
@@ -166,7 +195,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "QuanLyMonChay.cshtml",
               "DocumentMoniker": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Views\\Home\\QuanLyMonChay.cshtml",
               "RelativeDocumentMoniker": "Cuahangchay\\Views\\Home\\QuanLyMonChay.cshtml",
@@ -178,7 +207,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "QuanLyHoaDon.cshtml",
               "DocumentMoniker": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Views\\Home\\QuanLyHoaDon.cshtml",
               "RelativeDocumentMoniker": "Cuahangchay\\Views\\Home\\QuanLyHoaDon.cshtml",
@@ -190,7 +219,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "UpdateKhachHang.cshtml",
               "DocumentMoniker": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Views\\Home\\UpdateKhachHang.cshtml",
               "RelativeDocumentMoniker": "Cuahangchay\\Views\\Home\\UpdateKhachHang.cshtml",
@@ -198,12 +227,11 @@
               "RelativeToolTip": "Cuahangchay\\Views\\Home\\UpdateKhachHang.cshtml",
               "ViewState": "AgIAAAwAAAAAAAAAAAAIwB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-13T16:11:42.073Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-13T16:11:42.073Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Views\\KhachHangs\\Create.cshtml",
               "RelativeDocumentMoniker": "Cuahangchay\\Views\\KhachHangs\\Create.cshtml",
@@ -215,7 +243,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Views\\KhachHangs\\Delete.cshtml",
               "RelativeDocumentMoniker": "Cuahangchay\\Views\\KhachHangs\\Delete.cshtml",
@@ -227,7 +255,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Views\\KhachHangs\\Details.cshtml",
               "RelativeDocumentMoniker": "Cuahangchay\\Views\\KhachHangs\\Details.cshtml",
@@ -239,7 +267,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Views\\KhachHangs\\Edit.cshtml",
               "RelativeDocumentMoniker": "Cuahangchay\\Views\\KhachHangs\\Edit.cshtml",
@@ -251,7 +279,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "QuanLyKhachHang.cshtml",
               "DocumentMoniker": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Views\\Home\\QuanLyKhachHang.cshtml",
               "RelativeDocumentMoniker": "Cuahangchay\\Views\\Home\\QuanLyKhachHang.cshtml",
@@ -263,7 +291,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\clips\\Documents\\GitHub\\ChayRestaurant\\Cuahangchay\\Cuahangchay\\Views\\KhachHangs\\Index.cshtml",
               "RelativeDocumentMoniker": "Cuahangchay\\Views\\KhachHangs\\Index.cshtml",

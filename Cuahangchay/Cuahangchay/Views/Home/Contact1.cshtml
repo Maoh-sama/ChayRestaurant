@@ -1,31 +1,94 @@
 ﻿@{
-    ViewData["Title"] = "Liên Hệ";
-    Layout = "~/Views/Shared/_Layoutold.cshtml";
+    ViewBag.Title = "Liên hệ";
+    Layout = "~/Views/Shared/layoutnew.cshtml";
 }
 
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow-lg border-0" style="background-color: #fffaf0; border-radius: 15px;">
+                <div class="card-body p-5">
+                    <h2 class="text-center mb-4" style="color: #4CAF50; font-weight: bold;">Liên hệ với chúng tôi</h2>
 
+                    <!-- Contact Information -->
+                    <div class="row text-center mb-5">
+                        <div class="col-md-4">
+                            <i class="bi bi-geo-alt-fill text-success" style="font-size: 1.5rem;"></i>
+                            <p class="mt-2"><strong>Địa chỉ:</strong> 123 Lê Lợi, TP.HCM</p>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="bi bi-telephone-fill text-success" style="font-size: 1.5rem;"></i>
+                            <p class="mt-2"><strong>Điện thoại:</strong> 0909 999 999</p>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="bi bi-envelope-fill text-success" style="font-size: 1.5rem;"></i>
+                            <p class="mt-2"><strong>Email:</strong> info@cuahangchay.vn</p>
+                        </div>
+                    </div>
 
+                    <!-- Google Map -->
+                    <div class="text-center mb-5">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.google.com/maps?q=123+Lê+Lợi,+TP.HCM&output=embed"
+                                    style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
 
-<div class="container mt-5">
-    <div class="card shadow-sm" style="background-color: #fffaf0;">
-        <div class="card-body">
-            <h2 class="text-center mb-4" style="color: #4CAF50;">Liên hệ</h2>
-            <p class="text-center">
-                <i class="bi bi-geo-alt-fill"></i> <strong>Địa chỉ:</strong> 123 Lê Lợi, TP.HCM
-            </p>
-            <p class="text-center">
-                <i class="bi bi-telephone-fill"></i> <strong>Điện thoại:</strong> 0909 999 999
-            </p>
-            <p class="text-center">
-                <i class="bi bi-envelope-fill"></i> <strong>Email:</strong> info@cuahangchay.vn
-            </p>
-
-            <div class="text-center mt-4">
-                <iframe src="https://www.google.com/maps?q=123+Lê+Lợi,+TP.HCM&output=embed"
-                        width="300" height="200" style="border:0;" allowfullscreen="" loading="lazy">
-                </iframe>
+                    <!-- Contact Form -->
+                    <h4 class="text-center mb-4" style="color: #4CAF50;">Gửi tin nhắn cho chúng tôi</h4>
+                    <form asp-action="Contact" method="post">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Họ và tên</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Nhập họ và tên" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Nhập email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Tin nhắn</label>
+                            <textarea class="form-control" id="message" name="message" rows="5" placeholder="Nhập tin nhắn của bạn" required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-success px-5">Gửi</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+<style>
+    .card {
+        transition: transform 0.3s ease-in-out;
+    }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+    .form-control {
+        border-radius: 8px;
+        border: 1px solid #ced4da;
+    }
+
+        .form-control:focus {
+            border-color: #4CAF50;
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+        }
+
+    .btn-success {
+        background-color: #4CAF50;
+        border: none;
+        border-radius: 8px;
+        transition: background-color 0.3s ease;
+    }
+
+        .btn-success:hover {
+            background-color: #45a049;
+        }
+</style>
+
 
