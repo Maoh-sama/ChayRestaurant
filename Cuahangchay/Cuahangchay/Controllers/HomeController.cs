@@ -492,32 +492,58 @@ namespace Cuahangchay.Controllers
 
         public async Task<IActionResult> ThongKeNguyenLieu() => View(await _context.NguyenLieus.ToListAsync());
         public async Task<IActionResult> ThongKeBanHang() => View(await _context.HoaDons.Include(h => h.ChiTietHoaDons).ThenInclude(ct => ct.MonChay).ToListAsync());
-        public async Task<IActionResult> ThongKeDoanhThu()
+        public async Task<IActionResult> ThongKeDoanhThu(DateTime? startDate, DateTime? endDate)
         {
             var hoaDons = await _context.HoaDons
                 .Include(h => h.KhachHang)
                 .Include(h => h.NhanVien)
                 .Include(h => h.ChiTietHoaDons)
-                    .ThenInclude(ct => ct.MonChay)
+                .ThenInclude(ct => ct.MonChay)
                 .ToListAsync();
+
+            // Lọc hóa đơn theo ngày nếu có tham số
+            if (startDate.HasValue)
+            {
+                hoaDons = hoaDons.Where(h => h.NgayLap.Date >= startDate.Value.Date).ToList();
+            }
+            if (endDate.HasValue)
+            {
+                hoaDons = hoaDons.Where(h => h.NgayLap.Date <= endDate.Value.Date).ToList();
+            }
+
+            // Thống kê tổng doanh thu theo ngày
+            var dailyRevenue = hoaDons
+                .GroupBy(h => h.NgayLap.Date)
+                .Select(g => new
+                {
+                    Ngay = g.Key,
+                    TongTien = g.Sum(h => h.TongTien)
+                })
+                .OrderBy(x => x.Ngay)
+                .ToList();
+
+            ViewBag.DailyRevenue = dailyRevenue;
+            ViewBag.StartDate = startDate;
+            ViewBag.EndDate = endDate;
 
             // Thống kê số lượng hóa đơn theo khoảng giá
             var thongKeKhoangGia = hoaDons
-    .GroupBy(h => h.TongTien switch
-    {
-        var t when t < 500000 => "Dưới 500k",
-        var t when t >= 500000 && t <= 2000000 => "500k - 2 triệu",
-        _ => "Trên 2 triệu"
-    })
-    .Select(g => new
-    {
-        KhoangGia = g.Key,
-        SoLuong = g.Count()
-    })
-    .ToList();
-
+                .GroupBy(h => h.TongTien switch
+                {
+                    var t when t < 500000 => "Dưới 500k",
+                    var t when t >= 500000 && t <= 2000000 => "500k - 2 triệu",
+                    _ => "Trên 2 triệu"
+                })
+                .Select(g => new
+                {
+                    KhoangGia = g.Key,
+                    SoLuong = g.Count()
+                })
+                .ToList();
 
             ViewBag.ThongKeKhoangGia = thongKeKhoangGia;
+
+            // Trả về model là danh sách các hóa đơn đã được lọc
             return View(hoaDons);
         }
         public IActionResult AccessDenied() => View();
