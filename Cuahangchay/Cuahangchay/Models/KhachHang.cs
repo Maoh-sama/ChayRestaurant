@@ -8,7 +8,7 @@ namespace Cuahangchay.Models
         [Key]
         public int KHID { get; set; }
 
-        [Required(ErrorMessage = "Tên khách hàng là bắt buộc")]
+        
         public string? TenKH { get; set; }
 
         [Required(ErrorMessage = "Số điện thoại là bắt buộc")]

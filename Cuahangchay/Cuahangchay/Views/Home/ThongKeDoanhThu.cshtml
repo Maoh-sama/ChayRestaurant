@@ -7,6 +7,97 @@
 <div class="container-fluid">
     <h1 class="h3 mb-4 text-gray-800">Thống kê doanh thu</h1>
 
+    <!-- Biểu đồ -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Thống kê hóa đơn theo khoảng giá</h6>
+        </div>
+        <div class="card-body">
+            <canvas id="hoaDonChart" width="400" height="200"></canvas>
+            <div id="chartError" class="text-danger mt-2" style="display: none;"></div>
+        </div>
+    </div>
+    @section Scripts {
+        <!-- DataTables -->
+        <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
+        <!-- Chart.js -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                // Khởi tạo DataTable
+                $('#dataTable').DataTable();
+
+                // Lấy dữ liệu từ ViewBag
+                var thongKeKhoangGia = @Html.Raw(Json.Serialize(ViewBag.ThongKeKhoangGia ?? new List<object>()));
+
+                // Debug dữ liệu
+                console.log("Dữ liệu biểu đồ:", thongKeKhoangGia);
+
+                // Kiểm tra và xử lý dữ liệu cho biểu đồ
+                var labels = thongKeKhoangGia.length > 0 ? thongKeKhoangGia.map(item => item.KhoangGia || 'Không xác định') : ['Không có dữ liệu'];
+                var data = thongKeKhoangGia.length > 0 ? thongKeKhoangGia.map(item => item.SoLuong || 0) : [0];
+
+                console.log("Labels:", labels, "Data:", data);
+
+                // Lấy context của canvas
+                var ctx = document.getElementById('hoaDonChart');
+                if (!ctx) {
+                    document.getElementById('chartError').innerText = 'Không tìm thấy canvas.';
+                    document.getElementById('chartError').style.display = 'block';
+                    return;
+                }
+                var chartCtx = ctx.getContext('2d');
+
+                try {
+                    new Chart(chartCtx, {
+                        type: 'bar',
+                        data: {
+                            labels: labels,
+                            datasets: [{
+                                label: 'Số lượng hóa đơn',
+                                data: data,
+                                backgroundColor: ['#4e73df', '#1cc88a', '#f6c23e', '#e74a3b'],
+                                borderColor: ['#4e73df', '#1cc88a', '#f6c23e', '#e74a3b'],
+                                borderWidth: 1
+                            }]
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    beginAtZero: true,
+                                    title: {
+                                        display: true,
+                                        text: 'Số lượng hóa đơn'
+                                    }
+                                },
+                                x: {
+                                    title: {
+                                        display: true,
+                                        text: 'Khoảng giá'
+                                    }
+                                }
+                            },
+                            plugins: {
+                                legend: {
+                                    display: true,
+                                    position: 'top'
+                                },
+                                title: {
+                                    display: true,
+                                    text: 'Thống kê hóa đơn theo khoảng giá'
+                                }
+                            }
+                        }
+                    });
+                } catch (error) {
+                    document.getElementById('chartError').innerText = 'Lỗi khi vẽ biểu đồ: ' + error.message;
+                    document.getElementById('chartError').style.display = 'block';
+                }
+            });
+        </script>
+    }
+    <!-- Bảng doanh thu -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Tổng doanh thu theo hóa đơn</h6>
@@ -22,7 +113,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var item in Model)
+                        @foreach (var item in Model ?? new List<Cuahangchay.Models.HoaDon>())
                         {
                             <tr>
                                 <td>@item.HoaDonID</td>
@@ -37,12 +128,3 @@
     </div>
 </div>
 
-@section Scripts {
-    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap4.min.js"></script>
-    <script>
-        $(document).ready(function () {
-            $('#dataTable').DataTable();
-        });
-    </script>
-}

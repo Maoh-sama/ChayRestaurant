@@ -332,37 +332,54 @@ namespace Cuahangchay.Controllers
         {
             if (ModelState.IsValid)
             {
+                // Check if the username already exists
                 var existingUser = _context.TaiKhoans.FirstOrDefault(u => u.Username == model.Username);
                 if (existingUser != null)
                 {
                     ModelState.AddModelError("", "Tên đăng nhập đã tồn tại.");
                     return View(model);
                 }
+
+                // Create new TaiKhoan
                 var newUser = new TaiKhoan
                 {
                     Username = model.Username,
                     MatKhau = model.Password, // TODO: Mã hóa mật khẩu
                     Quyen = "User"
                 };
-                _context.TaiKhoans.Add(newUser);
+
+                // Create new KhachHang
+                var newKhachHang = new KhachHang
+                {
+                    TenKH = model.TenKH, // Use TenKH from RegisterViewModel
+                    SoDienThoai = model.SoDienThoai,
+                    Email = model.Email,
+                    
+                };
+
                 try
                 {
+                    // Add TaiKhoan and KhachHang to the database
+                    _context.TaiKhoans.Add(newUser);
+                    _context.KhachHangs.Add(newKhachHang);
                     _context.SaveChanges();
                 }
                 catch (Exception ex)
                 {
-                    ModelState.AddModelError("", $"Lỗi khi lưu tài khoản: {ex.Message}");
+                    ModelState.AddModelError("", $"Lỗi khi lưu dữ liệu: {ex.Message}");
                     return View(model);
                 }
+
                 return RedirectToAction("Login");
             }
+
             return View(model);
         }
 
 
         /// /////////Cap Nhat Khach Hang//////////
 
-       
+
 
         [HttpGet]
         public IActionResult UpdateKhachHang()
@@ -409,6 +426,8 @@ namespace Cuahangchay.Controllers
                 _context.KhachHangs.Add(khachHang);
             }
 
+            // Gán TenKH từ taiKhoan.Username và cập nhật các trường khác
+            khachHang.TenKH = taiKhoan.Username;
             khachHang.SoDienThoai = model.SoDienThoai;
             khachHang.Email = model.Email;
 
@@ -473,8 +492,34 @@ namespace Cuahangchay.Controllers
 
         public async Task<IActionResult> ThongKeNguyenLieu() => View(await _context.NguyenLieus.ToListAsync());
         public async Task<IActionResult> ThongKeBanHang() => View(await _context.HoaDons.Include(h => h.ChiTietHoaDons).ThenInclude(ct => ct.MonChay).ToListAsync());
-        public async Task<IActionResult> ThongKeDoanhThu() => View(await _context.HoaDons.ToListAsync());
+        public async Task<IActionResult> ThongKeDoanhThu()
+        {
+            var hoaDons = await _context.HoaDons
+                .Include(h => h.KhachHang)
+                .Include(h => h.NhanVien)
+                .Include(h => h.ChiTietHoaDons)
+                    .ThenInclude(ct => ct.MonChay)
+                .ToListAsync();
 
+            // Thống kê số lượng hóa đơn theo khoảng giá
+            var thongKeKhoangGia = hoaDons
+    .GroupBy(h => h.TongTien switch
+    {
+        var t when t < 500000 => "Dưới 500k",
+        var t when t >= 500000 && t <= 2000000 => "500k - 2 triệu",
+        _ => "Trên 2 triệu"
+    })
+    .Select(g => new
+    {
+        KhoangGia = g.Key,
+        SoLuong = g.Count()
+    })
+    .ToList();
+
+
+            ViewBag.ThongKeKhoangGia = thongKeKhoangGia;
+            return View(hoaDons);
+        }
         public IActionResult AccessDenied() => View();
 
         [Authorize]
