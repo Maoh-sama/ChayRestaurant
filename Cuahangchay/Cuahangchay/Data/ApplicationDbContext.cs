@@ -25,15 +25,21 @@ namespace Cuahangchay.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             // Quan hệ ChiTietHoaDon
-            modelBuilder.Entity<ChiTietHoaDon>()
-                .HasOne(c => c.HoaDon)
-                .WithMany(h => h.ChiTietHoaDons)
-                .HasForeignKey(c => c.HoaDonID);
+            modelBuilder.Entity<ChiTietHoaDon>(entity =>
+            {
+                entity.ToTable("ChiTietHoaDon");
+                entity.HasKey(e => e.CTID);
+                entity.Property(e => e.TenMon).HasMaxLength(100); // Cấu hình nvarchar(100)
+                entity.HasOne(d => d.HoaDon)
+                      .WithMany(h => h.ChiTietHoaDons)
+                      .HasForeignKey(d => d.HoaDonID);
+            });
 
-            modelBuilder.Entity<ChiTietHoaDon>()
-                .HasOne(c => c.MonChay)
-                .WithMany()
-                .HasForeignKey(c => c.MonID);
+            modelBuilder.Entity<MonChay>(entity =>
+            {
+                entity.ToTable("MonChay");
+                entity.HasKey(e => e.MonID);
+            });
 
             // Quan hệ TaiKhoan - NhanVien
             modelBuilder.Entity<TaiKhoan>()

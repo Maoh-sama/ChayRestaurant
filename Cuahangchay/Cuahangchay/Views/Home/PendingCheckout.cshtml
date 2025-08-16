@@ -75,8 +75,8 @@
                         @foreach (var item in Model.ChiTietHoaDons)
                         {
                             <tr>
-                                <td>@item.MonID</td>
-                                <td>@item.MonChay?.TenMon ?? "Chưa xác định"</td>
+                                <td>@item.TenMon</td>
+                                <td>@item.TenMon</td>
                                 <td>@item.SoLuong</td>
                                 <td>@item.DonGia.ToString("N0") VNĐ</td>
                                 <td>@(item.SoLuong* item.DonGia).ToString("N0") VNĐ</td>

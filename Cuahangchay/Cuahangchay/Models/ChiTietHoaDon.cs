@@ -1,23 +1,20 @@
-﻿// Đảm bảo có dòng này
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json.Serialization; // Để sử dụng JsonIgnore
+using System.Text.Json.Serialization;
 
 namespace Cuahangchay.Models
 {
-    [Table("ChiTietHoaDon")] // Dòng này chỉ định tên bảng trong cơ sở dữ liệu
+    [Table("ChiTietHoaDon")]
     public class ChiTietHoaDon
     {
-        [Key] // Dòng này phải có
+        [Key]
         public int CTID { get; set; }
         public int HoaDonID { get; set; }
-        public int MonID { get; set; }
+        public string TenMon { get; set; } // Chỉ là trường dữ liệu, không phải foreign key
         public int SoLuong { get; set; }
         public decimal DonGia { get; set; }
 
-        public MonChay MonChay { get; set; }
         [JsonIgnore]
         public HoaDon HoaDon { get; set; }
-
     }
 }

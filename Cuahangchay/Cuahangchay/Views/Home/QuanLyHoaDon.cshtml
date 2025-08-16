@@ -30,10 +30,10 @@
                             <tr>
                                 <th>Mã HD</th>
                                 <th>Ngày lập</th>
-                                <th>Mã bàn</th>
+                               
                                
                                 <th>Tổng tiền</th>
-                                <th>Trạng thái</th>
+                                
                                 <th>Thao tác</th>
                             </tr>
                         </thead>
@@ -43,31 +43,14 @@
                                 <tr>
                                     <td>@item.HoaDonID</td>
                                     <td>@item.NgayLap.ToString("dd/MM/yyyy HH:mm")</td>
-                                    <td>@item.NhanVienID</td>
+                                   
                                     <td>@item.TongTien.ToString("N0") VNĐ</td>
-                                    <td>
-                                        @if (item.TrangThai == "Chờ xác nhận")
-                                        {
-                                            <span class="badge badge-warning">@item.TrangThai</span>
-                                        }
-                                        else if (item.TrangThai == "Đã xác nhận")
-                                        {
-                                            <span class="badge badge-success">@item.TrangThai</span>
-                                        }
-                                        else
-                                        {
-                                            <span class="badge badge-secondary">@item.TrangThai</span>
-                                        }
+                               
                                     <td>
                                         <a asp-action="Details" asp-controller="HoaDon" asp-route-id="@item.HoaDonID" class="btn btn-info btn-sm">
                                             <i class="fas fa-info-circle"></i> Chi tiết
                                         </a>
-                                        <a asp-action="Edit" asp-controller="HoaDon" asp-route-id="@item.HoaDonID" class="btn btn-warning btn-sm">
-                                            <i class="fas fa-edit"></i> Sửa
-                                        </a>
-                                        <a asp-action="Delete" asp-controller="HoaDon" asp-route-id="@item.HoaDonID" class="btn btn-danger btn-sm">
-                                            <i class="fas fa-trash"></i> Xóa
-                                        </a>
+                                    
                                     </td>
                                 </tr>
                             }

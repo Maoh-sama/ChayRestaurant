@@ -4,59 +4,7 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
-<div class="container-fluid">
-    <h1 class="h3 mb-4 text-gray-800">Thống kê doanh thu</h1>
 
-    <div class="container-fluid">
-        
-
-        <div class="card shadow mb-4">
-            <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">Tổng doanh thu theo ngày</h6>
-            </div>
-            <div class="card-body">
-                <form asp-action="ThongKeDoanhThu" method="get" class="form-inline mb-3">
-                    <div class="form-group mr-2">
-                        <label for="startDate" class="mr-1">Từ ngày:</label>
-                        <input type="date" id="startDate" name="startDate" class="form-control" value="@ViewBag.StartDate?.ToString("yyyy-MM-dd")" />
-                    </div>
-                    <div class="form-group mr-2">
-                        <label for="endDate" class="mr-1">Đến ngày:</label>
-                        <input type="date" id="endDate" name="endDate" class="form-control" value="@ViewBag.EndDate?.ToString("yyyy-MM-dd")" />
-                    </div>
-                    <button type="submit" class="btn btn-primary">Lọc</button>
-                </form>
-
-                <div class="table-responsive">
-                    <table class="table table-bordered" width="100%" cellspacing="0">
-                        <thead>
-                            <tr>
-                                <th>Ngày</th>
-                                <th>Tổng doanh thu</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @if (ViewBag.DailyRevenue != null)
-                            {
-                                @foreach (var item in ViewBag.DailyRevenue)
-                                {
-                                    <tr>
-                                        <td>@item.Ngay.ToString("dd/MM/yyyy")</td>
-                                        <td>@item.TongTien.ToString("N0") VND</td>
-                                    </tr>
-                                }
-                            }
-                            else
-                            {
-                                <tr>
-                                    <td colspan="2">Không có dữ liệu.</td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
     <!-- Bảng doanh thu -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">

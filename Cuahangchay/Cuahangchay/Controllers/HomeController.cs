@@ -84,9 +84,9 @@ namespace Cuahangchay.Controllers
             var chiTietHoaDons = cart.Select(item => new ChiTietHoaDon
             {
                 HoaDonID = hoaDon.HoaDonID,
-                MonID = item.MonID,
+                TenMon = item.TenMon, // Thay bằng TenMon từ CartItem
                 SoLuong = item.SoLuong,
-                DonGia = item.Gia 
+                DonGia = item.Gia
             }).ToList();
 
             TempData["HoaDonID"] = hoaDon.HoaDonID;
@@ -130,7 +130,6 @@ namespace Cuahangchay.Controllers
                 .Include(h => h.KhachHang)
                 .Include(h => h.NhanVien)
                 .Include(h => h.ChiTietHoaDons)
-                .ThenInclude(ct => ct.MonChay)
                 .FirstOrDefault(h => h.HoaDonID == hoaDonId);
             if (hoaDon == null || hoaDon.ChiTietHoaDons == null || hoaDon.KhachHang == null || hoaDon.NhanVien == null)
             {
@@ -142,7 +141,7 @@ namespace Cuahangchay.Controllers
 
 
 
-//////AddToCart///////
+        //////AddToCart///////
 
 
 
@@ -473,14 +472,14 @@ namespace Cuahangchay.Controllers
         public async Task<IActionResult> QuanLyHoaDon()
         {
             var hoaDons = await _context.HoaDons
-                .Include(h => h.ChiTietHoaDons)
+                .Include(h => h.ChiTietHoaDons) // Không cần ThenInclude MonChay nữa
                 .Where(h => h.NhanVien != null && h.KhachHang != null)
                 .ToListAsync();
             ViewBag.TrangThai = new List<SelectListItem>
-        {
-            new SelectListItem { Text = "Chờ xác nhận", Value = "Chờ xác nhận" },
-            new SelectListItem { Text = "Đã xác nhận", Value = "Đã xác nhận" }
-        };
+            {
+                new SelectListItem { Text = "Chờ xác nhận", Value = "Chờ xác nhận" },
+                new SelectListItem { Text = "Đã xác nhận", Value = "Đã xác nhận" }
+            };
             return View(hoaDons);
         }
 
@@ -491,14 +490,13 @@ namespace Cuahangchay.Controllers
         public async Task<IActionResult> QuanLyKhachHang() => View(await _context.KhachHangs.ToListAsync());
 
         public async Task<IActionResult> ThongKeNguyenLieu() => View(await _context.NguyenLieus.ToListAsync());
-        public async Task<IActionResult> ThongKeBanHang() => View(await _context.HoaDons.Include(h => h.ChiTietHoaDons).ThenInclude(ct => ct.MonChay).ToListAsync());
+       
         public async Task<IActionResult> ThongKeDoanhThu(DateTime? startDate, DateTime? endDate)
         {
             var hoaDons = await _context.HoaDons
                 .Include(h => h.KhachHang)
                 .Include(h => h.NhanVien)
-                .Include(h => h.ChiTietHoaDons)
-                .ThenInclude(ct => ct.MonChay)
+                .Include(h => h.ChiTietHoaDons) // Loại bỏ .ThenInclude(ct => ct.MonChay)
                 .ToListAsync();
 
             // Lọc hóa đơn theo ngày nếu có tham số
