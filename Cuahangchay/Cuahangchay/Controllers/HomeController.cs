@@ -96,7 +96,8 @@ namespace Cuahangchay.Controllers
 
             return RedirectToAction("Success");
         }
-
+       
+        
         [Authorize(Roles = "ThuNgan")]
         public IActionResult ConfirmCheckout(int hoaDonId)
         {
@@ -490,13 +491,14 @@ namespace Cuahangchay.Controllers
         public async Task<IActionResult> QuanLyKhachHang() => View(await _context.KhachHangs.ToListAsync());
 
         public async Task<IActionResult> ThongKeNguyenLieu() => View(await _context.NguyenLieus.ToListAsync());
-       
+
+        [Authorize(Roles = "Admin,ThuNgan")]
         public async Task<IActionResult> ThongKeDoanhThu(DateTime? startDate, DateTime? endDate)
         {
             var hoaDons = await _context.HoaDons
                 .Include(h => h.KhachHang)
                 .Include(h => h.NhanVien)
-                .Include(h => h.ChiTietHoaDons) // Loại bỏ .ThenInclude(ct => ct.MonChay)
+                .Include(h => h.ChiTietHoaDons)
                 .ToListAsync();
 
             // Lọc hóa đơn theo ngày nếu có tham số
