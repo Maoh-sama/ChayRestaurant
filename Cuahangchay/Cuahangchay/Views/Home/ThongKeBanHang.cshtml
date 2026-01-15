@@ -31,7 +31,7 @@
                                 <td>@item.NgayLap.ToString("dd/MM/yyyy HH:mm")</td>
                                 
                                 <td>@item.NhanVien.HoTen</td>
-                                <td>@item.TongTien.ToString("N0") VND</td>
+                                <td>@((item.TongTien ?? 0).ToString("N0")) VNĐ</td>
                             </tr>
                         }
                     </tbody>

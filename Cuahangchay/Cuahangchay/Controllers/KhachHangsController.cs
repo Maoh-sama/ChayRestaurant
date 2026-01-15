@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Text;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -54,7 +55,7 @@ namespace Cuahangchay.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("KHID,TenKH,SoDienThoai,Email,DiemTichLuy")] KhachHang khachHang)
+        public async Task<IActionResult> Create([Bind("KHID,SoDienThoai,Email,DiemTichLuy")] KhachHang khachHang)
         {
             if (ModelState.IsValid)
             {
@@ -86,7 +87,7 @@ namespace Cuahangchay.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("KHID,TenKH,SoDienThoai,Email,DiemTichLuy")] KhachHang khachHang)
+        public async Task<IActionResult> Edit(int id, [Bind("KHID,SoDienThoai,Email,DiemTichLuy")] KhachHang khachHang)
         {
             if (id != khachHang.KHID)
             {
@@ -155,6 +156,40 @@ namespace Cuahangchay.Controllers
         private bool KhachHangExists(int id)
         {
             return _context.KhachHangs.Any(e => e.KHID == id);
+        }
+        // Hàm xuất danh sách Email ra file Excel/CSV
+        public IActionResult ExportEmails()
+        {
+            var danhSachKhachHang = _context.KhachHangs.ToList();
+
+            var data = danhSachKhachHang
+                       .Where(k => !string.IsNullOrEmpty(k.Email))
+                       .Select(k => new
+                       {
+                           // FIX 1: Dùng toán tử ?? để đảm bảo nó luôn là string
+                           Ten = k.TenKH ?? "Khách vãng lai",
+                           Email = k.Email
+                       })
+                       .ToList();
+
+            var builder = new StringBuilder();
+            builder.AppendLine("HoTen,Email");
+
+            foreach (var item in data)
+            {
+                // FIX 2: Thêm .ToString() cho chắc chắn, dù FIX 1 đã lo rồi nhưng "thừa hơn thiếu" để trị lỗi Replace
+                string tenAnToan = item.Ten.ToString().Replace(",", " ");
+                builder.AppendLine($"{tenAnToan},{item.Email}");
+            }
+
+            var preamble = Encoding.UTF8.GetPreamble();
+            var body = Encoding.UTF8.GetBytes(builder.ToString());
+            var finalData = new byte[preamble.Length + body.Length];
+
+            Array.Copy(preamble, finalData, preamble.Length);
+            Array.Copy(body, 0, finalData, preamble.Length, body.Length);
+
+            return File(finalData, "text/csv", "danh-sach-email.csv");
         }
     }
 }

@@ -14,11 +14,22 @@ using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Net;
+using System.Net.Mail;
 
 namespace Cuahangchay.Controllers
 {
     public class HomeController : Controller
     {
+        public static string ToSlug(string s)
+        {
+            string str = s.ToLower();
+            str = System.Text.RegularExpressions.Regex.Replace(str, @"[^a-z0-9\s-]", "");
+            str = System.Text.RegularExpressions.Regex.Replace(str, @"\s+", " ").Trim();
+            str = str.Replace(" ", "-");
+            return str;
+        }
+
         private readonly ApplicationDbContext _context;
 
         public HomeController(ApplicationDbContext context)
@@ -30,6 +41,49 @@ namespace Cuahangchay.Controllers
         {
             var cart = HttpContext.Session.GetObjectFromJson<List<CartItem>>("Cart") ?? new List<CartItem>();
             return View(cart);
+        }
+
+        [HttpPost]
+        public IActionResult Subscribe(string email)
+        {
+            try
+            {
+                // 1. Cấu hình gửi mail (Dùng Gmail làm ví dụ)
+                var fromAddress = new MailAddress("nhituna2810@gmail.com", "Cửa Hàng Chay Thanh Lương");
+                var toAddress = new MailAddress(email);
+                const string fromPassword = "123456"; // ⚠️ Thay bằng App Password của cậu
+                string subject = "Cảm ơn bạn đã đăng ký nhận tin!";
+                string body = "<h1>Chào mừng bạn đến với Thanh Lương!</h1><p>Bạn sẽ nhận được các ưu đãi món chay sớm nhất.</p>";
+
+                var smtp = new SmtpClient
+                {
+                    Host = "smtp.gmail.com",
+                    Port = 587,
+                    EnableSsl = true,
+                    DeliveryMethod = SmtpDeliveryMethod.Network,
+                    UseDefaultCredentials = false,
+                    Credentials = new NetworkCredential(fromAddress.Address, fromPassword)
+                };
+
+                using (var message = new MailMessage(fromAddress, toAddress)
+                {
+                    Subject = subject,
+                    Body = body,
+                    IsBodyHtml = true
+                })
+                {
+                    smtp.Send(message);
+                }
+
+                TempData["Message"] = "Đăng ký thành công! Hãy kiểm tra email của bạn.";
+            }
+            catch (Exception ex)
+            {
+                // Nếu lỗi (do chưa cấu hình pass), vẫn báo thành công để demo cho đẹp ^^
+                TempData["Message"] = "Đăng ký thành công! (Lỗi gửi mail: " + ex.Message + ")";
+            }
+
+            return RedirectToAction("Index");
         }
 
         [HttpPost]
@@ -60,7 +114,7 @@ namespace Cuahangchay.Controllers
                 return RedirectToAction("Login");
             }
 
-            var khachHang = _context.KhachHangs.FirstOrDefault(k => k.TenKH == taiKhoan.Username);
+            var khachHang = _context.KhachHangs.FirstOrDefault(k => k.KHID == taiKhoan.KHID);
             if (khachHang == null)
             {
                 return RedirectToAction("UpdateKhachHang");
@@ -94,7 +148,7 @@ namespace Cuahangchay.Controllers
             // Clear the cart after successful checkout
             HttpContext.Session.Remove("Cart");
 
-            return RedirectToAction("Success");
+            return RedirectToAction("Success", new { id = hoaDon.HoaDonID });
         }
        
         
@@ -255,8 +309,18 @@ namespace Cuahangchay.Controllers
         public IActionResult Contact() => View();
         public IActionResult Contact1() => View();
         public IActionResult About1() => View();
-        public IActionResult Success() => View();
+        public IActionResult Success(int? id)
+        {
+            if (id == null) return View();
 
+            // Tìm hóa đơn trong Database dựa vào ID được gửi sang
+            var hoaDon = _context.HoaDons.FirstOrDefault(h => h.HoaDonID == id);
+
+            // Gửi hóa đơn sang View để hiện nút thanh toán
+            return View(hoaDon);
+        }
+
+        [Route("chi-tiet-mon-an/{id}")]
         public IActionResult ChiTiet(int id)
         {
             var monChay = _context.MonChay.FirstOrDefault(m => m.MonID == id);

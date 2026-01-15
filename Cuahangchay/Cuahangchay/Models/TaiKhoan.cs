@@ -9,6 +9,7 @@ namespace Cuahangchay.Models
         [Key]
         [Required]
         public string Username { get; set; }
+       
 
         [Required]
         public string MatKhau { get; set; }
@@ -18,6 +19,7 @@ namespace Cuahangchay.Models
         public string Quyen { get; set; }
 
         public int? NhanVienID { get; set; }
+        public int? KHID { get; set; }
 
         public NhanVien NhanVien { get; set; }
     }

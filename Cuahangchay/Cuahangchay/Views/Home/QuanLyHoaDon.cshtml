@@ -28,13 +28,14 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th>Mã HD</th>
+                                <th>Mã hóa đơn</th>
                                 <th>Ngày lập</th>
-                               
-                               
+                                <th>Khách hàng</th>
                                 <th>Tổng tiền</th>
-                                
-                                
+                                <th>PT Thanh toán</th>
+                                <th>Mã Giao dịch</th>
+                                <th>Trạng thái</th>
+                                <th>Thao tác</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -42,17 +43,37 @@
                             {
                                 <tr>
                                     <td>@item.HoaDonID</td>
-                                    <td>@item.NgayLap.ToString("dd/MM/yyyy HH:mm")</td>
-                                   
-                                    <td>@item.TongTien.ToString("N0") VNĐ</td>
-                               
+                                    <td>@String.Format("{0:dd/MM/yyyy HH:mm}", item.NgayLap)</td>
+                                    <td>@item.KhachHang?.TenKH</td>
+                                    <td>@((item.TongTien ?? 0).ToString("N0")) VNĐ</td>
+
                                     <td>
-                                        
-                                    
+                                        @if (item.PhuongThucThanhToan == "VNPAY")
+                                        {
+                                            <span class="badge badge-info">VNPAY</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge badge-secondary">@(item.PhuongThucThanhToan ?? "COD")</span>
+                                        }
+                                    </td>
+                                    <td>
+                                        <small>@item.MaGiaoDich</small>
+                                    </td>
+                                    <td>
+                                        @if (item.TrangThai == "Đã thanh toán")
+                                        {
+                                            <span class="badge badge-success">Đã thanh toán</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge badge-warning">@item.TrangThai</span>
+                                        }
                                     </td>
                                 </tr>
                             }
                         </tbody>
+
                     </table>
                 </div>
             </div>

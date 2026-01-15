@@ -10,6 +10,7 @@ wwwroot\img\dauhucachua.png
 wwwroot\img\dauhuxaoque.png
 wwwroot\img\duy.jpg
 wwwroot\img\goicuon.png
+wwwroot\img\Heoquaychay.png
 wwwroot\img\lauchay.png
 wwwroot\img\Nemran.png
 wwwroot\img\Nha hang chay.jpg
@@ -1923,4 +1924,8 @@ wwwroot\vendor\jquery\jquery.min.map
 wwwroot\vendor\jquery\jquery.slim.js
 wwwroot\vendor\jquery\jquery.slim.min.js
 wwwroot\vendor\jquery\jquery.slim.min.map
-wwwroot\img\Heoquaychay.png
+wwwroot\img\pho-chay.jpg
+wwwroot\img\com-chay.jpg
+wwwroot\img\bun-dau-chay.jpg
+wwwroot\img\bunmamchay.jpg
+wwwroot\img\tau-hu-ky.jpg

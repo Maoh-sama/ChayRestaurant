@@ -4,7 +4,21 @@
 <!DOCTYPE html>  
 <html>  
 <head>  
-    <meta charset="utf-8" />  
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData["Title"] - Cửa Hàng Chay Thanh Lương</title>
+    <meta name="description" content="@(ViewData["MetaDescription"] ?? "Nhà hàng chay thanh tịnh, ngon miệng, phục vụ chu đáo.")">
+    <meta name="keywords" content="đồ chay, món chay ngon, thanh lương, @ViewData["MetaKeywords"]">
+    <link rel="canonical" href="@(Context.Request.Scheme + "://" + Context.Request.Host + Context.Request.Path)" />
+
+    <meta property="og:site_name" content="Cửa Hàng Chay Thanh Lương" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="@(ViewData["OgTitle"] ?? ViewData["Title"])" />
+    <meta property="og:description" content="@(ViewData["OgDescription"] ?? ViewData["MetaDescription"] ?? "Món chay ngon, tốt cho sức khỏe.")" />
+    <meta property="og:image" content="@(ViewData["OgImage"] ?? (Context.Request.Scheme + "://" + Context.Request.Host + "/images/logo-default.png"))" />
+    <meta property="og:url" content="@(Context.Request.Scheme + "://" + Context.Request.Host + Context.Request.Path)" />
+
     <title>@ViewData["Title"] - Nhà hàng Chay</title>  
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <style>
@@ -39,8 +53,59 @@
             font-weight: 600;
         }
     </style>
+    @await RenderSectionAsync("Seo", required: false)
 </head>
 <body>
+    <div id="fb-root"></div>
+
+    <div id="fb-customer-chat" class="fb-customerchat">
+    </div>
+
+    <script>
+        var chatbox = document.getElementById('fb-customer-chat');
+        chatbox.setAttribute("page_id", "905601999305470");
+        chatbox.setAttribute("attribution", "biz_inbox");
+    </script>
+
+    <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            xfbml            : true,
+            version          : 'v18.0'
+          });
+        };
+
+        (function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+        var Tawk_API=Tawk_API||{};
+        var Tawk_LoadStart=new Date();
+        
+        Tawk_API.customStyle = {
+            visibility : 'visible',
+            zIndex : 1000,
+            bottom : '110px', 
+            right : '20px'    
+        };
+
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src= 'https://embed.tawk.to/694aa674b87cca197b1f25a0/1jd5pke91';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+    </script>
+    <!--End of Tawk.to Script-->
+
     <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
         <div class="container-fluid">
             <a class="navbar-brand" href="/Home/Index1">Cửa Hàng Chay Thanh Lương</a>
@@ -78,7 +143,47 @@
         @RenderBody()
     </div>
 
-    <footer class="bg-light text-center py-3 mt-5">  
+    <footer class="bg-light text-center py-3 mt-5">
+        <div class="bg-light border-top py-5 mt-4">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 col-md-8 text-center">
+
+                        <h4 class="font-weight-bold text-dark mb-2">
+                            <i class="fa fa-envelope-open-o" aria-hidden="true"></i> Đăng Ký Nhận Tin
+                        </h4>
+                        <p class="text-muted mb-4">
+                            Nhập email để nhận ngay <strong>Voucher giảm 20%</strong> cho đơn hàng đầu tiên nhé!
+                        </p>
+
+                        <form action="https://doanchaythanhluong.us10.list-manage.com/subscribe/post?u=bd5990697cc5a40295e1a641b&amp;id=89d4a96d6d&amp;f_id=00a855e4f0"
+                              method="post" target="_blank" novalidate>
+
+                            <div class="input-group input-group-lg mb-3">
+                                <input type="email" name="EMAIL" class="form-control"
+                                       placeholder="Nhập địa chỉ email của bạn..."
+                                       required aria-label="Email của bạn">
+
+                                <div style="position: absolute; left: -5000px;" aria-hidden="true">
+                                    <input type="text" name="b_bd5990697cc5a40295e1a641b_89d4a96d6d" tabindex="-1" value="">
+                                </div>
+
+                                <div class="input-group-append">
+                                    <button class="btn btn-success font-weight-bold" type="submit" name="subscribe">
+                                        Gửi Ngay <i class="fa fa-paper-plane"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <small class="text-black-50">
+                                *Chúng tôi cam kết bảo mật thông tin của bạn.
+                            </small>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <p>&copy; 2025 Nhà hàng Chay</p>  
     </footer> 
     @RenderSection("Scripts", required: false)

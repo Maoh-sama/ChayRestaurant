@@ -1,4 +1,23 @@
 ﻿@model MonChayViewModel
+@{
+    ViewData["Title"] = Model.MonChay.TenMon;
+    // Tạo đường dẫn ảnh tuyệt đối (Facebook cần link đầy đủ http://...)
+    string currentDomain = Context.Request.Scheme + "://" + Context.Request.Host;
+    string imageUrl = currentDomain + (string.IsNullOrEmpty(Model.MonChay.HinhAnh) ? "/images/no-image.jpg" : Model.MonChay.HinhAnh);
+    string pageUrl = currentDomain + Context.Request.Path;
+}
+
+@section Seo {
+    <meta name="description" content="@(Model.MonChay.MoTa ?? "Món chay thanh tịnh")">
+    <meta name="keywords" content="@Model.MonChay.TenMon, món chay ngon, thanh lương">
+
+    <meta property="og:site_name" content="Cửa Hàng Chay Thanh Lương" />
+    <meta property="og:type" content="product" />
+    <meta property="og:title" content="@Model.MonChay.TenMon" />
+    <meta property="og:description" content="@(Model.MonChay.MoTa ?? "Món ngon tại cửa hàng chay Thanh Lương")" />
+    <meta property="og:image" content="@imageUrl" />
+    <meta property="og:url" content="@pageUrl" />
+}
 
 <h2 class="text-center my-4">Chi tiết món ăn: @Model.MonChay.TenMon</h2>
 
@@ -29,6 +48,13 @@
                 <div class="input-group mb-3" style="max-width: 200px;">
                     <input type="number" name="soLuong" value="1" min="1" class="form-control" />
                     <button type="submit" class="btn btn-primary">Thêm vào giỏ hàng</button>
+                </div>
+                <div class="mt-3">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=@(Context.Request.Scheme + "://" + Context.Request.Host + Context.Request.Path)"
+                       target="_blank"
+                       class="btn btn-outline-primary">
+                        <i class="fab fa-facebook"></i> Chia sẻ món này
+                    </a>
                 </div>
             </form>
         }

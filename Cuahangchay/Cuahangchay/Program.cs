@@ -55,6 +55,12 @@ app.UseAuthorization();
 app.UseSession();
 
 app.MapControllerRoute(
+    name: "ChiTietMonAn",
+    pattern: "mon-an/{slug}-{id}",
+    defaults: new { controller = "Home", action = "ChiTiet" }
+);
+
+app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 

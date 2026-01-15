@@ -162,12 +162,6 @@ C:\Users\admin\Desktop\ChayRestaurant\Cuahangchay\Cuahangchay\obj\Debug\net8.0\s
 C:\Users\admin\Desktop\ChayRestaurant\Cuahangchay\Cuahangchay\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\admin\Desktop\ChayRestaurant\Cuahangchay\Cuahangchay\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\admin\Desktop\ChayRestaurant\Cuahangchay\Cuahangchay\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\admin\Desktop\ChayRestaurant\Cuahangchay\Cuahangchay\obj\Debug\net8.0\staticwebassets\msbuild.Cuahangchay.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\admin\Desktop\ChayRestaurant\Cuahangchay\Cuahangchay\obj\Debug\net8.0\staticwebassets\msbuild.Cuahangchay.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-C:\Users\admin\Desktop\ChayRestaurant\Cuahangchay\Cuahangchay\obj\Debug\net8.0\staticwebassets\msbuild.build.Cuahangchay.props
-C:\Users\admin\Desktop\ChayRestaurant\Cuahangchay\Cuahangchay\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Cuahangchay.props
-C:\Users\admin\Desktop\ChayRestaurant\Cuahangchay\Cuahangchay\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Cuahangchay.props
-C:\Users\admin\Desktop\ChayRestaurant\Cuahangchay\Cuahangchay\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Users\admin\Desktop\ChayRestaurant\Cuahangchay\Cuahangchay\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\admin\Desktop\ChayRestaurant\Cuahangchay\Cuahangchay\obj\Debug\net8.0\Cuahangc.F181AD89.Up2Date
 C:\Users\admin\Desktop\ChayRestaurant\Cuahangchay\Cuahangchay\obj\Debug\net8.0\Cuahangchay.dll
@@ -563,3 +557,9 @@ C:\Users\clips\Documents\GitHub\ChayRestaurant\Cuahangchay\Cuahangchay\obj\Debug
 C:\Users\clips\Documents\GitHub\ChayRestaurant\Cuahangchay\Cuahangchay\obj\Debug\net8.0\Cuahangchay.pdb
 C:\Users\clips\Documents\GitHub\ChayRestaurant\Cuahangchay\Cuahangchay\obj\Debug\net8.0\Cuahangchay.genruntimeconfig.cache
 C:\Users\clips\Documents\GitHub\ChayRestaurant\Cuahangchay\Cuahangchay\obj\Debug\net8.0\ref\Cuahangchay.dll
+C:\Users\admin\Desktop\ChayRestaurant\Cuahangchay\Cuahangchay\bin\Debug\net8.0\BCrypt.Net-Next.dll
+C:\Users\admin\Desktop\ChayRestaurant\Cuahangchay\Cuahangchay\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\admin\Desktop\ChayRestaurant\Cuahangchay\Cuahangchay\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\admin\Desktop\ChayRestaurant\Cuahangchay\Cuahangchay\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\admin\Desktop\ChayRestaurant\Cuahangchay\Cuahangchay\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\admin\Desktop\ChayRestaurant\Cuahangchay\Cuahangchay\obj\Debug\net8.0\staticwebassets.build.json.cache

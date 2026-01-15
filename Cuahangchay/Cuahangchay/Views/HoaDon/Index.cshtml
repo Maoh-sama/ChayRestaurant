@@ -43,8 +43,8 @@
                                 <tr>
                                     <td>@item.HoaDonID</td>
                                     <td>@item.NgayLap.ToString("dd/MM/yyyy HH:mm")</td>
-                                   
-                                    <td>@item.TongTien.ToString("N0") VNĐ</td>
+
+                                    <td>@(item.TongTien ?? 0).ToString("N0") VNĐ</td>
                                    
                                     <td>
                                         

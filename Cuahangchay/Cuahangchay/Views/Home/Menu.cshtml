@@ -4,6 +4,7 @@
     ViewData["Title"] = "Thực đơn";
 }
 
+
 <h2 class="text-center my-4">Thực đơn Món Chay</h2>
 
 <!-- Search Bar -->
@@ -23,11 +24,18 @@
         <div class="row">
             @foreach (var item in Model)
             {
+                {
+                   string slug = Cuahangchay.Controllers.HomeController.ToSlug(item.TenMon ?? "mon-an");
+                }
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="card h-100">
-                        <a href="@Url.Action("ChiTiet", "Home", new { id = item.MonID })">
+                        <a asp-controller="Home" asp-action="ChiTiet" asp-route-id="@item.MonID">
+
+                            Xem chi tiết
                             <img src="@item.HinhAnh" class="card-img-top" alt="@item.TenMon" style="object-fit: cover; height: 200px;">
                         </a>
+                            
+                        
                         <div class="card-body">
                             <h5 class="card-title">
                                 @item.TenMon

@@ -53,7 +53,7 @@
                             <td>@Model.NgayLap.ToString("dd/MM/yyyy HH:mm")</td>
                             <td>@Model.NhanVien?.HoTen ?? "Chưa xác định"</td>
                             <td>@Model.KhachHang?.TenKH ?? "Chưa xác định"</td>
-                            <td>@Model.TongTien.ToString("N0") VNĐ</td>
+                            <td>@(Model.TongTien ?? 0).ToString("N0") VNĐ</td>
                             <td>@Model.TrangThai</td>
                         </tr>
                     </tbody>
@@ -84,6 +84,7 @@
                         }
                     </tbody>
                 </table>
+
             </div>
         </div>
     </div>
